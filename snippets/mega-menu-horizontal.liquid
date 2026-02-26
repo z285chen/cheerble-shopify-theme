@@ -1,0 +1,125 @@
+{%- if link.links.size > 0 -%}
+  <style>
+    @media screen and (min-width: 1150px) {
+      #mega-menu-{{ mega_menu_block.id }} {
+        --mega-menu-nav-column-max-width: {% if mega_menu_block.settings.submenu_style == 'bold_text' %}{% if link.links.size <= 2 %}240px{% else %}200px{% endif %}{% else %}{% if link.links.size <= 2 %}180px{% else %}160px{% endif %}{% endif %};
+        --mega-menu-justify-content: {% if link.links.size == 0 or mega_menu_block.settings.layout == 'horizontal_center' and mega_menu_block.settings.stretch_promo == false %}center{% else %}space-between{% endif %};
+        --mega-menu-nav-gap: {% if mega_menu_block.settings.stretch_promo %}var(--spacing-12){% else %}var(--spacing-8){% endif %};
+
+        {% if link.links.size > 3 %}
+          --column-list-max-width: max-content;
+        {% endif %}
+      }
+    }
+
+    @media screen and (min-width: 1400px) {
+      #mega-menu-{{ mega_menu_block.id }} {
+        --mega-menu-nav-column-max-width: {% if mega_menu_block.settings.submenu_style == 'bold_text' %}{% if link.links.size == 1 %}260px{% elsif link.links.size == 2 %}240px{% else %}210px{% endif %}{% else %}{% if link.links.size == 1 %}220px{% elsif link.links.size == 2 %}200px{% else %}180px{% endif %}{% endif %};
+        --mega-menu-nav-gap: {% if mega_menu_block.settings.layout == 'horizontal_center' %}var(--spacing-12){% else %}var(--spacing-16){% endif %};
+          --column-list-max-width: max-content;
+      }
+    }
+
+    @media screen and (min-width: 1600px) {
+      #mega-menu-{{ mega_menu_block.id }} {
+        --mega-menu-nav-gap: var(--spacing-16);
+      }
+    }
+
+    @media screen and (min-width: 1800px) {
+      #mega-menu-{{ mega_menu_block.id }} {
+        --mega-menu-nav-gap: var(--spacing-20);
+      }
+    }
+  </style>
+{%- endif -%}
+
+<div id="mega-menu-{{ mega_menu_block.id }}" class="mega-menu {% if link.links.size == 0 %}justify-center{% endif %}">
+  {%- if link.links.size > 0 -%}
+     <ul class="mega-menu__nav mega-menu__nav__row" role="list">
+       <li class="categories">{{ 'header.custom.categories' | t }}</li>
+       
+{%- for sub_link in link.links -%}
+         {% assign title = sub_link.title | downcase %}
+         
+         <li class="v-stack gap-4 justify-items-center text-center {% if title == "view all" %}bold{% endif %}" {% if sub_link.type == 'product_link' or sub_link.type == 'collection_link' %} data-handle="{{ sub_link.object.handle}}" {% endif %}>
+           
+           {%- comment -%} 
+             关键点：在 <a> 标签上增加 v-stack 和 gap-2，
+             使其内部的图片、标题、注释形成一个整体动效组。
+           {%- endcomment -%}
+           <a {% if sub_link.url != '#' %}href="{{ sub_link.url }}"{% endif %} class="{% if mega_menu_block.settings.submenu_style == 'bold_heading' %}h5{% endif %} w-full v-stack gap-2 justify-items-center" {% if sub_link.current %}aria-current="page"{% endif %}> 
+             
+             {%- if sub_link.type == 'product_link' or sub_link.type == 'collection_link' -%}
+              <div class="mega-menu__image-wrapper" style="border-radius: 10px; overflow: hidden;">
+                {{ sub_link.object.featured_image | image_url: width: sub_link.object.featured_image.width | image_tag: class: "mega-menu__image", loading: 'lazy', fetchpriority: 'low', style: "border-radius: 10px;" }}
+              </div>
+             {%- endif -%}
+
+             <span {% if sub_link.url != '#' %}class="{% if mega_menu_block.settings.submenu_style == 'bold_text' %}link-faded{% else %}reversed-link hover:show{% endif %}"{% endif %}>
+               {{- sub_link.title -}}
+             </span>
+
+             {%- comment -%} 
+               注释文案：放在 <a> 内部，紧跟标题后面。
+               使用 link-faded 类名确保与标题的明暗变化同步。
+             {%- endcomment -%}
+             {%- if mega_menu_block != blank -%}
+               {%- capture column_desc_id -%}column_{{ forloop.index }}_desc{%- endcapture -%}
+               {%- assign column_desc = mega_menu_block.settings[column_desc_id] -%}
+               {%- if column_desc != blank -%}
+                 <span class="mega-menu__column-desc link-faded" style="font-size: 0.85rem; line-height: 1.4; max-width: 180px; text-align: center; font-weight: normal; display: block;">
+                   {{ column_desc }}
+                 </span>
+               {%- endif -%}
+             {%- endif -%}
+           </a>
+
+           {%- if sub_link.levels > 0 -%}
+             <ul class="v-stack gap-2 justify-items-center" role="list">
+               {%- for sub_sub_link in sub_link.links -%}
+                 <li>
+                   <a href="{{ sub_sub_link.url }}" class="{% if mega_menu_block.settings.submenu_style == 'bold_text' %}h5{% else %}link-faded{% endif %}">
+                     <span {% if mega_menu_block.settings.submenu_style == 'bold_text' %}class="reversed-link hover:show"{% endif %}>{{- sub_sub_link.title -}}</span>
+                   </a>
+                 </li>
+               {%- endfor -%}
+             </ul>
+           {%- endif -%}
+         </li>
+       {%- endfor -%}
+     </ul>
+  {%- endif -%}
+
+  {% liquid
+    assign promo_item_count = 0
+    assign use_carousel_fallback_until = ''
+
+    for i in (1..3)
+      assign image_setting = 'image_' | append: i
+      if mega_menu_block.settings[image_setting] != blank
+        assign promo_item_count = promo_item_count | plus: 1
+      endif
+    endfor
+
+    if mega_menu_block.settings.product != blank
+      assign promo_item_count = promo_item_count | plus: 1
+    endif
+
+    if link.links.size > 0 and promo_item_count == 4 or mega_menu_block.settings.promo_content_layout == 'carousel'
+      assign force_carousel_mode = true
+    else
+      if link.links.size == 2
+        if promo_item_count == 3 and mega_menu_block.settings.layout == 'grid'
+          assign use_carousel_fallback_until = 'xl'
+        endif
+      elsif link.links.size >= 3 and promo_item_count == 3
+        if use_promo_collage
+          assign use_carousel_fallback_until = 'xl'
+        else
+          assign use_carousel_fallback_until = '2xl'
+        endif
+      endif
+    endif
+  %}
+</div>

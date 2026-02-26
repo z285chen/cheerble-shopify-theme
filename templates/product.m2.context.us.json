@@ -1,0 +1,88 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "product.m2.json",
+  "context": {
+    "market": "us"
+  },
+  "sections": {
+    "main": {
+      "custom_css": [
+        "div.offer.bg-custom.text-custom {border-radius: 20px;}"
+      ],
+      "settings": {},
+      "blocks": {
+        "discount_code_m6NLEe": {
+          "type": "discount_code",
+          "disabled": false,
+          "settings": {
+            "special_offer": "{{ product.metafields.theme.special_offer.value }}",
+            "discount_text": "{{ product.metafields.theme.discount_text.value }}",
+            "icon": null,
+            "background_color": "#c7e0ff",
+            "text_color": "#1c1c1e",
+            "before_copy_btn_text": "COPY",
+            "after_copy_btn_text": "COPIED",
+            "button_background_color": "#ffffff",
+            "button_text_color": "#1c1e1e",
+            "copy_success_prompt": "Copied! Apply code at checkout",
+            "copy_success_prompt_text_color": "#1c1c1e"
+          }
+        },
+        "offer_axhLP": {
+          "type": "offer",
+          "disabled": false,
+          "settings": {
+            "text_alignment": "start",
+            "icon_position": "aligned",
+            "icon": "picto-stop",
+            "custom_icon": null,
+            "icon_width": 24,
+            "title": "{{ product.metafields.custom.shipping_notice_heading.value }}",
+            "content": "{{ product.metafields.custom.shipping_notice_content | metafield_tag }}",
+            "background": "#fef6f6",
+            "text_color": "#dd1d42"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "badges",
+        "title",
+        "subtitle_7YYiQX",
+        "price",
+        "rating",
+        "separator",
+        "variant_picker",
+        "offer_fdPG9x",
+        "discount_code_m6NLEe",
+        "quantity_selector",
+        "offer_axhLP",
+        "parcel_panel_edd_KyXXyi",
+        "payment_terms",
+        "description",
+        "b3bb3b1d-4955-4be3-9d65-1a2f9261b947",
+        "e83b2d31-219d-4284-bedc-bf9833b01041",
+        "buy_buttons",
+        "liquid_fPVHXf",
+        "c2714820-bbd9-4ae7-83eb-c3beb88a0639",
+        "920482cb-bbb9-4089-a9d2-9d3aded3cb26",
+        "527d7a7a-1b39-42a5-9108-a09630a88526",
+        "710f0c3e-69d1-4319-a093-0228e89d4354",
+        "0fc9db94-4b35-4a4a-89b9-2588c457b99e",
+        "6757e9f3-2104-4156-97c8-e6e52c98754f",
+        "collapsible_text_diW8GH",
+        "collapsible_text_nmW3GA",
+        "collapsible_text_XnTL6K",
+        "collapsible_text_tbQE8h"
+      ]
+    }
+  }
+}

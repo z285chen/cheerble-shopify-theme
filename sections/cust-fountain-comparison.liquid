@@ -1,0 +1,224 @@
+<style>
+    #shopify-section-{{ section.id }} .cust-fountain-comparison {
+        --cfc-text-color: {{ section.settings.text_color }};
+        --cfc-main-bgcolor: {{ section.settings.compare_main_bgcolor }};
+    }
+</style>
+<section class="cust-fountain-comparison" id="{{ section.settings.target_section }}">
+    <div class="cust-fountain-comparison__container">
+      <div class="cust-fountain-comparison__header">
+        {% if section.settings.headding != blank %}
+          <h2 class="cust-fountain-comparison-header__headding">{{ section.settings.headding }}</h2>
+        {% endif %}
+        {% if section.settings.description != blank %}
+          <p class="cust-fountain-comparison-header__description">{{ section.settings.description }}</p>
+        {% endif %}
+      </div>
+  
+      <div class="cust-fountain-comparison__content">
+        {% for block in section.blocks %}
+          <div class="cust-fountain-comparison__content-inner">
+          {% case block.type %}
+            {% when 'item_header' %}
+              <div class="cust-fountain-comparison-item__header ">
+                {% for i in (1..8) %}
+                  {% assign param_heading = 'param_heading_' | append: i %}
+                  {% if block.settings[param_heading] != blank %}
+                  <span class="cust-fountain-comparison-item__header-heading">
+                    {{ block.settings[param_heading] }}
+                  </span>
+                {% endif %}
+                {% endfor %}
+              </div>
+  
+            {% when 'item_content' %}
+              <div class="cust-fountain-comparison-item__content">
+                <div class="cust-fountain-comparison-item__product">
+                  {% render 'product-card', product: block.settings.product, background: section.settings.product_card_background, show_badges: true  %}
+                </div>
+                {% assign header_block = section.blocks | where: "type", "item_header" | first %}
+                <div class="cust-fountain-comparison-item-content">
+                  {% for i in (1..8) %}
+                    {% assign param = 'parm_' | append: i %}
+                    {% assign param_heading = 'param_heading_' | append: i %}
+                    {% if header_block.settings[param_heading] != blank and block.settings[param] != blank %}
+                      <div class="cust-fountain-comparison-item__content-row">
+                        <span class="cust-fountain-comparison-item__content-heading">
+                          <span>{{ header_block.settings[param_heading] }}</span>
+                          
+                        </span>
+                        <span class="cust-fountain-comparison-item__content-item-parm">
+                          {{ block.settings[param] }}
+                        </span>
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+          {% endcase %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% schema %}
+  {
+    "name": "Cust fountain comparison",
+    "settings": [
+      {
+        "type": "text",
+        "id": "target_section",
+        "label": "Sticky section id"
+      },
+      {
+        "type": "text",
+        "id": "headding",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "description",
+        "label": "Description"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color"
+       },
+       {
+        "type": "color",
+        "id": "product_card_background",
+        "label": "Product card background"
+       },
+       {
+        "type": "color",
+        "id": "compare_main_bgcolor",
+        "label": "Compare main background color"
+    }
+    ],
+    "blocks": [
+      {
+        "type": "item_header",
+        "name": "Item header",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "param_heading_1",
+            "label": "Heading 1",
+            "info": "input the compare content's title for this product"
+          },
+          {
+            "type": "text",
+            "id": "param_heading_2",
+            "label": "Heading 2",
+            "info": "input the compare content's title for this product"
+          },
+          {
+            "type": "text",
+            "id": "param_heading_3",
+            "label": "Heading 3",
+            "info": "input the compare content's title for this product"
+          },
+          {
+            "type": "text",
+            "id": "param_heading_4",
+            "label": "Heading 4",
+            "info": "input the compare content's title for this product"
+          },
+          {
+            "type": "text",
+            "id": "param_heading_5",
+            "label": "Heading 5",
+            "info": "input the compare content's title for this product"
+          },
+          {
+            "type": "text",
+            "id": "param_heading_6",
+            "label": "Heading 6",
+            "info": "input the compare content's title for this product"
+          },
+          {
+            "type": "text",
+            "id": "param_heading_7",
+            "label": "Heading 7",
+            "info": "input the compare content's title for this product"
+          },
+          {
+            "type": "text",
+            "id": "param_heading_8",
+            "label": "Heading 8",
+            "info": "input the compare content's title for this product"
+          }
+        ]
+      },
+      {
+        "type": "item_content",
+        "name": "Item content",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          },
+          {
+            "type": "html",
+            "id": "parm_1",
+            "label": "Parm 1",
+            "info": "input the content for this compare product"
+          },
+          {
+            "type": "html",
+            "id": "parm_2",
+            "label": "Parm 2",
+            "info": "input the content for this compare product"
+          },
+          {
+            "type": "html",
+            "id": "parm_3",
+            "label": "Parm 3",
+            "info": "input the content for this compare product"
+          },
+          {
+            "type": "html",
+            "id": "parm_4",
+            "label": "Parm 4",
+            "info": "input the content for this compare product"
+          },
+          {
+            "type": "html",
+            "id": "parm_5",
+            "label": "Parm 5",
+            "info": "input the content for this compare product"
+          },
+          {
+            "type": "html",
+            "id": "parm_6",
+            "label": "Parm 6",
+            "info": "input the content for this compare product"
+          },
+          {
+            "type": "html",
+            "id": "parm_7",
+            "label": "Parm 7",
+            "info": "input the content for this compare product"
+          },
+          {
+            "type": "html",
+            "id": "parm_8",
+            "label": "Parm 8",
+            "info": "input the content for this compare product"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Cust fountain comparison",
+        "category": "Custom Sections",
+        "settings": {}
+      }
+    ]
+  }
+  {% endschema %}
+  

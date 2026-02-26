@@ -1,0 +1,1105 @@
+{% comment %}
+ EComposer (https://ecomposer.io)
+ You SHOULD NOT modify source code in this page because
+ It is automatically generated from EComposer
+ At 2026-02-02 08:51:50
+ {% endcomment %} 
+ 
+ {% assign ecom_root_url = routes.root_url %}
+ {% if ecom_root_url != '/'%}
+ {% assign ecom_root_url = routes.root_url | append: '/' %}
+ {% endif %}
+ <link rel="stylesheet" media="print" onload="this.media='all'" id="ecom-vendors-simple_slider_css" href="https://cdn.ecomposer.app/vendors/css/ec_splide.min.css?ver=3.0" /><link rel="stylesheet" media="print" onload="this.media='all'" id="ecom-vendors-modal_css" href="https://cdn.ecomposer.app/vendors/css/ecom_modal.css" /><link rel="stylesheet" media="all" id="ecom-vendors-css_ecomposer_base" href="https://cdn.ecomposer.app/vendors/css/ecom-base.css?v=2.1" /><noscript><link rel="stylesheet" media="all" onload="this.media='all'" id="ecom-vendors-simple_slider_css" href="https://cdn.ecomposer.app/vendors/css/ec_splide.min.css?ver=3.0" /><link rel="stylesheet" media="all" onload="this.media='all'" id="ecom-vendors-modal_css" href="https://cdn.ecomposer.app/vendors/css/ecom_modal.css" /><link rel="stylesheet" media="all" id="ecom-vendors-css_ecomposer_base" href="https://cdn.ecomposer.app/vendors/css/ecom-base.css?v=2.1" /></noscript><script type="text/javascript" asyc="async" id="ecom-vendors-simple_slider_js" src="https://cdn.ecomposer.app/vendors/js/ec-splide.min.js?ver=3.0" ></script><script type="text/javascript" asyc="async" id="ecom-vendors-modal_js" src="https://cdn.ecomposer.app/vendors/js/ecom_modal_new.js" ></script><script type="text/javascript" asyc="async" id="ecom-vendors-zoom_js" src="https://cdn.ecomposer.app/vendors/js/ecom_zoom.js" ></script><script type="text/javascript" asyc="async" id="ecom-vendors-light_galerry" src="https://cdn.ecomposer.app/vendors/js/ecom-light-galerry.js" ></script><script type="text/javascript" asyc="async" id="ecom-vendors-countdown_js" src="https://cdn.ecomposer.app/vendors/js/ecom-countdown.js?ver=2.0" ></script>
+{%- assign headless = true -%}{%- render "ecom_theme_helper" -%}{%capture section_id %}ecom-preview-page-page{% endcapture%}{% if section and section_id == section.id and headless == true %}
+{{ content_for_header }}
+{% render 'ecom_header', ECOM_THEME: true %}{% endif %}<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=DM+Sans:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet"/>
+{{'ecom-preview-template-page.css' | asset_url | stylesheet_tag }}
+<script src="{{'ecom-preview-template-page.js' | asset_url }}" defer="defer"></script>
+<script type="text/javascript" class="ecom-page-info">
+ window.EComposer = window.EComposer || {};
+ window.EComposer.TEMPLATE_ID="preview-template-page";
+ window.EComposer.PAGE = {"title":"Untitled","type":"page","slug":"ecom-preview-page","plan_id":4,"template_id":"preview-template-page"};
+ </script>
+<div class="ecom-builder" id="ecom-preview-page"><div class="ecom-sections" data-section-id="{{section.id}}">
+ {% comment %}
+ // Reactive
+ * this.data.settings.product
+ {% endcomment %}
+ {% liquid
+ unless recommendations.performed
+ if request.page_type != 'product' or product == blank
+ assign selected_product = 'pet-fountain-elfin-e1-plus'
+ if selected_product == blank or selected_product == '' or all_products[selected_product] == blank
+ assign product = collections['all'].products.first
+ else
+ assign product = all_products[selected_product]
+ if product.id == blank
+ assign product = collections['all'].products.last
+ endif
+ endif
+ endif
+ endunless
+ %}
+ {%- if product != blank -%}
+ {%- capture ec_form_id -%}product_form_{{ product.id }}_ecom-aopnge3p6d{%- endcapture -%}
+ {%- form 'product', product, id: ec_form_id, class: "ecom-product-form ecom-product-form--single ecom-click", product_id: product.id, data-product_id: product.id,data-product-id: product.id, data-handle: product.handle-%}
+ <section class="ecom-row ecom-core ecom-section ecom-aopnge3p6d" data-id="ecom-aopnge3p6d" id="g1-hero-trigger" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first ecom-ccqh9ri5rre"><div class="core__column--wrapper" id="ecom-ccqh9ri5rre"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-v6k8xa7rdgi"><div class="ecom-element ecom-product-single ecom-product-single__media ecom-position-sticky" section_id="ecom-aopnge3p6d"><div class="ecom-product-single__media-wrapper "><div class="ecom-product-single__media-container ecom-product-single__media--slider ecom-product-single__media--vertical ecom-product-single__media-tablet--horizontal ecom-product-single__media-mobile--horizontal"><div class="ec_splide ecom-product-single__media--featured ecom-swiper-container" data-direction="ltr" data-breakpoints="{&quot;0&quot;:{},&quot;768&quot;:{&quot;gap&quot;:10},&quot;1025&quot;:{&quot;perPage&quot;:1,&quot;gap&quot;:16}}" data-priority="featured"><div class="ec_splide__track">
+ {% comment %}
+ Reactivity
+ *this.data.settings.image_action
+ *this.data.settings.enable_zoom
+ *this.data.settings.grid_advance_number_images
+ {% endcomment %}
+ 
+ {%- liquid
+ if product.has_only_default_variant
+ assign target = product
+ else
+ assign target = product.selected_or_first_available_variant
+ endif
+ -%}
+ 
+ 
+ 
+ {% assign img_padding = 1 | times: 1 %}
+ {% assign img_padding__tablet = 1 | times: 1 %}
+ {% assign img_padding__mobile = 1 | times: 1 %}
+ <div class="ec_splide__list ecom-swiper-wrapper ecom-product-single__media--images ecom-swiper-wrapper ecom-product-single__media--images-layout__slider{% if product.images.size == 1 %} ecom-product-single__only{% endif %}">
+ {% assign use_limit = undefined %}
+ {% assign limit_images = undefined %}
+ {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
+ {% for media in product.media %}
+ {% assign media_ration = 1 | divided_by: media.aspect_ratio | times: 100 %}
+ {% assign img_ration = 1 | divided_by: media.aspect_ratio | times: 100 %}
+ 
+ {% assign image = media.preview_image %}
+ {% case media.media_type %}
+ {% when 'image' %}
+ {%if use_limit and forloop.index > limit_images%}{% break %}{% endif %}
+ {% assign fetchpriority = 'low'%}
+ {% assign lazyload = 'low'%}
+ {% if forloop.first %}
+ {% assign fetchpriority = 'high'%}
+ {% assign lazyload = 'eager'%}
+ {% endif %}
+ <div class="ec_splide__slide ec_splide__slide ecom-product-single__media--image ecom-splide-slide ecom-flex ecom-image-align-center ecom-image-align---tablet ecom-image-align---mobile " data-index="{{forloop.index0}}" {% if variant_images contains media.src %} data-variant_id="{{ product.images | where: 'src', image.src | map: 'variants' | map: 'id' | join: ',' }}"{% endif %} style="--img_padding: 600px;--img_padding__tablet: {{ img_ration | divided_by: img_padding__tablet }}%;--img_padding__mobile: {{ img_ration | divided_by: img_padding__mobile }}%" data-half-width="{% assign img_ration_half = 1 | divided_by: image.aspect_ratio | times: 50 %}{{img_ration_half}}" data-full-width="{% assign img_ration_full = 1 | divided_by: media.aspect_ratio | times: 100 %}{{img_ration_full}}">
+ 
+ 
+ {%- assign img_master = media | image_url: width: 2048 -%}
+ {{ media | image_url: width: 1946 | image_tag:
+ sizes: sizes,
+ widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946',
+ class: 'ecom-image-default'
+ 
+ ,loading: 'eager'
+ ,fetchpriority: fetchpriority
+ ,alt: media.alt | escape
+ }}
+ 
+ 
+ </div>
+ {% when 'external_video'%}
+ <div class="ec_splide__slide ecom-product-single__media--image ecom-splide-slide ecom-flex ecom-image-align-center ecom-image-align---tablet ecom-image-align---mobile ecom-product-single__media---external-video ecom-product-single__media--full" data-position="{{media.position}}" style="--img_padding: {{ media_ration | divided_by: img_padding }}%;--img_padding__tablet: {{ media_ration | divided_by: img_padding__tablet }}%;--img_padding__mobile: {{ media_ration | divided_by: img_padding__mobile }}%;" >
+ {{ media | external_video_tag: image_size:'master' }}
+ </div>
+ {% when 'video' %}
+ {% assign videoUrl = '' %}
+ {% for source in media.sources %}
+ {% if source.format == "mp4" %}
+ {% assign videoUrl = source.url %}
+ {% break %}
+ {% endif %}
+ {% endfor %}
+ <div data-stopdrag="true" class="ec_splide__slide ecom-product-single__media--image ecom-splide-slide ecom-flex ecom-image-align-center ecom-image-align---tablet ecom-image-align---mobile ecom-product-single__media--video ecom-product-single__media--full ecom-swiper-no-swiping" data-position="{{media.position}}" style="--img_padding: 600px;--img_padding__tablet: {{ img_ration | divided_by: img_padding__tablet }}%;--img_padding__mobile: {{ img_ration | divided_by: img_padding__mobile }}%" >
+ {{ media | video_tag: image_size:'master', class: 'ecom-media-video', controls: false, autoplay: true, muted: true,loop: false }}
+ 
+ </div>
+ {% when 'model' %}
+ <div class="ec_splide__slide ecom-product-single__media--image ecom-splide-slide ecom-flex ecom-image-align-center ecom-image-align---tablet ecom-image-align---mobile ecom-swiper-no-swiping ecom-product-single__media--model ecom-product-single__media--full" data-stopdrag="true" data-position="{{media.position}}">
+ <div class="ecom-product-single__media--model-wrapper">
+ {{ media | model_viewer_tag: image_size:'master', reveal: 'interaction', toggleable: true, data-model-id: media.id }}
+ </div>
+ </div>
+ {% else %}
+ <div data-media-type="{{media.media_type}}" class="ec_splide__slide ecom-product-single__media--image ecom-splide-slide ecom-flex ecom-image-align-center ecom-image-align---tablet ecom-image-align---mobile ecom-swiper-no-swiping ecom-product-single__media--full" data-position="{{media.position}}">
+ <div class="ecom-product-single__media" style="--img_padding: 600px;--img_padding__tablet: {{ img_ration | divided_by: img_padding__tablet }}%;--img_padding__mobile: {{ img_ration | divided_by: img_padding__mobile }}%">
+ {{ media | media_tag: image_size:'master', class: 'ecom-product-single__media--item' }}
+ </div>
+ </div>
+ {% endcase %}
+ {% endfor %}
+ </div>
+ </div><div class="ec_splide__arrows"><button type="button" class="ec_splide__arrow ec_splide__arrow--next ecom-swiper-button ecom-swiper-button-next ecom-swiper-controls"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" fill="currentColor"><path d="M89.45 87.5l143.1 152c4.375 4.625 6.562 10.56 6.562 16.5c0 5.937-2.188 11.87-6.562 16.5l-143.1 152C80.33 434.1 65.14 434.5 55.52 425.4c-9.688-9.125-10.03-24.38-.9375-33.94l128.4-135.5l-128.4-135.5C45.49 110.9 45.83 95.75 55.52 86.56C65.14 77.47 80.33 77.87 89.45 87.5z"></path></svg></button><button type="button" class="ec_splide__arrow ec_splide__arrow--prev ecom-swiper-button ecom-swiper-button-prev ecom-swiper-controls"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" fill="currentColor"><path d="M166.5 424.5l-143.1-152c-4.375-4.625-6.562-10.56-6.562-16.5c0-5.938 2.188-11.88 6.562-16.5l143.1-152c9.125-9.625 24.31-10.03 33.93-.9375c9.688 9.125 10.03 24.38 .9375 33.94l-128.4 135.5l128.4 135.5c9.094 9.562 8.75 24.75-.9375 33.94C190.9 434.5 175.7 434.1 166.5 424.5z"></path></svg></button></div><ul class="ec_splide__pagination ecom-swiper-pagination"></ul></div></div></div><div class="ecom-hidden-content">
+ <script type="application/json" id="Product-model-{{ product.id }}">
+ {{ product.media | where: 'media_type', 'model' | json }}
+ </script>
+ </div></div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-xs3gwqidzo"><div class="core__column--wrapper" id="ecom-xs3gwqidzo"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-6snjshxdpx4"><div class="ecom-row ecom-core core__block ecom-nrrdaweqto9 ec-row-sticky" data-id="ecom-nrrdaweqto9" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-3xd7vbqv4wm"><div class="core__column--wrapper" id="ecom-3xd7vbqv4wm"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-g0gs6d3dk99"><div class="ecom-row ecom-core core__block ecom-2knn5tizbr6" data-id="ecom-2knn5tizbr6" ec-delay="600" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-8e04lu4bxd8"><div class="core__column--wrapper" id="ecom-8e04lu4bxd8"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block ecom-n0s6p48xy6"><div class="ecom-element ecom-product-single ecom-product-single__title" section_id="ecom-aopnge3p6d"><div class="ecom-product-single__title-wrapper"><div class="ecom-product-single__title-container"><h1 class="ecom-product__heading" href="{{ product.url }}" title="{{ product.title }}">{{ product.title }}</h1></div></div></div></div> <div class="ecom-block ecom-core core__block ecom-8oimv9z1z5m" ec-delay="600"><div class="ecom-element ecom-product-single ecom-product-single__price" section_id="ecom-aopnge3p6d"><div class="ecom-product-single__price-wrapper"><div class="ecom-product-single__price-container"><div class="ecom-product-single__price-container-grid"><div class="ecom-product-single ecom-product-single__price--prices">
+ {%- liquid
+ if product.has_only_default_variant
+ assign target = product
+ else
+ assign target = product.selected_or_first_available_variant
+ endif
+ -%}
+ <div class="ecom-product-single__price--sale {% if target.compare_at_price == nil or target.compare_at_price <= target.price %} ecom-product-single__price-normal {% endif %}" data-price="{{target.price}}">
+ {%- if settings.currency_code_enabled -%}
+ {{target.price | money_with_currency}}
+ {%- else -%}
+ {{target.price| money }}
+ {%- endif -%}
+ </div>
+ 
+ 
+ <div class="ecom-product-single__price--regular" {%- if target.compare_at_price == nil or target.compare_at_price <= target.price -%} style="display:none" {% endif %}>
+ {%- if settings.currency_code_enabled -%}
+ {{target.compare_at_price | money_with_currency}}
+ {%- else -%}
+ {{target.compare_at_price | money }}
+ {%- endif -%}
+ </div>
+ 
+ {%- capture taxes_text -%}{%- endcapture -%}
+ {%- if cart.taxes_included or shop.shipping_policy.body != blank -%}
+ {% if taxes_text %}
+ <div class="ec-product__tax caption rte">
+ {%- if shop.taxes_included -%}
+ 
+ {%- endif -%}
+ {%- if shop.shipping_policy.body != blank -%}
+ 
+ {%- endif -%}
+ </div>
+ {%- endif -%}
+ {%- endif -%}
+ </div></div><div class="ecom-product-single-afterpay">
+ 
+ </div></div></div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-wgzh17hrc5l"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-aopnge3p6d"><div class="text-content ecom-html has-drop-cap-view-framed">Our flagship Bluetooth creative console designed for digital creators. Perfect for digital drawing, animation, video editing, photo editing and color grading. Compatible with iPadOS, Android, macOS, and Windows.</div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-zu49u3d1eo8"><div class="ecom-row ecom-core core__block ecom-60mr09l84vj" data-id="ecom-60mr09l84vj" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first ecom-yx4rhe121zr"><div class="core__column--wrapper" id="ecom-yx4rhe121zr"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block ecom-lm2ls6eqkn"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-aopnge3p6d"><div class="text-content ecom-html has-drop-cap-view-framed">Limited-Time Early Bird Offer</div></div></div> <div class="ecom-block ecom-core core__block ecom-q4q3u8etqa"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-aopnge3p6d"><div class="text-content ecom-html has-drop-cap-view-framed">Up to 45% OFF</div></div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-r7ijre08jqf"><div class="core__column--wrapper" id="ecom-r7ijre08jqf"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block ecom-8su7ygulr8s"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-aopnge3p6d"><div class="text-content ecom-html has-drop-cap-view-framed">Preorder Countdown</div></div></div> <div class="ecom-block ecom-core core__block ecom-6v74vok62kn"><div class="ecom-element ecom-base-elements ecom-element__countdown" section_id="ecom-aopnge3p6d"><div class="ecom-element__countdown-wrapper ecom-flex"><div class="ecom-element__countdown-container"><div class="ecom-element__countdown--time" data-countdown-to="2026/2/06 12:30 GMT+0700" data-countdown-from="2026/0/29 12:30 GMT+0700" data-evergreen-cd-time="1:12:30" data-evergreen-redirect-url="" data-evergreen-restart="{&quot;type&quot;:&quot;&quot;,&quot;data&quot;:&quot;0:0:0&quot;}" data-countdown-restart="false" data-countdown-type="time" data-trans-week="[%-W] week%!W" data-trans-day="[%-D]days left" data-trans-hour="[%-H] hr%!H" data-trans-minute="[%-M] min%!M" data-trans-second="[%-S] sec%!S" data-show-fields="day"></div><div></div></div></div></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> <div class="ecom-block ecom-core core__block ecom-fkd1dfgaulv"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-aopnge3p6d"><div class="text-content ecom-html has-drop-cap-view-framed">Exclusive Preorder Benefits</div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-nk9ed5watzg"><div class="ecom-row ecom-core core__block ecom-jebnmfupvz" data-id="ecom-jebnmfupvz" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first ecom-b3xr8nuqoto"><div class="core__column--wrapper" id="ecom-b3xr8nuqoto"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block ecom-h4xdescq75g"><div class="ecom-element ecom-icon ecom-flex" section_id="ecom-aopnge3p6d"><a class="ecom-icon--container ecom-in_flex" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="currentColor"> <path d="M25.6346 22.5541C26.4367 22.5541 27.0875 23.204 27.0881 24.0059C27.088 24.8082 26.437 25.4593 25.6346 25.4593C24.8328 25.4587 24.1812 24.8079 24.1812 24.0059C24.1817 23.2044 24.8331 22.5547 25.6346 22.5541Z" fill="#111112"></path> <path d="M14.3521 14.5365C15.1539 14.5367 15.805 15.1865 15.8055 15.9883C15.8055 16.7905 15.1542 17.4415 14.3521 17.4418C13.5501 17.4414 12.8987 16.7904 12.8986 15.9883C12.8992 15.1866 13.5504 14.5369 14.3521 14.5365Z" fill="#111112"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M18.4667 4.696C19.4276 4.19862 20.5705 4.19855 21.5314 4.696L23.9859 5.96715C24.3096 6.13483 24.6589 6.2494 25.0194 6.30407L27.7521 6.71748C28.8223 6.87968 29.7474 7.55172 30.2326 8.51924L31.4712 10.9916C31.6346 11.3174 31.8514 11.6144 32.1109 11.8705L34.077 13.8122C34.8476 14.5726 35.2007 15.6591 35.0243 16.7272L34.5751 19.4551C34.5157 19.8146 34.5157 20.1812 34.5751 20.5407L35.0243 23.2686C35.2007 24.3367 34.8476 25.4232 34.077 26.1836L32.1109 28.1254C31.8514 28.3814 31.6346 28.6783 31.4712 29.0043L30.2326 31.475C29.7475 32.4429 28.8226 33.1161 27.7521 33.2784L25.0194 33.6918C24.659 33.7464 24.3096 33.861 23.9859 34.0287L21.5314 35.2998C20.5705 35.7972 19.4276 35.7972 18.4667 35.2998L16.0122 34.0287C15.6886 33.861 15.3391 33.7464 14.9787 33.6918L12.246 33.2784C11.1755 33.1161 10.2506 32.4429 9.76549 31.475L8.52689 29.0043C8.3635 28.6783 8.14677 28.3815 7.88724 28.1254L5.92109 26.1836C5.15056 25.4233 4.79591 24.3366 4.9722 23.2686L5.42304 20.5407C5.48239 20.1812 5.48238 19.8146 5.42304 19.4551L4.9722 16.7272C4.79585 15.6592 5.15052 14.5726 5.92109 13.8122L7.88724 11.8705C8.14674 11.6144 8.36351 11.3175 8.52689 10.9916L9.76549 8.51924C10.2507 7.55177 11.1758 6.87967 12.246 6.71748L14.9787 6.30407C15.3391 6.24939 15.6886 6.1348 16.0122 5.96715L18.4667 4.696ZM24.0477 12.0349L23.9484 12.1716L12.3908 27.9593H15.9488L16.0497 27.8226L27.2183 12.5655L27.6057 12.0349H24.0477ZM25.6346 20.0524C23.4522 20.053 21.6817 21.8235 21.6812 24.0059C21.6812 26.1887 23.4519 27.9587 25.6346 27.9593C27.8178 27.9593 29.588 26.1891 29.5881 24.0059C29.5875 21.8231 27.8175 20.0525 25.6346 20.0524ZM14.3521 12.0349C12.1695 12.0352 10.3992 13.8058 10.3986 15.9883C10.3987 18.1713 12.1692 19.9414 14.3521 19.9418C16.5351 19.9415 18.3055 18.1714 18.3055 15.9883C18.305 13.8057 16.5348 12.0351 14.3521 12.0349Z" fill="#111112"></path></svg></a></div></div> <div class="ecom-block ecom-core core__block ecom-5s65c5yne0b"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-aopnge3p6d"><div class="text-content ecom-html has-drop-cap-view-framed">Up to 15% OFF</div></div></div> </div></div></div></div> <div class="ecom-column ecom-core ecom-oqsjduumjp"><div class="core__column--wrapper" id="ecom-oqsjduumjp"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block ecom-jyktc7ajhw"><div class="ecom-element ecom-icon ecom-flex" section_id="ecom-aopnge3p6d"><a class="ecom-icon--container ecom-in_flex" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="currentColor"> <path d="M25.6346 22.5541C26.4367 22.5541 27.0875 23.204 27.0881 24.0059C27.088 24.8082 26.437 25.4593 25.6346 25.4593C24.8328 25.4587 24.1812 24.8079 24.1812 24.0059C24.1817 23.2044 24.8331 22.5547 25.6346 22.5541Z" fill="#111112"></path> <path d="M14.3521 14.5365C15.1539 14.5367 15.805 15.1865 15.8055 15.9883C15.8055 16.7905 15.1542 17.4415 14.3521 17.4418C13.5501 17.4414 12.8987 16.7904 12.8986 15.9883C12.8992 15.1866 13.5504 14.5369 14.3521 14.5365Z" fill="#111112"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M18.4667 4.696C19.4276 4.19862 20.5705 4.19855 21.5314 4.696L23.9859 5.96715C24.3096 6.13483 24.6589 6.2494 25.0194 6.30407L27.7521 6.71748C28.8223 6.87968 29.7474 7.55172 30.2326 8.51924L31.4712 10.9916C31.6346 11.3174 31.8514 11.6144 32.1109 11.8705L34.077 13.8122C34.8476 14.5726 35.2007 15.6591 35.0243 16.7272L34.5751 19.4551C34.5157 19.8146 34.5157 20.1812 34.5751 20.5407L35.0243 23.2686C35.2007 24.3367 34.8476 25.4232 34.077 26.1836L32.1109 28.1254C31.8514 28.3814 31.6346 28.6783 31.4712 29.0043L30.2326 31.475C29.7475 32.4429 28.8226 33.1161 27.7521 33.2784L25.0194 33.6918C24.659 33.7464 24.3096 33.861 23.9859 34.0287L21.5314 35.2998C20.5705 35.7972 19.4276 35.7972 18.4667 35.2998L16.0122 34.0287C15.6886 33.861 15.3391 33.7464 14.9787 33.6918L12.246 33.2784C11.1755 33.1161 10.2506 32.4429 9.76549 31.475L8.52689 29.0043C8.3635 28.6783 8.14677 28.3815 7.88724 28.1254L5.92109 26.1836C5.15056 25.4233 4.79591 24.3366 4.9722 23.2686L5.42304 20.5407C5.48239 20.1812 5.48238 19.8146 5.42304 19.4551L4.9722 16.7272C4.79585 15.6592 5.15052 14.5726 5.92109 13.8122L7.88724 11.8705C8.14674 11.6144 8.36351 11.3175 8.52689 10.9916L9.76549 8.51924C10.2507 7.55177 11.1758 6.87967 12.246 6.71748L14.9787 6.30407C15.3391 6.24939 15.6886 6.1348 16.0122 5.96715L18.4667 4.696ZM24.0477 12.0349L23.9484 12.1716L12.3908 27.9593H15.9488L16.0497 27.8226L27.2183 12.5655L27.6057 12.0349H24.0477ZM25.6346 20.0524C23.4522 20.053 21.6817 21.8235 21.6812 24.0059C21.6812 26.1887 23.4519 27.9587 25.6346 27.9593C27.8178 27.9593 29.588 26.1891 29.5881 24.0059C29.5875 21.8231 27.8175 20.0525 25.6346 20.0524ZM14.3521 12.0349C12.1695 12.0352 10.3992 13.8058 10.3986 15.9883C10.3987 18.1713 12.1692 19.9414 14.3521 19.9418C16.5351 19.9415 18.3055 18.1714 18.3055 15.9883C18.305 13.8057 16.5348 12.0351 14.3521 12.0349Z" fill="#111112"></path></svg></a></div></div> <div class="ecom-block ecom-core core__block ecom-p6z4rr8j3dm"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-aopnge3p6d"><div class="text-content ecom-html has-drop-cap-view-framed">1-Year Clip Studio Paint Debut</div></div></div> </div></div></div></div> <div class="ecom-column ecom-core ecom-n8chdo0y5jb"><div class="core__column--wrapper" id="ecom-n8chdo0y5jb"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block ecom-t27wvkpmfq"><div class="ecom-element ecom-icon ecom-flex" section_id="ecom-aopnge3p6d"><a class="ecom-icon--container ecom-in_flex" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="currentColor"> <path d="M25.6346 22.5541C26.4367 22.5541 27.0875 23.204 27.0881 24.0059C27.088 24.8082 26.437 25.4593 25.6346 25.4593C24.8328 25.4587 24.1812 24.8079 24.1812 24.0059C24.1817 23.2044 24.8331 22.5547 25.6346 22.5541Z" fill="#111112"></path> <path d="M14.3521 14.5365C15.1539 14.5367 15.805 15.1865 15.8055 15.9883C15.8055 16.7905 15.1542 17.4415 14.3521 17.4418C13.5501 17.4414 12.8987 16.7904 12.8986 15.9883C12.8992 15.1866 13.5504 14.5369 14.3521 14.5365Z" fill="#111112"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M18.4667 4.696C19.4276 4.19862 20.5705 4.19855 21.5314 4.696L23.9859 5.96715C24.3096 6.13483 24.6589 6.2494 25.0194 6.30407L27.7521 6.71748C28.8223 6.87968 29.7474 7.55172 30.2326 8.51924L31.4712 10.9916C31.6346 11.3174 31.8514 11.6144 32.1109 11.8705L34.077 13.8122C34.8476 14.5726 35.2007 15.6591 35.0243 16.7272L34.5751 19.4551C34.5157 19.8146 34.5157 20.1812 34.5751 20.5407L35.0243 23.2686C35.2007 24.3367 34.8476 25.4232 34.077 26.1836L32.1109 28.1254C31.8514 28.3814 31.6346 28.6783 31.4712 29.0043L30.2326 31.475C29.7475 32.4429 28.8226 33.1161 27.7521 33.2784L25.0194 33.6918C24.659 33.7464 24.3096 33.861 23.9859 34.0287L21.5314 35.2998C20.5705 35.7972 19.4276 35.7972 18.4667 35.2998L16.0122 34.0287C15.6886 33.861 15.3391 33.7464 14.9787 33.6918L12.246 33.2784C11.1755 33.1161 10.2506 32.4429 9.76549 31.475L8.52689 29.0043C8.3635 28.6783 8.14677 28.3815 7.88724 28.1254L5.92109 26.1836C5.15056 25.4233 4.79591 24.3366 4.9722 23.2686L5.42304 20.5407C5.48239 20.1812 5.48238 19.8146 5.42304 19.4551L4.9722 16.7272C4.79585 15.6592 5.15052 14.5726 5.92109 13.8122L7.88724 11.8705C8.14674 11.6144 8.36351 11.3175 8.52689 10.9916L9.76549 8.51924C10.2507 7.55177 11.1758 6.87967 12.246 6.71748L14.9787 6.30407C15.3391 6.24939 15.6886 6.1348 16.0122 5.96715L18.4667 4.696ZM24.0477 12.0349L23.9484 12.1716L12.3908 27.9593H15.9488L16.0497 27.8226L27.2183 12.5655L27.6057 12.0349H24.0477ZM25.6346 20.0524C23.4522 20.053 21.6817 21.8235 21.6812 24.0059C21.6812 26.1887 23.4519 27.9587 25.6346 27.9593C27.8178 27.9593 29.588 26.1891 29.5881 24.0059C29.5875 21.8231 27.8175 20.0525 25.6346 20.0524ZM14.3521 12.0349C12.1695 12.0352 10.3992 13.8058 10.3986 15.9883C10.3987 18.1713 12.1692 19.9414 14.3521 19.9418C16.5351 19.9415 18.3055 18.1714 18.3055 15.9883C18.305 13.8057 16.5348 12.0351 14.3521 12.0349Z" fill="#111112"></path></svg></a></div></div> <div class="ecom-block ecom-core core__block ecom-xd3065j77ti"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-aopnge3p6d"><div class="text-content ecom-html has-drop-cap-view-framed">Limited Edition Mystery Box<div>(Valued at $19.9)</div></div></div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-gbcfhsrcyzu"><div class="core__column--wrapper" id="ecom-gbcfhsrcyzu"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block ecom-pad8tn0kjo"><div class="ecom-element ecom-icon ecom-flex" section_id="ecom-aopnge3p6d"><a class="ecom-icon--container ecom-in_flex" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="currentColor"> <path d="M25.6346 22.5541C26.4367 22.5541 27.0875 23.204 27.0881 24.0059C27.088 24.8082 26.437 25.4593 25.6346 25.4593C24.8328 25.4587 24.1812 24.8079 24.1812 24.0059C24.1817 23.2044 24.8331 22.5547 25.6346 22.5541Z" fill="#111112"></path> <path d="M14.3521 14.5365C15.1539 14.5367 15.805 15.1865 15.8055 15.9883C15.8055 16.7905 15.1542 17.4415 14.3521 17.4418C13.5501 17.4414 12.8987 16.7904 12.8986 15.9883C12.8992 15.1866 13.5504 14.5369 14.3521 14.5365Z" fill="#111112"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M18.4667 4.696C19.4276 4.19862 20.5705 4.19855 21.5314 4.696L23.9859 5.96715C24.3096 6.13483 24.6589 6.2494 25.0194 6.30407L27.7521 6.71748C28.8223 6.87968 29.7474 7.55172 30.2326 8.51924L31.4712 10.9916C31.6346 11.3174 31.8514 11.6144 32.1109 11.8705L34.077 13.8122C34.8476 14.5726 35.2007 15.6591 35.0243 16.7272L34.5751 19.4551C34.5157 19.8146 34.5157 20.1812 34.5751 20.5407L35.0243 23.2686C35.2007 24.3367 34.8476 25.4232 34.077 26.1836L32.1109 28.1254C31.8514 28.3814 31.6346 28.6783 31.4712 29.0043L30.2326 31.475C29.7475 32.4429 28.8226 33.1161 27.7521 33.2784L25.0194 33.6918C24.659 33.7464 24.3096 33.861 23.9859 34.0287L21.5314 35.2998C20.5705 35.7972 19.4276 35.7972 18.4667 35.2998L16.0122 34.0287C15.6886 33.861 15.3391 33.7464 14.9787 33.6918L12.246 33.2784C11.1755 33.1161 10.2506 32.4429 9.76549 31.475L8.52689 29.0043C8.3635 28.6783 8.14677 28.3815 7.88724 28.1254L5.92109 26.1836C5.15056 25.4233 4.79591 24.3366 4.9722 23.2686L5.42304 20.5407C5.48239 20.1812 5.48238 19.8146 5.42304 19.4551L4.9722 16.7272C4.79585 15.6592 5.15052 14.5726 5.92109 13.8122L7.88724 11.8705C8.14674 11.6144 8.36351 11.3175 8.52689 10.9916L9.76549 8.51924C10.2507 7.55177 11.1758 6.87967 12.246 6.71748L14.9787 6.30407C15.3391 6.24939 15.6886 6.1348 16.0122 5.96715L18.4667 4.696ZM24.0477 12.0349L23.9484 12.1716L12.3908 27.9593H15.9488L16.0497 27.8226L27.2183 12.5655L27.6057 12.0349H24.0477ZM25.6346 20.0524C23.4522 20.053 21.6817 21.8235 21.6812 24.0059C21.6812 26.1887 23.4519 27.9587 25.6346 27.9593C27.8178 27.9593 29.588 26.1891 29.5881 24.0059C29.5875 21.8231 27.8175 20.0525 25.6346 20.0524ZM14.3521 12.0349C12.1695 12.0352 10.3992 13.8058 10.3986 15.9883C10.3987 18.1713 12.1692 19.9414 14.3521 19.9418C16.5351 19.9415 18.3055 18.1714 18.3055 15.9883C18.305 13.8057 16.5348 12.0351 14.3521 12.0349Z" fill="#111112"></path></svg></a></div></div> <div class="ecom-block ecom-core core__block ecom-7v8ip3t1rb9"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-aopnge3p6d"><div class="text-content ecom-html has-drop-cap-view-framed">Chance for Full Refund</div></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> <div class="ecom-block ecom-core core__block ecom-mzov388p98"><div class="ecom-element ecom-product-single ecom-product-single__variant-picker" section_id="ecom-aopnge3p6d"><div class="ecom-product-single__variant-picker-wrapper ecom_not_hide_dropdown_arrow"><div class="ecom-product-single__variant-picker-container {% if product.has_only_default_variant%} ecom-product-single__variant-picker--only-default{% endif%} " data-picker-type="image" data-ecom-placeholder="">
+ {%- liquid
+ assign ecom_has_variant_picker = true
+ assign tag_name = 'script'
+ assign variant_selected = product.selected_or_first_available_variant
+ assign checkIsHighVariant = false
+ if product.variants_count > 250
+ assign checkIsHighVariant = true
+ endif
+ -%}
+ {% if checkIsHighVariant %}
+ <div data-high-variant-product="{{ checkIsHighVariant }}"></div>
+ <{{tag_name}} type="application/json" data-selected-variant>
+ {
+ "id": {{ variant_selected.id | json }},
+ "title": {{ variant_selected.title | json }},
+ "price": {{ variant_selected.price | json }},
+ "available": {{ variant_selected.available | json }},
+ "compare_at_price": {{ variant_selected.compare_at_price | json }},
+ "featured_image": {{ variant_selected.featured_image | json }},
+ "featured_media": {{ variant_selected.featured_media | json }},
+ "sku": {{ variant_selected.sku | json }},
+ "barcode": {{ variant_selected.barcode | json }},
+ "options": {{ variant_selected.options | json }},
+ "option1": {{ variant_selected.option1 | json }},
+ "option2": {{ variant_selected.option2 | json }},
+ "option3": {{ variant_selected.option3 | json }},
+ "inventory_management": {{ variant_selected.inventory_management | json }},
+ "inventory_policy": {{ variant_selected.inventory_policy | json }},
+ "inventory_quantity": {{ variant_selected.inventory_quantity | json }},
+ "requires_selling_plan": {{ variant_selected.requires_selling_plan | json }},
+ "selling_plan_allocations": {{ variant_selected.selling_plan_allocations | json }},
+ "quantity_rule": {
+ "min": {{ variant_selected.quantity_rule.min | json }},
+ "max": {{ variant_selected.quantity_rule.max | json }},
+ "increment": {{ variant_selected.quantity_rule.increment | json }}
+ },
+ "unit_price": {{ variant_selected.unit_price | json }},
+ "unit_price_measurement": {{ variant_selected.unit_price_measurement | json }}
+ }
+ </{{tag_name}}>
+ {% endif %}
+ <div class="ecom-product-single__variant-picker--main">
+ {%- capture swatch_option_temp -%}Color{%- endcapture-%}
+ {%- assign swatch_option_temp = swatch_option_temp | split: ',' -%}
+ {% assign swatch_option = "" %}
+ {% for item in swatch_option_temp %}
+ {% assign normalizedItem = item | strip %}
+ {% assign swatch_option = swatch_option | append: normalizedItem %}
+ {% unless forloop.last %}
+ {% assign swatch_option = swatch_option | append: ',' %}
+ {% endunless %}
+ {% endfor %}
+ {%- assign swatch_option = swatch_option | split: ',' -%}
+ {% unless product.has_only_default_variant %}
+ {%- for option in product.options_with_values -%}
+ {%- if swatch_option contains option.name -%}
+ {% assign option_index = option.position | minus: 1 %}
+ <div class="ecom-product-single__picker-main ecom-product-single__picker-option-{{option.name | handleize }}">
+ <span class="ecom-product-single__picker-main-label ecom-product-single__picker--option-label" data-option-index="{{option_index}}">
+ <span class="ecom-product-variant--option-label-text">{{ option.name }}</span>
+ </span>
+ <ul class="ecom-product-single__picker-images-list">
+ {%- for option_value in option.values -%}
+ {%- assign option_variant = option_value.variant -%}
+ <li data-option-index="{{ option_index }}"
+ class="ecom-image-default ecom-product-single__swatch-item ecom-product-single__picker-images-item {% if option_value.selected %}ecom-image-active{% endif %} "
+ data-value="{{ option_value | escape }}"
+ data-option-value-id="{{ option_value.id }}"
+ data-product-url="{{ option_value.product_url }}">
+ <img src="{{ option_variant.featured_image | default: product.featured_image | image_url: width: 360 }}" alt="{{ option_value }}" />
+ </li>
+ {%- endfor -%}
+ </ul>
+ </div>
+ {% continue %}
+ {%-endif-%}
+ {% assign option_index = option.position | minus: 1 %}
+ <div class="ecom-product-single__picker-option-{{option.name | handleize }}">
+ <span class="ecom-product-single__picker-radio-label ecom-product-single__picker--option-label" data-option-index="{{option_index}}">
+ <span class="ecom-product-variant--option-label-text">{{option.name}}</span>
+ </span>
+ 
+ <ul class="ecom-product-single__picker-radio-list">
+ {% for option_value in option.values %}
+ <li class="ecom-product-single__swatch-item ecom-product-single__picker-radio-list-item {% if option_value.selected %}ecom-button-active{% endif %} "
+ data-option-index="{{ option_index }}"
+ data-value="{{ option_value | escape }}"
+ data-option-value-id="{{ option_value.id }}"
+ data-product-url="{{ option_value.product_url }}">
+ {{option_value}}
+ </li>
+ {% endfor %}
+ </ul>
+ 
+ </div>
+ {%- endfor -%}
+ {% endunless %}
+ </div><div class="ecom-product-single__variant-picker--options">
+ {%- if product.variants_count > 250 -%}
+ <input type="hidden" name="id" value="{{ variant_selected.id }}"
+ data-product-id="{{product.id}}"
+ data-json-product="product-json-{{product.id}}-ecom-mzov388p98"
+ id="ecom-variant-selector-{{product.id}}-ecom-mzov388p98"
+ ec-variants={{ product.variants_count }}
+ >
+ {%- else -%}
+ <select name="id"
+ class="ecom-product-single-select-id {% if product.has_only_default_variant %} ecom-product-single__picker-default-variant {% endif %}"
+ data-product-id="{{product.id}}"
+ data-json-product="product-json-{{product.id}}-ecom-mzov388p98"
+ id="ecom-variant-selector-{{product.id}}-ecom-mzov388p98"
+ >
+ {% unless product.has_only_default_variant %}
+ 
+ {% endunless %}
+ {% for variant in product.variants %}
+ <option value="{{variant.id}}"
+ {% if variant_selected.id == variant.id %}selected="selected"{% endif %}>
+ {{variant.title}}
+ </option>
+ {% endfor %}
+ </select>
+ {%- endif -%}
+ {% unless product.has_only_default_variant %}
+ {%- for option in product.options_with_values -%}
+ {% assign option_index = option.position | minus: 1 %}
+ <div class="selector-wrapper">
+ <label for="ecom-variant-selector-{{product.id}}-ecom-mzov388p98-option-{{option_index}}"><span class="ecom-product-variant--option-label-text">{{option.name}}</span></label>
+ <select class="single-option-selector"
+ id="ecom-variant-selector-{{product.id}}-ecom-mzov388p98-option-{{option_index}}"
+ data-option-index="{{option_index}}">
+ {% for option_value in option.values %}
+ <option value="{{option_value | escape}}"
+ {% if option_value.selected %}selected="selected"{% endif %}
+ 
+ data-option-value-id="{{option_value.id}}"
+ data-product-url="{{option_value.product_url}}">
+ {{option_value}}
+ </option>
+ {% endfor %}
+ </select>
+ </div>
+ {%- endfor -%}
+ {% endunless %}
+ </div><div class="ecom-product-single__variant-picker--json">
+ <script type="application/json" id="product-json-{{product.id}}-ecom-mzov388p98">
+ {%- render "ecom_product_json", product: product, checkIsHighVariant: checkIsHighVariant -%}
+ </script>
+ </div></div></div></div></div> <div class="ecom-block ecom-core core__block ecom-y02bxgf6b1h"><div class="ecom__element ecom-element-button ecom-button-default" section_id="ecom-aopnge3p6d"><a class="ecom__element--button ecom-flex ecom-fl_center ecom-al_center" href="#" data-ecom-popup="696a00610d0d422689007749"><span class="ecom__element--button-icon-text">Preorder Your Pet Feeder Match G1</span><span class="ecom-button-icon ecom__element--button-icon"></span></a></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-s1v3rfy3erg"><div class="ecom-row ecom-core core__block ecom-gtm0ciw1o3j" data-id="ecom-gtm0ciw1o3j" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first ecom-25mbisp57he"><div class="core__column--wrapper" id="ecom-25mbisp57he"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-0wpyp1ouw9z"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-aopnge3p6d"><div class="text-content ecom-html has-drop-cap-view-framed">Share to</div></div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-mzcc1u1qrn"><div class="core__column--wrapper" id="ecom-mzcc1u1qrn"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block ecom-9ju6jetkrq5"><div class="ecom__element ecom-element element__social-wrapper" section_id="ecom-aopnge3p6d"><div class="element__social"><div class="ecom__element-social facebook" style=""><a href="https://www.facebook.com/sharer/sharer.php?u={current-link}" alt="facebook" aria-label="facebook" class="element-social-link" target="_blank"><div class="ecom-social-icon"><span><svg version="1.1" id="lni_lni-facebook-filled" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+ <path d="M47.4,25.8L47.4,25.8h-5.6h-2v-2v-6.2v-2h2H46c1.1,0,2-0.8,2-2V3c0-1.1-0.8-2-2-2h-7.3c-7.9,0-13.4,5.6-13.4,13.9v8.7v2h-2
+ h-6.8c-1.4,0-2.7,1.1-2.7,2.7v7.2c0,1.4,1.1,2.7,2.7,2.7h6.6h2v2v20.1c0,1.4,1.1,2.7,2.7,2.7h9.4c0.6,0,1.1-0.3,1.5-0.7
+ s0.7-1.1,0.7-1.7l0,0l0,0V40.3v-2h2.1H46c1.3,0,2.3-0.8,2.5-2v-0.1v-0.1l1.4-6.9c0.1-0.7,0-1.5-0.6-2.3
+ C49.1,26.4,48.2,25.9,47.4,25.8z"></path>
+ </svg></span></div></a></div><div class="ecom__element-social twitter" style=""><a href="https://twitter.com/intent/tweet?url={current-link}" alt="twitter" aria-label="twitter" class="element-social-link" target="_blank"><div class="ecom-social-icon"><span><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg></span></div></a></div></div></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </section>
+ {% unless ecom_has_variant_picker %}
+ <input type="hidden" name="id" value="{{product.selected_or_first_available_variant.id}}" />
+ <script type="application/json" id="product-json-{{product.id}}-ecom-aopnge3p6d">
+ {% if product.variants_count > 250 %}
+ {% assign checkIsHighVariant = true %}
+ {% endif %}
+ {%- render "ecom_product_json", product: product, checkIsHighVariant: checkIsHighVariant-%}
+ </script>
+ {% endunless %}
+ {%- endform -%}
+ {% assign ecom_has_variant_picker = false %}
+ {%- endif -%}
+ <section class="ecom-row ecom-core ecom-section ecom-2s02fy7qrch" data-id="ecom-2s02fy7qrch" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-97m1bso0f1o"><div class="core__column--wrapper" id="ecom-97m1bso0f1o"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-ezudxutcatr"><div class="ecom-row ecom-core core__block ecom-9k9cdzenbqk" data-id="ecom-9k9cdzenbqk" ec-delay="800" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-7xlk0g81myr"><div class="core__column--wrapper" id="ecom-7xlk0g81myr"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks" style="--ecom-global-elements-space: 0px;"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-x8ev0rpyulb"><div class="ecom-row ecom-core core__block ecom-6nifb9npd2b" data-id="ecom-6nifb9npd2b" style="z-index: inherit;"><div class="core__row--columns core__row--full"><div class="ecom-column ecom-core core__column--first ecom-sptqlayyh5"><div class="core__column--wrapper" id="ecom-sptqlayyh5"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-hw9lyap0shf"><div class="ecom-row ecom-core core__block ecom-i1fuudv3ts" data-id="ecom-i1fuudv3ts" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first ecom-nmzvhun7pqh"><div class="core__column--wrapper" id="ecom-nmzvhun7pqh"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block ecom-i75rtvnwx3k"><div class="ecom-element ecom-icon ecom-flex" section_id="ecom-2s02fy7qrch"><a class="ecom-icon--container ecom-in_flex" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="currentColor"> <path d="M14 1.74188C20.7708 1.74211 26.2604 7.23089 26.2607 14.0016C26.2605 20.7725 20.7708 26.2622 14 26.2624C7.22917 26.2622 1.74047 20.7725 1.74023 14.0016C1.74055 7.23089 7.22922 1.74211 14 1.74188ZM14 4.17059C8.57125 4.17082 4.16926 8.57292 4.16895 14.0016C4.16918 19.4304 8.5712 23.8315 14 23.8317C19.4288 23.8315 23.8298 19.4304 23.8301 14.0016C23.8298 8.57292 19.4287 4.17082 14 4.17059ZM14 12.2507C14.7088 12.2507 15.2832 12.8251 15.2832 13.5339V18.7839C15.283 19.4925 14.7087 20.0661 14 20.0661C13.2913 20.0661 12.717 19.4925 12.7168 18.7839V13.5339C12.7168 12.8251 13.2912 12.2507 14 12.2507ZM14 7.00067C14.9665 7.00067 15.75 7.78417 15.75 8.75067C15.75 9.71717 14.9665 10.5007 14 10.5007C13.0335 10.5007 12.25 9.71717 12.25 8.75067C12.25 7.78417 13.0335 7.00067 14 7.00067Z" fill="#111112"></path></svg></a></div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-xy9mhorpo4"><div class="core__column--wrapper" id="ecom-xy9mhorpo4"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-ftv4d3ium1"><div class="ecom__element element__heading ecom-element ecom-html ecom-type-deffault" section_id="ecom-2s02fy7qrch"><h4 class="ecom__heading ecom-db">Event Notice</h4></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> <div class="ecom-block ecom-core core__block ecom-8bvppayyudr"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-2s02fy7qrch"><div class="text-content ecom-html has-drop-cap-view-framed"><ol><li>This is the exclusive preorder event for the new Arctic Series of TourBox Elite Plus.</li><li>During the preorder period, you can purchase at a special limited-time price.</li><li>Please aware this is a preorder event, and the product is not yet in stock.</li></ol></div></div></div> </div></div></div></div> <div class="ecom-column ecom-core ecom-0rxpvulf4u7b"><div class="core__column--wrapper" id="ecom-0rxpvulf4u7b"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-1p5tgxr8vzg"><div class="ecom-row ecom-core core__block ecom-qkgxt1mzqf" data-id="ecom-qkgxt1mzqf" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first ecom-r6nmrzik9ta"><div class="core__column--wrapper" id="ecom-r6nmrzik9ta"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block ecom-f94swxvq7uq"><div class="ecom-element ecom-icon ecom-flex" section_id="ecom-2s02fy7qrch"><a class="ecom-icon--container ecom-in_flex" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="currentColor"> <path d="M14 1.74188C20.7708 1.74211 26.2604 7.23089 26.2607 14.0016C26.2605 20.7725 20.7708 26.2622 14 26.2624C7.22917 26.2622 1.74047 20.7725 1.74023 14.0016C1.74055 7.23089 7.22922 1.74211 14 1.74188ZM14 4.17059C8.57125 4.17082 4.16926 8.57292 4.16895 14.0016C4.16918 19.4304 8.5712 23.8315 14 23.8317C19.4288 23.8315 23.8298 19.4304 23.8301 14.0016C23.8298 8.57292 19.4287 4.17082 14 4.17059ZM14 12.2507C14.7088 12.2507 15.2832 12.8251 15.2832 13.5339V18.7839C15.283 19.4925 14.7087 20.0661 14 20.0661C13.2913 20.0661 12.717 19.4925 12.7168 18.7839V13.5339C12.7168 12.8251 13.2912 12.2507 14 12.2507ZM14 7.00067C14.9665 7.00067 15.75 7.78417 15.75 8.75067C15.75 9.71717 14.9665 10.5007 14 10.5007C13.0335 10.5007 12.25 9.71717 12.25 8.75067C12.25 7.78417 13.0335 7.00067 14 7.00067Z" fill="#111112"></path></svg></a></div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-wr5kwpftst"><div class="core__column--wrapper" id="ecom-wr5kwpftst"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-01hj8p94yj2i"><div class="ecom__element element__heading ecom-element ecom-html ecom-type-deffault" section_id="ecom-2s02fy7qrch"><h4 class="ecom__heading ecom-db">Event Notice</h4></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> <div class="ecom-block ecom-core core__block ecom-p9ha6r1soo8"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-2s02fy7qrch"><div class="text-content ecom-html has-drop-cap-view-framed"><ol><li>This is the exclusive preorder event for the new Arctic Series of TourBox Elite Plus.</li><li>During the preorder period, you can purchase at a special limited-time price.</li><li>Please aware this is a preorder event, and the product is not yet in stock.</li></ol></div></div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-1cm6bbgjtsq"><div class="core__column--wrapper" id="ecom-1cm6bbgjtsq"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-bizwvz8ysdo"><div class="ecom-row ecom-core core__block ecom-hf5qgeitnq" data-id="ecom-hf5qgeitnq" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first ecom-rnepbc3av9l"><div class="core__column--wrapper" id="ecom-rnepbc3av9l"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block ecom-ibnd9ljr5n"><div class="ecom-element ecom-icon ecom-flex" section_id="ecom-2s02fy7qrch"><a class="ecom-icon--container ecom-in_flex" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="currentColor"> <path d="M14 1.74188C20.7708 1.74211 26.2604 7.23089 26.2607 14.0016C26.2605 20.7725 20.7708 26.2622 14 26.2624C7.22917 26.2622 1.74047 20.7725 1.74023 14.0016C1.74055 7.23089 7.22922 1.74211 14 1.74188ZM14 4.17059C8.57125 4.17082 4.16926 8.57292 4.16895 14.0016C4.16918 19.4304 8.5712 23.8315 14 23.8317C19.4288 23.8315 23.8298 19.4304 23.8301 14.0016C23.8298 8.57292 19.4287 4.17082 14 4.17059ZM14 12.2507C14.7088 12.2507 15.2832 12.8251 15.2832 13.5339V18.7839C15.283 19.4925 14.7087 20.0661 14 20.0661C13.2913 20.0661 12.717 19.4925 12.7168 18.7839V13.5339C12.7168 12.8251 13.2912 12.2507 14 12.2507ZM14 7.00067C14.9665 7.00067 15.75 7.78417 15.75 8.75067C15.75 9.71717 14.9665 10.5007 14 10.5007C13.0335 10.5007 12.25 9.71717 12.25 8.75067C12.25 7.78417 13.0335 7.00067 14 7.00067Z" fill="#111112"></path></svg></a></div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-girj6y51vh"><div class="core__column--wrapper" id="ecom-girj6y51vh"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-aroulgboi8h"><div class="ecom__element element__heading ecom-element ecom-html ecom-type-deffault" section_id="ecom-2s02fy7qrch"><h4 class="ecom__heading ecom-db">Event Notice</h4></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> <div class="ecom-block ecom-core core__block ecom-oydhh9b7qck"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-2s02fy7qrch"><div class="text-content ecom-html has-drop-cap-view-framed"><ol><li>This is the exclusive preorder event for the new Arctic Series of TourBox Elite Plus.</li><li>During the preorder period, you can purchase at a special limited-time price.</li><li>Please aware this is a preorder event, and the product is not yet in stock.</li></ol></div></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </section><section class="ec-flex-wp ecom-row ecom-core ecom-section ecom-a8y164xt9xs"><div class="ecom-inner"><div class="ecom-block ecom-core core__block elmspace ecom-pu3hviptfrg"><div class="ecom__element ecom-element element__code exporting" section_id="ecom-a8y164xt9xs"><div id="G1-Custom-SubNav" class="g1-sub-nav-fixed">
+ <div class="innerNav">
+ <div class="innerNav-content">
+ <div class="innerNav-title">Cheerble Pet Feeder Match G1</div>
+ <div class="innerNav-catalog">
+ <div class="innerNav-catalog-item" data-target="section-details">Product Details</div>
+ <div class="innerNav-catalog-item" data-target="section-box">What's in the box?</div>
+ <div class="innerNav-catalog-item" data-target="section-specs">Product Specs</div>
+ <div class="innerNav-catalog-item" data-target="section-qa">Q&A</div>
+ </div>
+ </div>
+ </div>
+</div>
+<style>
+/* 1. 设置 Sub Nav 占据最顶部位置 */
+.g1-sub-nav-fixed {
+ position: fixed !important;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 70px; /* 你的目标高度 */
+ background: #000000 !important;
+ z-index: 2147483647 !important;
+ 
+ opacity: 0;
+ visibility: hidden;
+ transform: translateY(-100%);
+ transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* 核心修复：确保中间这一层也撑满 70px */
+.innerNav {
+ height: 100%;
+ width: 100%;
+}
+.g1-sub-nav-fixed.is-active {
+ opacity: 1;
+ visibility: visible;
+ transform: translateY(0);
+}
+/* 2. 内部内容容器 */
+.innerNav-content {
+ max-width: 1200px;
+ margin: 0 auto;
+ height: 100%; /* 继承 innerNav 的 100% 高度 */
+ display: flex;
+ align-items: center; /* 垂直居中 */
+ justify-content: flex-start; /* 靠左对齐 */
+ gap: 40px; /* 标题和右侧导航的间距，建议稍微加大点 */
+ padding: 0 20px;
+ box-sizing: border-box;
+}
+/* 标题样式 */
+.innerNav-title { 
+ color: #fff; 
+ font-weight: bold; 
+ font-size: 18px; 
+ margin: 0 !important; /* 修正了拼写错误 magin -> margin */
+ display: flex; 
+ align-items: center;
+ height: 100%; 
+ white-space: nowrap; /* 防止标题换行 */
+}
+/* 导航列表容器 */
+.innerNav-catalog { 
+ display: flex; 
+ gap: 20px; 
+ height: 100%;
+ align-items: center; /* 确保整个列表在 flex 容器中居中 */
+}
+/* 导航项目 */
+.innerNav-catalog-item { 
+ color: #999; 
+ cursor: pointer; 
+ font-size: 14px; 
+ font-weight: 500; 
+ height: 100%; 
+ display: flex; 
+ align-items: center; /* 确保文字在自身高度内居中 */
+ transition: color 0.2s;
+}
+.innerNav-catalog-item:hover { color: #fff; }
+/* 修正详情 Section 的位置，防止跳转时被盖住开头 */
+#section-details, #section-box, #section-specs, #section-qa {
+ scroll-margin-top: 70px; /* 设置为导航栏的高度 */
+}
+</style>
+<script>
+(function() {
+ function initSubNav() {
+ const subNav = document.getElementById('G1-Custom-SubNav');
+ if (!subNav) return;
+ // 【关键步骤】将导航栏直接移动到 body 标签下
+ // 这样它就脱离了 EComposer Section 的层级限制，永远在最顶层
+ document.body.appendChild(subNav);
+ const triggerSection = document.getElementById('g1-hero-trigger');
+ const themeHeader = document.querySelector('.header-wrapper, #shopify-section-header, .header');
+ window.addEventListener('scroll', function() {
+ if (!triggerSection) return;
+ // 获取 Hero 第一屏底部的位置
+ const triggerBottom = triggerSection.getBoundingClientRect().bottom;
+ // 逻辑：滑过第一屏底部时显示
+ if (triggerBottom <= 0) { 
+ subNav.classList.add('is-active');
+ if (themeHeader) themeHeader.style.zIndex = "1"; // 降低主导航层级
+ } else {
+ subNav.classList.remove('is-active');
+ if (themeHeader) themeHeader.style.zIndex = ""; // 恢复
+ }
+ });
+ // 锚点跳转
+ document.querySelectorAll('.innerNav-catalog-item').forEach(item => {
+ item.addEventListener('click', function() {
+ const targetId = this.getAttribute('data-target');
+ const targetEl = document.getElementById(targetId);
+ if (targetEl) {
+ const offset = 60;
+ const targetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset - offset;
+ window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+ }
+ });
+ });
+ }
+ // 确保在页面加载后执行
+ if (document.readyState === 'complete') {
+ initSubNav();
+ } else {
+ window.addEventListener('load', initSubNav);
+ }
+})();
+</script></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </section><section class="ecom-row ecom-core ecom-section ecom-unhcg94usu" data-id="ecom-unhcg94usu" id="section-details" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first ecom-xs2n9nl2uh"><div class="core__column--wrapper" id="ecom-xs2n9nl2uh"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-qyqqldc03rh"><div class="ecom-row ecom-core core__block ecom-3visvnlu2s2" data-id="ecom-3visvnlu2s2" id="section-details" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-pb2zznjqgwm"><div class="core__column--wrapper" id="ecom-pb2zznjqgwm"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks" style="--ecom-global-elements-space: 0px;"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-6paohqpd5mv"><div class="ecom-element ecom-base-image" section_id="ecom-unhcg94usu"><figure><div class="ecom-container-image ecom-image-align"><div class="ecom-image-content-position ecom-image-default ecom-base-image-container-overlay" style=""><picture class="ecom-image-picture"><img class="" loading="lazy" fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0037/5209/9958/files/landing_page_template_test_g1.webp?v=1768551359" srcset="https://cdn.shopify.com/s/files/1/0037/5209/9958/files/landing_page_template_test_g1.webp?v=1768551359 1480w, https://cdn.shopify.com/s/files/1/0037/5209/9958/files/landing_page_template_test_g1.webp?v=1768551359&amp;width=600&amp;crop=center 600w" sizes="(max-width: 600px) 600px, 1480px" alt="landing_page_template_test_g1" width="1480" height="2750"></picture></div></div></figure></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-h9y7qzc3la5"><div class="ecom-element ecom-base-image" section_id="ecom-unhcg94usu"><figure><div class="ecom-container-image ecom-image-align"><div class="ecom-image-content-position ecom-image-default ecom-base-image-container-overlay" style=""><picture class="ecom-image-picture"><img class="" loading="lazy" fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0037/5209/9958/files/landing_page_template_test_g1.webp?v=1768551359" srcset="https://cdn.shopify.com/s/files/1/0037/5209/9958/files/landing_page_template_test_g1.webp?v=1768551359 1480w, https://cdn.shopify.com/s/files/1/0037/5209/9958/files/landing_page_template_test_g1.webp?v=1768551359&amp;width=600&amp;crop=center 600w" sizes="(max-width: 600px) 600px, 1480px" alt="landing_page_template_test_g1" width="1480" height="2750"></picture></div></div></figure></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-i5do1297y2"><div class="ecom-element ecom-base-image" section_id="ecom-unhcg94usu"><figure><div class="ecom-container-image ecom-image-align"><div class="ecom-image-content-position ecom-image-default ecom-base-image-container-overlay" style=""><picture class="ecom-image-picture"><img class="" loading="lazy" fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0037/5209/9958/files/landing_page_template_test_g1.webp?v=1768551359" srcset="https://cdn.shopify.com/s/files/1/0037/5209/9958/files/landing_page_template_test_g1.webp?v=1768551359 1480w, https://cdn.shopify.com/s/files/1/0037/5209/9958/files/landing_page_template_test_g1.webp?v=1768551359&amp;width=600&amp;crop=center 600w" sizes="(max-width: 600px) 600px, 1480px" alt="landing_page_template_test_g1" width="1480" height="2750"></picture></div></div></figure></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-4bk64r0almh"><div class="ecom-element ecom-base-image" section_id="ecom-unhcg94usu"><figure><div class="ecom-container-image ecom-image-align"><div class="ecom-image-content-position ecom-image-default ecom-base-image-container-overlay" style=""><picture class="ecom-image-picture"><img class="" loading="lazy" fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0037/5209/9958/files/landing_page_template_test_g1.webp?v=1768551359" srcset="https://cdn.shopify.com/s/files/1/0037/5209/9958/files/landing_page_template_test_g1.webp?v=1768551359 1480w, https://cdn.shopify.com/s/files/1/0037/5209/9958/files/landing_page_template_test_g1.webp?v=1768551359&amp;width=600&amp;crop=center 600w" sizes="(max-width: 600px) 600px, 1480px" alt="landing_page_template_test_g1" width="1480" height="2750"></picture></div></div></figure></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> <div class="ecom-block ecom-core core__block elmspace ecom-lhhwuag59vi"><div class="ecom-row ecom-core core__block ecom-qe47n9f5q5" data-id="ecom-qe47n9f5q5" id="section-box" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-b7eaxpfzev"><div class="core__column--wrapper" id="ecom-b7eaxpfzev"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks" style="--ecom-global-elements-space: 0px;"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-x7cgoy3lokc"><div class="ecom__element element__heading ecom-element ecom-html ecom-type-deffault" section_id="ecom-unhcg94usu"><h3 class="ecom__heading ecom-db">FAQs</h3></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-10gw3h1lyyyl"><div class="ecom-row ecom-core core__block ecom-o1hjciysxls" data-id="ecom-o1hjciysxls" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-cuqolwt9sb7"><div class="core__column--wrapper" id="ecom-cuqolwt9sb7"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-51hygrgupf3"><div class="ecom__element element__heading ecom-element ecom-html ecom-type-deffault" section_id="ecom-unhcg94usu"><h4 class="ecom__heading ecom-db">Will the leather change or scratch over time?</h4></div></div> <div class="ecom-block ecom-core core__block ecom-c94rc2264e"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-unhcg94usu"><div class="text-content ecom-html has-drop-cap-view-framed">Our Horween leather is minimally treated with natural oils and waxes and is therefore prone to scuffing and marking in the first few months of use. With time, scuffs and marks will buff out into a rich and lustrous patina. If you’re looking for a perfect finish, this is not the case for you. If you’re after an authentic leather patina, this is absolutely the case for you.</div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-7esd0ryfzs5"><div class="ecom__element element__heading ecom-element ecom-html ecom-type-deffault" section_id="ecom-unhcg94usu"><h4 class="ecom__heading ecom-db">What materials are your phone cases made of?</h4></div></div> <div class="ecom-block ecom-core core__block ecom-8aitffxn41k"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-unhcg94usu"><div class="text-content ecom-html has-drop-cap-view-framed">Our phone cases are crafted from high-quality materials such as silicone, TPU, hard plastic, and leather. Each material is carefully selected to provide durability, style, and maximum protection for your device.</div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-qi8lks5zyb"><div class="ecom__element element__heading ecom-element ecom-html ecom-type-deffault" section_id="ecom-unhcg94usu"><h4 class="ecom__heading ecom-db">Can I return or exchange a phone case if it doesn’t fit my device?</h4></div></div> <div class="ecom-block ecom-core core__block ecom-nlug2iayb6g"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-unhcg94usu"><div class="text-content ecom-html has-drop-cap-view-framed">Absolutely! If your phone case doesn’t fit, you can return or exchange it within 30 days of purchase. Make sure it’s in its original condition and packaging. Check our return policy for more details.</div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-9ovbfe2pv7i"><div class="ecom__element element__heading ecom-element ecom-html ecom-type-deffault" section_id="ecom-unhcg94usu"><h4 class="ecom__heading ecom-db">Do you offer customization options for phone cases?</h4></div></div> <div class="ecom-block ecom-core core__block ecom-66snffv83d9"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-unhcg94usu"><div class="text-content ecom-html has-drop-cap-view-framed">Yes, we provide customization services for select phone case models. You can add your name, photo, or unique design to make your phone case truly one of a kind. Visit our customization page for more details.</div></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> <div class="ecom-block ecom-core core__block elmspace ecom-xejl25mf29r"><div class="ecom-row ecom-core core__block ecom-wdv33nkj0kk" data-id="ecom-wdv33nkj0kk" id="section-specs" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-d8u0dahhifc"><div class="core__column--wrapper" id="ecom-d8u0dahhifc"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks" style="--ecom-global-elements-space: 0px;"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-91mmo2vjjy"><div class="ecom__element element__heading ecom-element ecom-html ecom-type-deffault" section_id="ecom-unhcg94usu"><h3 class="ecom__heading ecom-db">FAQs</h3></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-karo8ofndc"><div class="ecom-row ecom-core core__block ecom-lg9lct8m4mr" data-id="ecom-lg9lct8m4mr" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-b722n9r144s"><div class="core__column--wrapper" id="ecom-b722n9r144s"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-aqee662p6a7"><div class="ecom__element element__heading ecom-element ecom-html ecom-type-deffault" section_id="ecom-unhcg94usu"><h4 class="ecom__heading ecom-db">Will the leather change or scratch over time?</h4></div></div> <div class="ecom-block ecom-core core__block ecom-4e7aje1sq9d"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-unhcg94usu"><div class="text-content ecom-html has-drop-cap-view-framed">Our Horween leather is minimally treated with natural oils and waxes and is therefore prone to scuffing and marking in the first few months of use. With time, scuffs and marks will buff out into a rich and lustrous patina. If you’re looking for a perfect finish, this is not the case for you. If you’re after an authentic leather patina, this is absolutely the case for you.</div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-k5vlq5x3vye"><div class="ecom__element element__heading ecom-element ecom-html ecom-type-deffault" section_id="ecom-unhcg94usu"><h4 class="ecom__heading ecom-db">What materials are your phone cases made of?</h4></div></div> <div class="ecom-block ecom-core core__block ecom-ib43wafb08p"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-unhcg94usu"><div class="text-content ecom-html has-drop-cap-view-framed">Our phone cases are crafted from high-quality materials such as silicone, TPU, hard plastic, and leather. Each material is carefully selected to provide durability, style, and maximum protection for your device.</div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-kfhgzrhpp6"><div class="ecom__element element__heading ecom-element ecom-html ecom-type-deffault" section_id="ecom-unhcg94usu"><h4 class="ecom__heading ecom-db">Can I return or exchange a phone case if it doesn’t fit my device?</h4></div></div> <div class="ecom-block ecom-core core__block ecom-loe3nrzw6y"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-unhcg94usu"><div class="text-content ecom-html has-drop-cap-view-framed">Absolutely! If your phone case doesn’t fit, you can return or exchange it within 30 days of purchase. Make sure it’s in its original condition and packaging. Check our return policy for more details.</div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-nfkkd381wu"><div class="ecom__element element__heading ecom-element ecom-html ecom-type-deffault" section_id="ecom-unhcg94usu"><h4 class="ecom__heading ecom-db">Do you offer customization options for phone cases?</h4></div></div> <div class="ecom-block ecom-core core__block ecom-h76u1mq8x9e"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-unhcg94usu"><div class="text-content ecom-html has-drop-cap-view-framed">Yes, we provide customization services for select phone case models. You can add your name, photo, or unique design to make your phone case truly one of a kind. Visit our customization page for more details.</div></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> <div class="ecom-block ecom-core core__block elmspace ecom-mqaxk2qo3cs"><div class="ecom-row ecom-core core__block ecom-deb0fkw5tkg" data-id="ecom-deb0fkw5tkg" id="section-qa" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-wjjkutlxmbl"><div class="core__column--wrapper" id="ecom-wjjkutlxmbl"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks" style="--ecom-global-elements-space: 0px;"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-2flj57p7f4o"><div class="ecom__element element__heading ecom-element ecom-html ecom-type-deffault" section_id="ecom-unhcg94usu"><h3 class="ecom__heading ecom-db">FAQs</h3></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-ku2jz3co44"><div class="ecom-row ecom-core core__block ecom-l89wqy4rlas" data-id="ecom-l89wqy4rlas" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-v4vyhst2f6"><div class="core__column--wrapper" id="ecom-v4vyhst2f6"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-2qe2uhoyxbm"><div class="ecom__element element__heading ecom-element ecom-html ecom-type-deffault" section_id="ecom-unhcg94usu"><h4 class="ecom__heading ecom-db">Will the leather change or scratch over time?</h4></div></div> <div class="ecom-block ecom-core core__block ecom-4ontcopdnl"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-unhcg94usu"><div class="text-content ecom-html has-drop-cap-view-framed">Our Horween leather is minimally treated with natural oils and waxes and is therefore prone to scuffing and marking in the first few months of use. With time, scuffs and marks will buff out into a rich and lustrous patina. If you’re looking for a perfect finish, this is not the case for you. If you’re after an authentic leather patina, this is absolutely the case for you.</div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-tt185npq8x"><div class="ecom__element element__heading ecom-element ecom-html ecom-type-deffault" section_id="ecom-unhcg94usu"><h4 class="ecom__heading ecom-db">What materials are your phone cases made of?</h4></div></div> <div class="ecom-block ecom-core core__block ecom-1zfe43u3ke2"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-unhcg94usu"><div class="text-content ecom-html has-drop-cap-view-framed">Our phone cases are crafted from high-quality materials such as silicone, TPU, hard plastic, and leather. Each material is carefully selected to provide durability, style, and maximum protection for your device.</div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-f17bivr4p3e"><div class="ecom__element element__heading ecom-element ecom-html ecom-type-deffault" section_id="ecom-unhcg94usu"><h4 class="ecom__heading ecom-db">Can I return or exchange a phone case if it doesn’t fit my device?</h4></div></div> <div class="ecom-block ecom-core core__block ecom-kkey6qg8bqi"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-unhcg94usu"><div class="text-content ecom-html has-drop-cap-view-framed">Absolutely! If your phone case doesn’t fit, you can return or exchange it within 30 days of purchase. Make sure it’s in its original condition and packaging. Check our return policy for more details.</div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-sjghqwxrdh"><div class="ecom__element element__heading ecom-element ecom-html ecom-type-deffault" section_id="ecom-unhcg94usu"><h4 class="ecom__heading ecom-db">Do you offer customization options for phone cases?</h4></div></div> <div class="ecom-block ecom-core core__block ecom-7i27neootx4"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-unhcg94usu"><div class="text-content ecom-html has-drop-cap-view-framed">Yes, we provide customization services for select phone case models. You can add your name, photo, or unique design to make your phone case truly one of a kind. Visit our customization page for more details.</div></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-t98yfcgqx9"><div class="core__column--wrapper" id="ecom-t98yfcgqx9"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-2hfw22ao7a4"><div class="ecom__element element__heading ecom-element ecom-html ecom-type-deffault" section_id="ecom-unhcg94usu"><h4 class="ecom__heading ecom-db">Discount</h4></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-ggijs47gz8r"><div class="ecom-row ecom-core core__block ecom-fhpcaj9ovo" data-id="ecom-fhpcaj9ovo" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-gsr4dfgcz2"><div class="core__column--wrapper" id="ecom-gsr4dfgcz2"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks" style="--ecom-global-elements-space: 0px;"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-snjyx15yxk"><div class="ecom__element ecom-element element__code exporting" section_id="ecom-unhcg94usu">
+{% assign target_product_handle = "pet-feeder-match-g1-first-8-hour-special" %}
+{% assign total_limit = 500 %}
+{% assign g1_prod = all_products[target_product_handle] %}
+{% assign first_variant = g1_prod.selected_or_first_available_variant %}
+<style>
+ /* 1. 外层容器 */
+ .g1-static-card {
+ position: relative;
+ width: 100%;
+ /* 锁定固定高度，防止切换时卡片跳动 */
+ height: 580px; 
+ background: #fff;
+ border-radius: 8px;
+ border: 1px solid #eee;
+ padding: 0px;
+ box-sizing: border-box;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ align-items: center;
+ /* 彻底禁止外层任何形式的滚动溢出 */
+ overflow: hidden; 
+ }
+ /* 2. 内容区域 */
+ .g1-content-wrapper { 
+ flex: 1; 
+ width: 100%; 
+ /* --- 修改点：取消内部滑动 --- */
+ overflow: hidden; 
+ margin-bottom: 10px;
+ display: flex;
+ flex-direction: column;
+ }
+ .g1-content-front { display: block; animation: fadeIn 0.3s ease; width: 100%; text-align: center; }
+ .g1-content-back { display: none; animation: fadeIn 0.3s ease; padding: 0 15px; width: 100%; }
+ .g1-img { width: 100%; height: 220px; object-fit: cover; margin-bottom: 10px; display: block; }
+ .g1-title { color: #1a1a1a; margin: 0; font-size: 18px; font-weight: 600; padding: 0 10px; }
+ 
+ .g1-price-area { 
+ color: #8214ff; font-size: 20px; font-weight: bold; margin: 8px 0; 
+ display: flex; justify-content: center; align-items: baseline; gap: 8px;
+ }
+ .g1-compare { color: #999; font-size: 14px; text-decoration: line-through; font-weight: normal; }
+ .g1-selector-box { width: 80%; margin: 5px auto 10px auto; }
+ .g1-select {
+ width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;
+ font-size: 13px; background: #f9f9f9; cursor: pointer;
+ }
+ .g1-stock-info { font-size: 12px; color: #555; margin-bottom: 15px; text-align: center; }
+ .g1-stock-num { color: #1a1a1a; font-weight: 700; }
+ /* 3. 底部固定操作区 */
+ .g1-actions-area {
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 12px; 
+ padding-bottom: 25px; 
+ background: #fff;
+ z-index: 5;
+ flex-shrink: 0; /* 确保操作区不被压缩 */
+ }
+ .g1-btn-common {
+ width: 75%; 
+ height: 42px; 
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-size: 14px;
+ font-weight: 600;
+ cursor: pointer;
+ border-radius: 4px;
+ transition: 0.3s;
+ text-transform: uppercase;
+ box-sizing: border-box;
+ }
+ .g1-buy-btn { background: #002fa7; color: #fff; border: none; }
+ .g1-buy-btn:hover { background: #002585; }
+ .g1-buy-btn:disabled { background: #ccc; cursor: not-allowed; }
+ .g1-learn-btn {
+ background: transparent;
+ border: 1px solid #1c1c1e;
+ color: #1c1c1e;
+ text-transform: capitalize;
+ }
+ .g1-learn-btn:hover { border-color: #8214ff; color: #8214ff; }
+ 
+ .g1-static-card.show-list .g1-content-front { display: none; }
+ .g1-static-card.show-list .g1-content-back { display: block; }
+ @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+</style>
+<div class="g1-static-card" id="card-{{ g1_prod.id }}">
+ 
+ <div class="g1-content-wrapper">
+ <div class="g1-content-front">
+ <img src="{{ first_variant.featured_image | default: g1_prod.featured_image | image_url: width: 600 }}" class="g1-img" id="img-{{ g1_prod.id }}">
+ <h4 class="g1-title">{{ g1_prod.title }}</h4>
+ <div class="g1-selector-box">
+ <select class="g1-select" onchange="updateG1Card('{{ g1_prod.id }}', this)">
+ {% for variant in g1_prod.variants %}
+ <option value="{{ variant.id }}" 
+ data-price="{{ variant.price | money }}" 
+ data-compare="{{ variant.compare_at_price | money }}"
+ data-stock="{{ variant.inventory_quantity }}"
+ data-img="{{ variant.featured_image | image_url: width: 600 }}"
+ {% unless variant.available %}disabled{% endunless %}>
+ {{ variant.title }}
+ </option>
+ {% endfor %}
+ </select>
+ </div>
+ <div class="g1-price-area" id="price-{{ g1_prod.id }}">
+ {{ first_variant.price | money }}
+ {% if first_variant.compare_at_price > first_variant.price %}
+ <span class="g1-compare">{{ first_variant.compare_at_price | money }}</span>
+ {% endif %}
+ </div>
+ <div class="g1-stock-info">
+ Remaining: <span class="g1-stock-num" id="stock-{{ g1_prod.id }}">{{ first_variant.inventory_quantity | at_least: 0 }}</span> / 
+ Total: <span class="g1-stock-num">{{ total_limit }}</span>
+ </div>
+ </div>
+ <div class="g1-content-back">
+ <h4 style="color:#000; margin: 20px 0 10px 0; text-align:center; font-size:16px;">What's in the box</h4>
+ <ul style="list-style:none; padding:0; font-size:13px; color:#555; line-height:2.2;">
+ <li>• 1x TourBox G1 Console</li>
+ <li>• 1x Braided USB-C Cable</li>
+ <li>• 1x Quick Start Guide</li>
+ <li>• 1x Warranty Card</li>
+ </ul>
+ </div>
+ </div>
+ <div class="g1-actions-area">
+ <button class="g1-btn-common g1-buy-btn" id="btn-{{ g1_prod.id }}" onclick="addG1ToCart('{{ g1_prod.id }}')" {% unless first_variant.available %}disabled{% endunless %}>
+ {% if first_variant.available %}Pre-order Now{% else %}Sold Out{% endif %}
+ </button>
+ <div class="g1-btn-common g1-learn-btn" onclick="toggleG1Card('{{ g1_prod.id }}')">
+ <span>Learn More</span>
+ <span style="margin-left:8px; font-weight:bold;" class="icon-{{ g1_prod.id }}">+</span>
+ </div>
+ </div>
+</div>
+<script>
+if (typeof toggleG1Card !== 'function') {
+ window.toggleG1Card = function(id) {
+ const card = document.getElementById('card-' + id);
+ const icon = card.querySelector('.icon-' + id);
+ const isExpanded = card.classList.toggle('show-list');
+ icon.textContent = isExpanded ? '-' : '+';
+ };
+ window.updateG1Card = function(id, select) {
+ const opt = select.options[select.selectedIndex];
+ const priceArea = document.getElementById('price-' + id);
+ const stockNum = document.getElementById('stock-' + id);
+ const imgEl = document.getElementById('img-' + id);
+ const btn = document.getElementById('btn-' + id);
+ priceArea.innerHTML = opt.dataset.compare && opt.dataset.compare !== opt.dataset.price ? 
+ opt.dataset.price + ' <span class="g1-compare">' + opt.dataset.compare + '</span>' : opt.dataset.price;
+ 
+ stockNum.textContent = opt.dataset.stock < 0 ? 0 : opt.dataset.stock;
+ if(opt.dataset.img) imgEl.src = opt.dataset.img;
+ 
+ if(parseInt(opt.dataset.stock) > 0) {
+ btn.disabled = false;
+ btn.textContent = "Pre-order Now";
+ } else {
+ btn.disabled = true;
+ btn.textContent = "Sold Out";
+ }
+ };
+ window.addG1ToCart = function(id) {
+ const select = document.querySelector('#card-' + id + ' .g1-select');
+ const variantId = select.value;
+ const btn = document.getElementById('btn-' + id);
+ const originalText = btn.textContent;
+ btn.textContent = "Adding...";
+ btn.disabled = true;
+ fetch('/cart/add.js', {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json' },
+ body: JSON.stringify({ items: [{ id: parseInt(variantId), quantity: 1 }] })
+ })
+ .then(res => {
+ if(res.ok) window.location.href = '/checkout';
+ else { alert("Sold out!"); btn.textContent = originalText; btn.disabled = false; }
+ })
+ .catch(() => { alert("Error"); btn.textContent = originalText; btn.disabled = false; });
+ };
+}
+</script></div></div> <div class="ecom-block ecom-core core__block ecom-xh50jpoylp"><div class="ecom__element ecom-element element__code exporting" section_id="ecom-unhcg94usu">
+{% assign target_product_handle = "pet-feeder-match-g1-super-early-bird" %}
+{% assign total_limit = 500 %}
+{% assign g1_prod = all_products[target_product_handle] %}
+{% assign first_variant = g1_prod.selected_or_first_available_variant %}
+<style>
+ /* 1. 外层容器 */
+ .g1-static-card {
+ position: relative;
+ width: 100%;
+ height: 580px; /* 适当增加高度以容纳底部两个固定按钮 */
+ background: #fff;
+ border-radius: 8px;
+ border: 1px solid #eee;
+ padding: 0px;
+ box-sizing: border-box;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ align-items: center;
+ overflow: hidden;
+ }
+ /* 2. 内容区域（可滚动部分） */
+ .g1-content-wrapper { 
+ flex: 1; 
+ width: 100%; 
+ overflow-y: auto; 
+ scrollbar-width: none;
+ margin-bottom: 10px;
+ }
+ .g1-content-wrapper::-webkit-scrollbar { display: none; }
+ .g1-content-front { display: block; animation: fadeIn 0.3s ease; width: 100%; text-align: center; }
+ .g1-content-back { display: none; animation: fadeIn 0.3s ease; padding: 0 15px; width: 100%; }
+ .g1-img { width: 100%; height: 220px; object-fit: cover; margin-bottom: 10px; display: block; }
+ .g1-title { color: #1a1a1a; margin: 0; font-size: 18px; font-weight: 600; padding: 0 10px; }
+ 
+ .g1-price-area { 
+ color: #8214ff; font-size: 20px; font-weight: bold; margin: 8px 0; 
+ display: flex; justify-content: center; align-items: baseline; gap: 8px;
+ }
+ .g1-compare { color: #999; font-size: 14px; text-decoration: line-through; font-weight: normal; }
+ .g1-selector-box { width: 80%; margin: 5px auto 10px auto; }
+ .g1-select {
+ width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;
+ font-size: 13px; background: #f9f9f9; cursor: pointer;
+ }
+ .g1-stock-info { font-size: 12px; color: #555; margin-bottom: 15px; text-align: center; }
+ .g1-stock-num { color: #1a1a1a; font-weight: 700; }
+ /* 3. 底部固定操作区 (控制间距的核心) */
+ .g1-actions-area {
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ /* --- 这里调整两个按钮之间的间距 --- */
+ gap: 12px; 
+ padding-bottom: 25px; /* 距离卡片最底部的距离 */
+ background: #fff;
+ z-index: 5;
+ }
+ /* 统一按钮基础样式 */
+ .g1-btn-common {
+ width: 75%; /* 按钮宽度 */
+ height: 42px; /* 按钮高度 */
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-size: 14px;
+ font-weight: 600;
+ cursor: pointer;
+ border-radius: 4px;
+ transition: 0.3s;
+ text-transform: uppercase;
+ box-sizing: border-box;
+ }
+ /* 购买按钮 */
+ .g1-buy-btn {
+ background: #002fa7;
+ color: #fff;
+ border: none;
+ }
+ .g1-buy-btn:hover { background: #002585; }
+ .g1-buy-btn:disabled { background: #ccc; cursor: not-allowed; }
+ /* Learn More 按钮 */
+ .g1-learn-btn {
+ background: transparent;
+ border: 1px solid #1c1c1e;
+ color: #1c1c1e;
+ text-transform: capitalize;
+ }
+ 
+ /* 视图切换逻辑 */
+ .g1-static-card.show-list .g1-content-front { display: none; }
+ .g1-static-card.show-list .g1-content-back { display: block; }
+ @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+</style>
+<div class="g1-static-card" id="card-{{ g1_prod.id }}">
+ 
+ 
+ <div class="g1-content-wrapper">
+ 
+ <div class="g1-content-front">
+ <img src="{{ first_variant.featured_image | default: g1_prod.featured_image | image_url: width: 600 }}" class="g1-img" id="img-{{ g1_prod.id }}">
+ 
+ <h4 class="g1-title">{{ g1_prod.title }}</h4>
+ 
+ <div class="g1-selector-box">
+ <select class="g1-select" onchange="updateG1Card('{{ g1_prod.id }}', this)">
+ {% for variant in g1_prod.variants %}
+ <option value="{{ variant.id }}" 
+ data-price="{{ variant.price | money }}" 
+ data-compare="{{ variant.compare_at_price | money }}"
+ data-stock="{{ variant.inventory_quantity }}"
+ data-img="{{ variant.featured_image | image_url: width: 600 }}"
+ {% unless variant.available %}disabled{% endunless %}>
+ {{ variant.title }}
+ </option>
+ {% endfor %}
+ </select>
+ </div>
+ <div class="g1-price-area" id="price-{{ g1_prod.id }}">
+ {{ first_variant.price | money }}
+ {% if first_variant.compare_at_price > first_variant.price %}
+ <span class="g1-compare">{{ first_variant.compare_at_price | money }}</span>
+ {% endif %}
+ </div>
+ <div class="g1-stock-info">
+ Remaining: <span class="g1-stock-num" id="stock-{{ g1_prod.id }}">{{ first_variant.inventory_quantity | at_least: 0 }}</span> / 
+ Total: <span class="g1-stock-num">{{ total_limit }}</span>
+ </div>
+ </div>
+ 
+ <div class="g1-content-back">
+ <h4 style="color:#000; margin: 20px 0 10px 0; text-align:center; font-size:16px;">What's in the box</h4>
+ <ul style="list-style:none; padding:0; font-size:13px; color:#555; line-height:2.2;">
+ <li>• 1x TourBox G1 Console</li>
+ <li>• 1x Braided USB-C Cable</li>
+ <li>• 1x Quick Start Guide</li>
+ <li>• 1x Warranty Card</li>
+ </ul>
+ </div>
+ </div>
+ 
+ <div class="g1-actions-area">
+ 
+ <button class="g1-btn-common g1-buy-btn" id="btn-{{ g1_prod.id }}" onclick="addG1ToCart('{{ g1_prod.id }}')" {% unless first_variant.available %}disabled{% endunless %}>
+ {% if first_variant.available %}Pre-order Now{% else %}Sold Out{% endif %}
+ </button>
+ 
+ <div class="g1-btn-common g1-learn-btn" onclick="toggleG1Card('{{ g1_prod.id }}')">
+ <span>Learn More</span>
+ <span style="margin-left:8px; font-weight:bold;" class="icon-{{ g1_prod.id }}">+</span>
+ </div>
+ </div>
+</div>
+<script>
+if (typeof toggleG1Card !== 'function') {
+ window.toggleG1Card = function(id) {
+ const card = document.getElementById('card-' + id);
+ const icon = card.querySelector('.icon-' + id);
+ const isExpanded = card.classList.toggle('show-list');
+ icon.textContent = isExpanded ? '-' : '+';
+ };
+ window.updateG1Card = function(id, select) {
+ const opt = select.options[select.selectedIndex];
+ const priceArea = document.getElementById('price-' + id);
+ const stockNum = document.getElementById('stock-' + id);
+ const imgEl = document.getElementById('img-' + id);
+ const btn = document.getElementById('btn-' + id);
+ priceArea.innerHTML = opt.dataset.compare && opt.dataset.compare !== opt.dataset.price ? 
+ opt.dataset.price + ' <span class="g1-compare">' + opt.dataset.compare + '</span>' : opt.dataset.price;
+ 
+ stockNum.textContent = opt.dataset.stock < 0 ? 0 : opt.dataset.stock;
+ if(opt.dataset.img) imgEl.src = opt.dataset.img;
+ 
+ if(parseInt(opt.dataset.stock) > 0) {
+ btn.disabled = false;
+ btn.textContent = "Pre-order Now";
+ } else {
+ btn.disabled = true;
+ btn.textContent = "Sold Out";
+ }
+ };
+ window.addG1ToCart = function(id) {
+ const select = document.querySelector('#card-' + id + ' .g1-select');
+ const variantId = select.value;
+ const btn = document.getElementById('btn-' + id);
+ const originalText = btn.textContent;
+ 
+ btn.textContent = "Adding...";
+ btn.disabled = true;
+ fetch('/cart/add.js', {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json' },
+ body: JSON.stringify({ items: [{ id: parseInt(variantId), quantity: 1 }] })
+ })
+ .then(res => {
+ if(res.ok) window.location.href = '/checkout';
+ else {
+ alert("Sold out!");
+ btn.textContent = originalText;
+ btn.disabled = false;
+ }
+ })
+ .catch(() => {
+ alert("Error adding to cart");
+ btn.textContent = originalText;
+ btn.disabled = false;
+ });
+ };
+}
+</script></div></div> <div class="ecom-block ecom-core core__block ecom-rn6lmdaq7zb"><div class="ecom__element ecom-element element__code exporting" section_id="ecom-unhcg94usu">
+{% assign target_product_handle = "pet-feeder-match-g1-early-bird" %}
+{% assign total_limit = 500 %}
+{% assign g1_prod = all_products[target_product_handle] %}
+{% assign first_variant = g1_prod.selected_or_first_available_variant %}
+<style>
+ /* 1. 外层容器 */
+ .g1-static-card {
+ position: relative;
+ width: 100%;
+ height: 580px; /* 适当增加高度以容纳底部两个固定按钮 */
+ background: #fff;
+ border-radius: 8px;
+ border: 1px solid #eee;
+ padding: 0px;
+ box-sizing: border-box;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ align-items: center;
+ overflow: hidden;
+ }
+ /* 2. 内容区域（可滚动部分） */
+ .g1-content-wrapper { 
+ flex: 1; 
+ width: 100%; 
+ overflow-y: auto; 
+ scrollbar-width: none;
+ margin-bottom: 10px;
+ }
+ .g1-content-wrapper::-webkit-scrollbar { display: none; }
+ .g1-content-front { display: block; animation: fadeIn 0.3s ease; width: 100%; text-align: center; }
+ .g1-content-back { display: none; animation: fadeIn 0.3s ease; padding: 0 15px; width: 100%; }
+ .g1-img { width: 100%; height: 220px; object-fit: cover; margin-bottom: 10px; display: block; }
+ .g1-title { color: #1a1a1a; margin: 0; font-size: 18px; font-weight: 600; padding: 0 10px; }
+ 
+ .g1-price-area { 
+ color: #8214ff; font-size: 20px; font-weight: bold; margin: 8px 0; 
+ display: flex; justify-content: center; align-items: baseline; gap: 8px;
+ }
+ .g1-compare { color: #999; font-size: 14px; text-decoration: line-through; font-weight: normal; }
+ .g1-selector-box { width: 80%; margin: 5px auto 10px auto; }
+ .g1-select {
+ width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;
+ font-size: 13px; background: #f9f9f9; cursor: pointer;
+ }
+ .g1-stock-info { font-size: 12px; color: #555; margin-bottom: 15px; text-align: center; }
+ .g1-stock-num { color: #1a1a1a; font-weight: 700; }
+ /* 3. 底部固定操作区 (控制间距的核心) */
+ .g1-actions-area {
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ /* --- 这里调整两个按钮之间的间距 --- */
+ gap: 12px; 
+ padding-bottom: 25px; /* 距离卡片最底部的距离 */
+ background: #fff;
+ z-index: 5;
+ }
+ /* 统一按钮基础样式 */
+ .g1-btn-common {
+ width: 75%; /* 按钮宽度 */
+ height: 42px; /* 按钮高度 */
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-size: 14px;
+ font-weight: 600;
+ cursor: pointer;
+ border-radius: 4px;
+ transition: 0.3s;
+ text-transform: uppercase;
+ box-sizing: border-box;
+ }
+ /* 购买按钮 */
+ .g1-buy-btn {
+ background: #002fa7;
+ color: #fff;
+ border: none;
+ }
+ .g1-buy-btn:hover { background: #002585; }
+ .g1-buy-btn:disabled { background: #ccc; cursor: not-allowed; }
+ /* Learn More 按钮 */
+ .g1-learn-btn {
+ background: transparent;
+ border: 1px solid #1c1c1e;
+ color: #1c1c1e;
+ text-transform: capitalize;
+ }
+ 
+ /* 视图切换逻辑 */
+ .g1-static-card.show-list .g1-content-front { display: none; }
+ .g1-static-card.show-list .g1-content-back { display: block; }
+ @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+</style>
+<div class="g1-static-card" id="card-{{ g1_prod.id }}">
+ 
+ 
+ <div class="g1-content-wrapper">
+ 
+ <div class="g1-content-front">
+ <img src="{{ first_variant.featured_image | default: g1_prod.featured_image | image_url: width: 600 }}" class="g1-img" id="img-{{ g1_prod.id }}">
+ 
+ <h4 class="g1-title">{{ g1_prod.title }}</h4>
+ 
+ <div class="g1-selector-box">
+ <select class="g1-select" onchange="updateG1Card('{{ g1_prod.id }}', this)">
+ {% for variant in g1_prod.variants %}
+ <option value="{{ variant.id }}" 
+ data-price="{{ variant.price | money }}" 
+ data-compare="{{ variant.compare_at_price | money }}"
+ data-stock="{{ variant.inventory_quantity }}"
+ data-img="{{ variant.featured_image | image_url: width: 600 }}"
+ {% unless variant.available %}disabled{% endunless %}>
+ {{ variant.title }}
+ </option>
+ {% endfor %}
+ </select>
+ </div>
+ <div class="g1-price-area" id="price-{{ g1_prod.id }}">
+ {{ first_variant.price | money }}
+ {% if first_variant.compare_at_price > first_variant.price %}
+ <span class="g1-compare">{{ first_variant.compare_at_price | money }}</span>
+ {% endif %}
+ </div>
+ <div class="g1-stock-info">
+ Remaining: <span class="g1-stock-num" id="stock-{{ g1_prod.id }}">{{ first_variant.inventory_quantity | at_least: 0 }}</span> / 
+ Total: <span class="g1-stock-num">{{ total_limit }}</span>
+ </div>
+ </div>
+ 
+ <div class="g1-content-back">
+ <h4 style="color:#000; margin: 20px 0 10px 0; text-align:center; font-size:16px;">What's in the box</h4>
+ <ul style="list-style:none; padding:0; font-size:13px; color:#555; line-height:2.2;">
+ <li>• 1x TourBox G1 Console</li>
+ <li>• 1x Braided USB-C Cable</li>
+ <li>• 1x Quick Start Guide</li>
+ <li>• 1x Warranty Card</li>
+ </ul>
+ </div>
+ </div>
+ 
+ <div class="g1-actions-area">
+ 
+ <button class="g1-btn-common g1-buy-btn" id="btn-{{ g1_prod.id }}" onclick="addG1ToCart('{{ g1_prod.id }}')" {% unless first_variant.available %}disabled{% endunless %}>
+ {% if first_variant.available %}Pre-order Now{% else %}Sold Out{% endif %}
+ </button>
+ 
+ <div class="g1-btn-common g1-learn-btn" onclick="toggleG1Card('{{ g1_prod.id }}')">
+ <span>Learn More</span>
+ <span style="margin-left:8px; font-weight:bold;" class="icon-{{ g1_prod.id }}">+</span>
+ </div>
+ </div>
+</div>
+<script>
+if (typeof toggleG1Card !== 'function') {
+ window.toggleG1Card = function(id) {
+ const card = document.getElementById('card-' + id);
+ const icon = card.querySelector('.icon-' + id);
+ const isExpanded = card.classList.toggle('show-list');
+ icon.textContent = isExpanded ? '-' : '+';
+ };
+ window.updateG1Card = function(id, select) {
+ const opt = select.options[select.selectedIndex];
+ const priceArea = document.getElementById('price-' + id);
+ const stockNum = document.getElementById('stock-' + id);
+ const imgEl = document.getElementById('img-' + id);
+ const btn = document.getElementById('btn-' + id);
+ priceArea.innerHTML = opt.dataset.compare && opt.dataset.compare !== opt.dataset.price ? 
+ opt.dataset.price + ' <span class="g1-compare">' + opt.dataset.compare + '</span>' : opt.dataset.price;
+ 
+ stockNum.textContent = opt.dataset.stock < 0 ? 0 : opt.dataset.stock;
+ if(opt.dataset.img) imgEl.src = opt.dataset.img;
+ 
+ if(parseInt(opt.dataset.stock) > 0) {
+ btn.disabled = false;
+ btn.textContent = "Pre-order Now";
+ } else {
+ btn.disabled = true;
+ btn.textContent = "Sold Out";
+ }
+ };
+ window.addG1ToCart = function(id) {
+ const select = document.querySelector('#card-' + id + ' .g1-select');
+ const variantId = select.value;
+ const btn = document.getElementById('btn-' + id);
+ const originalText = btn.textContent;
+ 
+ btn.textContent = "Adding...";
+ btn.disabled = true;
+ fetch('/cart/add.js', {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json' },
+ body: JSON.stringify({ items: [{ id: parseInt(variantId), quantity: 1 }] })
+ })
+ .then(res => {
+ if(res.ok) window.location.href = '/checkout';
+ else {
+ alert("Sold out!");
+ btn.textContent = originalText;
+ btn.disabled = false;
+ }
+ })
+ .catch(() => {
+ alert("Error adding to cart");
+ btn.textContent = originalText;
+ btn.disabled = false;
+ });
+ };
+}
+</script></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </section>
+</div></div>
+{% schema %}
+{
+ "name": "Untitled",
+ "settings": [
+ {
+ "type": "header",
+ "content": "The section was generated by [Ecomposer](https:\/\/ecomposer.io).",
+ "info": "\n EComposer is a Visual Page Builder app on Shopify AppStore.\n It provides 100+ pre-built templates in library,\n so you can build unlimited pages that you can imagine with it.\n Please don't add Shopify sections to EComposer's page in the theme customize. If you do this, Shopify sections will be deleted when you republish your page in EComposer\n "
+ },
+ {
+ "type": "header",
+ "content": "[EDIT WITH EComposer APP \u2192](https:\/\/ecomposer.app\/shop?open_builder=1&page=page&id=preview-template-page&utm_source=theme-customize)",
+ "info": "(*You must install the app to start editing this section [Learn more](https:\/\/help.ecomposer.io\/docs\/getting-started\/installation\/))"
+ }
+ ],
+ "locales": {
+ "en": {}
+ }
+}
+{% endschema %}

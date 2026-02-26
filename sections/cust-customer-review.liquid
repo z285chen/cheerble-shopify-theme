@@ -1,0 +1,187 @@
+{%- render 'section-spacing-collapsing' -%}
+
+{%- comment -%}
+------------------------------------------------------------------------------------------------------------------------
+CSS
+------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<style>
+  #shopify-section-{{ section.id }} .review-list {
+    --product-list-gap: 32px;
+    --product-list-items-per-row: 3;
+    --product-list-carousel-item-width: calc(var(--container-inner-width) / 3 - (var(--product-list-column-gap) / 3 * {{ 3 | minus: 1 }}));
+    --product-list-grid: auto / auto-flow var(--product-list-carousel-item-width);
+  }
+
+  @media (max-width: 699px) {
+    #shopify-section-{{ section.id }} .review-list {
+      --product-list-gap: var(--container-outer-width);
+      --product-list-items-per-row: 1;
+      --product-list-carousel-item-width: calc(var(--container-inner-width) / 1 - (var(--product-list-column-gap) / 1 * {{ 1 | minus: 1 }}));
+    }
+  }
+  
+  .cust-customer-review .review-list{
+    grid: var(--product-list-grid);
+    gap: var(--product-list-gap);
+    display: grid;
+  }
+      {% for block in section.blocks %}
+    #review-item-{{ block.id }}.cust-customer-review-item {
+        --cust-review-card-bgcolor: {{ block.settings.review_card_bgcolor }};
+            background-color: var(--cust-review-card-bgcolor);
+    }
+    {%endfor %}
+</style>
+
+{%- comment -%}
+------------------------------------------------------------------------------------------------------------------------
+LIQUID
+------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+<section class="cust-customer-review">
+<div {% render 'section-properties' %}>
+  <div class="section-stack cust-carousel">
+      <div class="cust-customer-review-header">
+      {% if section.settings.headding != blank %}
+        <h2 class="cust-customer-review-title">{{ section.settings.headding }}</h2>
+      {% endif %}
+      {% if section.settings.description != blank %}
+        <p class="cust-customer-review-desc">{{ section.settings.description }}</p>
+      {% endif %}
+    </div>
+    <div class="scrollable-with-controls">
+      {%- assign scroll_area_id = 'review-list-scroll-area-' | append: section.id -%}
+
+      <scroll-carousel selector=".cust-customer-review-item" id="{{ scroll_area_id }}" class="scroll-area bleed {% if section.blocks.size > 1 %}is-scrollable{% endif %}">
+          <div class="review-list">
+            {%- for block in section.blocks -%}
+              <div id="review-item-{{ block.id }}" class="cust-customer-review-item">
+              {% assign star_num = block.settings.star_num %}
+              <div class="cust-customer-review-star">
+                {% for i in (1..star_num) %}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 26 24" fill="none">
+                    <path d="M12.0909 0.984489C12.4473 0.206483 13.5527 0.206484 13.9091 0.98449L16.6989 7.07407C16.8445 7.39193 17.1456 7.61065 17.4929 7.65092L24.1465 8.42236C24.9966 8.52092 25.3382 9.57225 24.7084 10.1516L19.7789 14.6867C19.5216 14.9234 19.4066 15.2773 19.4757 15.62L20.798 22.1864C20.967 23.0253 20.0727 23.6751 19.327 23.2551L13.4907 19.9683C13.1861 19.7968 12.8139 19.7968 12.5093 19.9683L6.67297 23.2551C5.92732 23.6751 5.033 23.0253 5.20195 22.1864L6.52435 15.62C6.59337 15.2773 6.47838 14.9234 6.22108 14.6867L1.29163 10.1516C0.661844 9.57225 1.00344 8.52092 1.85351 8.42236L8.50713 7.65092C8.85443 7.61065 9.15548 7.39193 9.30109 7.07407L12.0909 0.984489Z" fill="#002FA7"/>
+                  </svg>
+                {% endfor %}
+              </div>
+  
+              <div class="cust-customer-review-inner">
+                {% if block.settings.review_text != blank %}
+                  <p class="cust-customer-review-text">
+                    {{ block.settings.review_text }}
+                  </p>
+                {% endif %}
+                <div class="cust-customer-review-avatar">
+                  {% if block.settings.reviewer_avatar != blank %}
+                    <div class="cust-customer-reviewer-avatar">
+                      {{
+                        block.settings.reviewer_avatar
+                        | image_url: width: block.settings.reviewer_avatar.width
+                        | image_tag: loading: 'lazy'
+                      }}
+                    </div>
+                  {% endif %}
+                  {% if block.settings.reviewer_name != blank %}
+                    <span class="cust-customer-reviewer-name">
+                      {{ block.settings.reviewer_name }}
+                    </span>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            {%- endfor -%}
+          </div>
+      </scroll-carousel>
+    {% if section.blocks.size > 3 %}
+     <button is="prev-button" class="circle-button circle-button--lg circle-button--fill border group" aria-controls="{{ scroll_area_id }}" disabled>
+        <span class="sr-only">{{ 'general.accessibility.previous' | t }}</span>
+        <span class="animated-arrow animated-arrow--reverse"></span>
+      </button>
+
+      <button is="next-button" class="circle-button circle-button--lg circle-button--fill border group" aria-controls="{{ scroll_area_id }}">
+        <span class="sr-only">{{ 'general.accessibility.next' | t }}</span>
+        <span class="animated-arrow"></span>
+      </button>
+        {% endif %}
+                      
+      <div class="cust-carousel_dots">
+        {% for block in section.blocks %}
+          <span class="dot-item {% if forloop.first %} active {% endif %}"></span>
+        {% endfor %} 
+      </div>
+    
+    </div>
+  </div>
+</div>
+</section>
+{% schema %}
+{
+  "name": "Cust customer review",
+  "class": "shopify-section--product-recommendations cust-customer-review",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "headding",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review_item",
+      "name": "Review item",
+      "settings": [
+        {
+          "type": "range",
+          "id": "star_num",
+          "label": "Star Number",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "review_text",
+          "label": "Review Text",
+          "default": "Input some review"
+        },
+        {
+          "type": "text",
+          "id": "reviewer_name",
+          "label": "Reviewer Name",
+          "default": "reviewer name"
+        },
+        {
+          "type": "image_picker",
+          "id": "reviewer_avatar",
+          "label": "Reviewer avatar"
+        },
+        {
+          "type": "color",
+          "id": "review_card_bgcolor",
+          "label": "Review card background color",
+          "default": "#fbfbfb"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cust customer review"
+    }
+  ]
+}
+{% endschema %}

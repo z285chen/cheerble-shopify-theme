@@ -1,0 +1,354 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "cust-collection-banner",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "show_collection_image": true,
+        "collection_title_size": "h1",
+        "image_size": "auto",
+        "image": "{{ collection.metafields.custom.banner_image_pc_.value }}",
+        "mobile_image": "{{ collection.metafields.custom.banner_image_m_.value }}",
+        "mobile_text_position": "place-self-center-start text-start",
+        "desktop_text_position": "sm:place-self-center-start sm:text-start",
+        "featured_product": "",
+        "featured_product_heading": "",
+        "text_color": "#1c1c1e",
+        "overlay_color": "rgba(0,0,0,0)",
+        "overlay_opacity": 0
+      }
+    },
+    "scrolling_text_AUAzhr": {
+      "type": "scrolling-text",
+      "name": "Scrolling text",
+      "settings": {
+        "full_width": false,
+        "text": "Buy one toy, get one shell at 50% off",
+        "text_size": "xsmall",
+        "text_style": "fill",
+        "scrolling_mode": "auto",
+        "scrolling_speed": 10,
+        "background": "rgba(0,0,0,0)",
+        "background_gradient": "",
+        "text_color": "#1c1c1e",
+        "text_gradient": ""
+      }
+    },
+    "image_with_text_overlay_dqyfNH": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_Vd4gMp": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "text": "Subheading"
+          }
+        },
+        "heading_eyiW6A": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "Image with text overlay",
+            "show_h1": false,
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_dit6Db": {
+          "type": "richtext",
+          "disabled": true,
+          "settings": {
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_Vd4gMp",
+        "heading_eyiW6A",
+        "richtext_dit6Db"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "auto",
+        "image": "shopify://shop_images/air_series_black_core_2.jpg",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "cust_featured_product_w7pPwn": {
+      "type": "cust-featured-product",
+      "blocks": {
+        "badges_fXhzWq": {
+          "type": "badges",
+          "settings": {}
+        },
+        "title_G3kPxA": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h2"
+          }
+        },
+        "rating_iwXmiK": {
+          "type": "rating",
+          "settings": {
+            "show_empty": false
+          }
+        },
+        "price_Agq8Yk": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "variant_picker_RER7MV": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "variant_image_options": "",
+            "size_chart_page": ""
+          }
+        },
+        "separator_tAy8FD": {
+          "type": "separator",
+          "settings": {}
+        },
+        "cust_feat_pro_subtitle_CGiUh9": {
+          "type": "cust_feat_pro_subtitle",
+          "settings": {
+            "cust_featured_product_subtitle": "{{ section.settings.product.metafields.descriptors.subtitle.value }}"
+          }
+        },
+        "cust_pro_key_features_aJJjNC": {
+          "type": "cust_pro_key_features",
+          "settings": {
+            "cust_featured_product_key_features": "<p>{{ section.settings.product.metafields.theme.key_features | metafield_tag }}</p>"
+          }
+        },
+        "buy_buttons_AN4jma": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": false,
+            "show_gift_card_recipient": false,
+            "atc_button_background": "#002fa7",
+            "atc_button_text_color": "#ffffff",
+            "payment_button_background": "",
+            "payment_button_text_color": "",
+            "learn_more_btn_text": "Learn more",
+            "learn_more_btn_link": "{{ section.settings.product.url }}",
+            "learn_more_btn_bg": "rgba(0,0,0,0)",
+            "learn_more_text_color": "#002fa7"
+          }
+        }
+      },
+      "block_order": [
+        "badges_fXhzWq",
+        "title_G3kPxA",
+        "rating_iwXmiK",
+        "price_Agq8Yk",
+        "variant_picker_RER7MV",
+        "separator_tAy8FD",
+        "cust_feat_pro_subtitle_CGiUh9",
+        "cust_pro_key_features_aJJjNC",
+        "buy_buttons_AN4jma"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "> div {padding-top: 32px; padding-bottom: 52px;}",
+        "@media screen and (max-width: 699px) {> div {padding-top: 24px; padding-bottom: 0px; }}"
+      ],
+      "settings": {
+        "cust_featured_product_media": "{{ section.settings.product.metafields.custom.featured_product_media.value }}",
+        "cust_featured_product_headding": "Trending This Month",
+        "cust_feat_title_align": "left",
+        "full_width": true,
+        "product": "{{ collection.metafields.custom.featured_product.value }}",
+        "desktop_media_width": 50,
+        "desktop_media_layout": "carousel_thumbnails_bottom",
+        "mobile_media_size": "expanded",
+        "mobile_carousel_control": "floating_dots",
+        "enable_video_autoplay": true,
+        "enable_video_looping": false,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "input_background": "rgba(0,0,0,0)",
+        "input_text_color": ""
+      }
+    },
+    "main": {
+      "type": "cust-main-collection",
+      "settings": {
+        "products_per_page": 24,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 3,
+        "filter_layout": "sidebar",
+        "show_sort_by": true,
+        "show_filters": true,
+        "show_filter_group_name": false,
+        "show_filter_values_count": true,
+        "open_first_filter_group": false
+      }
+    },
+    "cust_image_with_text_overlay_KmR47T": {
+      "type": "cust-image-with-text-overlay",
+      "blocks": {
+        "heading_ELaF4f": {
+          "type": "heading",
+          "settings": {
+            "text": "Discover the Best Toy for Your Furry Friend!",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_QDHxXm": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Not sure what to get? Our quiz will fetch the best options for your pet!</p>"
+          }
+        },
+        "button_khCHX4": {
+          "type": "button",
+          "settings": {
+            "style": "fill",
+            "size": "lg",
+            "text": "Take the quiz",
+            "url": "shopify://pages/quiz",
+            "background": "",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_ELaF4f",
+        "richtext_QDHxXm",
+        "button_khCHX4"
+      ],
+      "custom_css": [],
+      "settings": {
+        "full_width": false,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "auto",
+        "image": "shopify://shop_images/quiz.png",
+        "mobile_image": "shopify://shop_images/Quiz_1.png",
+        "mobile_text_position": "place-self-start-center text-center",
+        "desktop_text_position": "sm:place-self-center-start sm:text-start",
+        "text_color": "#1c1c1e",
+        "overlay_color": "rgba(0,0,0,0)",
+        "overlay_opacity": 0
+      }
+    },
+    "cust_text_with_icons_Ax7qy3": {
+      "type": "cust-text-with-icons",
+      "blocks": {
+        "item_qUghyq": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "custom_icon": "shopify://shop_images/guarantee_1_1.svg",
+            "mobile_icon_width": 48,
+            "icon_width": 80,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "12 Month Warranties",
+            "content": ""
+          }
+        },
+        "item_na687G": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "custom_icon": "shopify://shop_images/refund-policy_1_1.svg",
+            "mobile_icon_width": 48,
+            "icon_width": 80,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "60 Days Return",
+            "content": ""
+          }
+        },
+        "item_Qx9ENj": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "custom_icon": "shopify://shop_images/wallet_2_1.svg",
+            "mobile_icon_width": 48,
+            "icon_width": 80,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Buy Now, Pay Later",
+            "content": ""
+          }
+        },
+        "item_DQPkjd": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "custom_icon": "shopify://shop_images/support_1_1.svg",
+            "mobile_icon_width": 48,
+            "icon_width": 80,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Super Friendly Customer Support",
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_qUghyq",
+        "item_na687G",
+        "item_Qx9ENj",
+        "item_DQPkjd"
+      ],
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": true,
+        "title": "Innovative Designs for Every Adventure",
+        "description": "",
+        "heading_tag": "h5",
+        "text_alignment": "center",
+        "icon_spacing": "medium",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "scrolling_text_AUAzhr",
+    "image_with_text_overlay_dqyfNH",
+    "cust_featured_product_w7pPwn",
+    "main",
+    "cust_image_with_text_overlay_KmR47T",
+    "cust_text_with_icons_Ax7qy3"
+  ]
+}

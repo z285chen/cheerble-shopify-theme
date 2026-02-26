@@ -1,0 +1,169 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": "100%"
+      }
+    },
+    "a80e4359-72e4-4de9-a522-89f286f0e7bf": {
+      "type": "feature-chart",
+      "blocks": {
+        "template--16782550859995__a80e4359-72e4-4de9-a522-89f286f0e7bf-headings-1": {
+          "type": "headings",
+          "settings": {
+            "heading_1": "Model",
+            "heading_2": "Suitable for",
+            "heading_3": "Replaceable parts",
+            "heading_4": "Mode",
+            "heading_5": "LED light",
+            "heading_6": "Material",
+            "heading_7": "Dimension",
+            "heading_8": "Weight",
+            "heading_9": "Battery",
+            "heading_10": "",
+            "heading_11": "",
+            "heading_12": "",
+            "heading_13": "",
+            "heading_14": "",
+            "heading_15": "",
+            "heading_16": "",
+            "heading_17": "",
+            "heading_18": "",
+            "heading_19": "",
+            "heading_20": ""
+          }
+        },
+        "9b61a84d-7aec-412e-8e68-a2762c926561": {
+          "type": "values",
+          "settings": {
+            "product": "wicked-ball-air",
+            "value_1": "{{ block.settings.product.metafields.custom.model | metafield_tag }}",
+            "value_2": "{{ block.settings.product.metafields.custom.suitable_for | metafield_tag }}",
+            "value_3": "{{ block.settings.product.metafields.custom.replaceable_shell | metafield_tag }}",
+            "value_4": "<p>Gentle, Normal, Passive<\/p>",
+            "value_5": "<p>-<\/p>",
+            "value_6": "{{ block.settings.product.metafields.custom.material | metafield_tag }}",
+            "value_7": "{{ block.settings.product.metafields.custom.dimension | metafield_tag }}",
+            "value_8": "{{ block.settings.product.metafields.custom.weight | metafield_tag }}",
+            "value_9": "{{ block.settings.product.metafields.custom.battery | metafield_tag }}",
+            "value_10": "",
+            "value_11": "",
+            "value_12": "",
+            "value_13": "",
+            "value_14": "",
+            "value_15": "",
+            "value_16": "",
+            "value_17": "",
+            "value_18": "",
+            "value_19": "",
+            "value_20": "",
+            "view_button_background": "",
+            "view_button_text_color": ""
+          }
+        },
+        "template--16782550859995__a80e4359-72e4-4de9-a522-89f286f0e7bf-values-1": {
+          "type": "values",
+          "settings": {
+            "product": "wickedball",
+            "value_1": "{{ block.settings.product.metafields.custom.model | metafield_tag }}",
+            "value_2": "{{ block.settings.product.metafields.custom.suitable_for | metafield_tag }}",
+            "value_3": "{{ block.settings.product.metafields.custom.replaceable_shell | metafield_tag }}",
+            "value_4": "<p>Gentle, Normal, Active<\/p>",
+            "value_5": "<p>Blue, Yellow, Red<\/p>",
+            "value_6": "{{ block.settings.product.metafields.custom.material | metafield_tag }}",
+            "value_7": "{{ block.settings.product.metafields.custom.dimension | metafield_tag }}",
+            "value_8": "{{ block.settings.product.metafields.custom.weight | metafield_tag }}",
+            "value_9": "{{ block.settings.product.metafields.custom.battery | metafield_tag }}",
+            "value_10": "",
+            "value_11": "",
+            "value_12": "",
+            "value_13": "",
+            "value_14": "",
+            "value_15": "",
+            "value_16": "",
+            "value_17": "",
+            "value_18": "",
+            "value_19": "",
+            "value_20": "",
+            "view_button_background": "",
+            "view_button_text_color": ""
+          }
+        },
+        "template--16782550859995__a80e4359-72e4-4de9-a522-89f286f0e7bf-values-2": {
+          "type": "values",
+          "settings": {
+            "product": "wicked-ball-pe",
+            "value_1": "{{ block.settings.product.metafields.custom.model | metafield_tag }}",
+            "value_2": "{{ block.settings.product.metafields.custom.suitable_for | metafield_tag }}",
+            "value_3": "{{ block.settings.product.metafields.custom.replaceable_shell | metafield_tag }}",
+            "value_4": "<p>Gentle, Normal, Passive<\/p>",
+            "value_5": "<p>Cyan, Yellow, Red, Colorful<\/p>",
+            "value_6": "{{ block.settings.product.metafields.custom.material | metafield_tag }}",
+            "value_7": "{{ block.settings.product.metafields.custom.dimension | metafield_tag }}",
+            "value_8": "{{ block.settings.product.metafields.custom.weight | metafield_tag }}",
+            "value_9": "{{ block.settings.product.metafields.custom.battery | metafield_tag }}",
+            "value_10": "",
+            "value_11": "",
+            "value_12": "",
+            "value_13": "",
+            "value_14": "",
+            "value_15": "",
+            "value_16": "",
+            "value_17": "",
+            "value_18": "",
+            "value_19": "",
+            "value_20": "",
+            "view_button_background": "",
+            "view_button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16782550859995__a80e4359-72e4-4de9-a522-89f286f0e7bf-headings-1",
+        "9b61a84d-7aec-412e-8e68-a2762c926561",
+        "template--16782550859995__a80e4359-72e4-4de9-a522-89f286f0e7bf-values-1",
+        "template--16782550859995__a80e4359-72e4-4de9-a522-89f286f0e7bf-values-2"
+      ],
+      "settings": {
+        "full_width": true,
+        "subheading": "Compare",
+        "title": "Pick out the right interactive ball for your dog!",
+        "content": "<p>Not sure which one to choose? We selected our most popular interactive toys. Compare them and choose the best one for your needs.<\/p>",
+        "button_text": "",
+        "button_url": "",
+        "text_position": "start",
+        "max_rows": 9,
+        "view_all_text": "View all",
+        "view_less_text": "View less",
+        "view_product": "View",
+        "viewing_product": "",
+        "show_product_swatch": true,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "chart_background": "",
+        "chart_text_color": "",
+        "chart_true_false_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "a80e4359-72e4-4de9-a522-89f286f0e7bf"
+  ]
+}

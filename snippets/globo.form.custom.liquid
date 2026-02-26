@@ -1,0 +1,8 @@
+<script>
+      document.addEventListener('globo.formbuilder.form.submitted', e => {
+          let { form, formId } = e.detail
+          if(formId == "125939") {
+                history.pushState(null, '', '?customer_posted=true');
+          }
+      })
+</script>

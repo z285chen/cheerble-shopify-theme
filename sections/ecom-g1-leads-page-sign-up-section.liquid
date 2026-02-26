@@ -1,0 +1,113 @@
+{% comment %}
+ EComposer (https://ecomposer.io)
+ You SHOULD NOT modify source code in this page because
+ It is automatically generated from EComposer
+ At 2025-12-31 07:14:42
+ {% endcomment %} 
+ 
+ {% assign ecom_root_url = routes.root_url %}
+ {% if ecom_root_url != '/'%}
+ {% assign ecom_root_url = routes.root_url | append: '/' %}
+ {% endif %}
+ <link rel="stylesheet" media="all" id="ecom-vendors-css_ecomposer_base" href="https://cdn.ecomposer.app/vendors/css/ecom-base.css?v=2.1" /><noscript><link rel="stylesheet" media="all" id="ecom-vendors-css_ecomposer_base" href="https://cdn.ecomposer.app/vendors/css/ecom-base.css?v=2.1" /></noscript>
+{%capture section_id %}ecom-g1-leads-page-sign-up-section{% endcapture%}{% if section and section_id == section.id and headless == true %}
+{{ content_for_header }}
+{% render 'ecom_header', ECOM_THEME: true %}{% endif %}
+{{'ecom-6954c78307391cf7a60469ca.css' | asset_url | stylesheet_tag }}
+<script src="{{'ecom-6954c78307391cf7a60469ca.js' | asset_url }}" defer="defer"></script>
+<script type="text/javascript" class="ecom-page-info">
+ window.EComposer = window.EComposer || {};
+ window.EComposer.TEMPLATE_ID="6954c78307391cf7a60469ca";
+ window.EComposer.SECTION = {"template_id":"6954c78307391cf7a60469ca","title":"G1 Leads Page Sign Up","type":"section","slug":"ecom-g1-leads-page-sign-up","plan_id":4};
+ </script>
+<div class="ecom-builder" id="ecom-g1-leads-page-sign-up"><div class="ecom-sections" data-section-id="{{section.id}}"><section class="ecom-row ecom-core ecom-section ecom-h15ozwcfjmn" data-id="ecom-h15ozwcfjmn" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-ghj69rkgwhn"><div class="core__column--wrapper" id="ecom-ghj69rkgwhn"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks" index="0"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block ecom-r547o21slso" ec-delay="600"><div class="ecom__element element__heading ecom-element ecom-html ecom-type-deffault"><h2 class="ecom__heading ecom-db">{{ 'sections.ecom-g1-leads-page-sign-up-section.headingtext_r547o21slso_html' | t }}</h2></div></div> <div class="ecom-block ecom-core core__block ecom-ltx9z1s6fvf" ec-delay="700"><div class="ecom__element ecom-element element__text ecom-type-deffault"><div class="text-content ecom-html has-drop-cap-view-framed">{{ 'sections.ecom-g1-leads-page-sign-up-section.textcontent_ltx9z1s6fvf_html' | t }}</div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-5x7gqy0p4w6"><div class="ecom-element ecom-shopify-elements ecom-shopify__newsletter-form"><div class="ecom-shopify__newsletter-form-wrapper ecom-w__full"><div class="ecom-shopify__newsletter-form-container"><div>
+ {% form 'customer', action:'/contact', class: 'ecom-shopify__newsletter-form' ,id:'newsletter-form-ecom-5x7gqy0p4w6',data-ecom-popup:'undefined' %}
+ <input type="hidden" name="contact[tags]" value="2026_leads_g1" />
+ <div class="ecom-newsletter-form-content-wrap">
+ <div class="ecom-newsletter-form-content ">
+ <input
+ id="ECom-NewsletterForm-ecom-5x7gqy0p4w6"
+ type="email"
+ name="contact[email]"
+ class="ecom-shopify__newsletter-form-field--input"
+ value="{{ form.email }}"
+ aria-required="true"
+ autocorrect="off"
+ autocapitalize="off"
+ autocomplete="email"
+ {% if form.errors %}
+ aria-invalid="true"
+ {% endif %}
+ placeholder="{{ 'sections.ecom-g1-leads-page-sign-up-section.email_placeholder_5x7gqy0p4w6_html' | t }}"
+ required
+ >
+ 
+ 
+ <button type="submit" class="ecome-shopify__newsletter__button" name="commit">
+ <span> {{ 'sections.ecom-g1-leads-page-sign-up-section.submit_title_5x7gqy0p4w6_html' | t }} </span>
+ <span class="ecom-shopify__newsletter__button-icon"> </span>
+ </button>
+ 
+ </div>
+ 
+ </div>
+ 
+ {%- if form.posted_successfully? or EComBuilderMode == true and false -%}
+ <div class="ecom-shopify__newsletter-form-success" {% unless EComBuilderMode %}tabindex="-1"{% endunless %}>
+ {{ 'sections.ecom-g1-leads-page-sign-up-section.success_message_5x7gqy0p4w6_html' | t }}
+ </div>
+ {%- endif -%}
+ {%- if form.errors or EComBuilderMode == true and false -%}
+ <div class="ecom-shopify__newsletter-form-message">
+ <h2 class="ecom-shopify__newsletter-form-status-error" role="alert" {% unless EComBuilderMode %}tabindex="-1"{% endunless %}>
+ {{ 'sections.ecom-g1-leads-page-sign-up-section.error_title_5x7gqy0p4w6_html' | t }}
+ </h2>
+ <p class="ecom-shopify__newsletter-form-detail-error">
+ {% if EComBuilderMode %}
+ This is example error text when missing email field
+ {% endif %}
+ {{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}
+ </p>
+ </div>
+ {%- endif -%}
+ <div class="ecom-shopify__newsletter-form-message ecom-dn">
+ <p class="ecom-shopify__newsletter-form-detail-error">
+ {{ 'sections.ecom-g1-leads-page-sign-up-section.error_already_5x7gqy0p4w6_html' | t }}
+ </p>
+ </div>
+ {% endform %}
+ </div></div></div></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </section>
+</div></div>
+{% schema %}
+{
+ "name": "G1 Leads Page Sign Up",
+ "settings": [
+ {
+ "type": "header",
+ "content": "The section was generated by [Ecomposer](https:\/\/ecomposer.io).",
+ "info": "\n EComposer is a Visual Page Builder app on Shopify AppStore.\n It provides 100+ pre-built templates in library,\n so you can build unlimited pages that you can imagine with it.\n Please don't add Shopify sections to EComposer's page in the theme customize. If you do this, Shopify sections will be deleted when you republish your page in EComposer\n "
+ },
+ {
+ "type": "header",
+ "content": "[EDIT WITH EComposer APP \u2192](https:\/\/ecomposer.app\/shop?open_builder=1&page=section&id=6954c78307391cf7a60469ca&utm_source=theme-customize)",
+ "info": "(*You must install the app to start editing this section [Learn more](https:\/\/help.ecomposer.io\/docs\/getting-started\/installation\/))"
+ }
+ ],
+ "locales": {
+ "en": {
+ "headingtext_r547o21slso_html": "Be the first to own Match G1",
+ "textcontent_ltx9z1s6fvf_html": "Sign up for exclusive Super Early Bird pricing.",
+ "email_placeholder_5x7gqy0p4w6_html": "example@mail.com",
+ "submit_title_5x7gqy0p4w6_html": "Unlock My Discount",
+ "success_message_5x7gqy0p4w6_html": "Subscribed successfully!",
+ "error_title_5x7gqy0p4w6_html": "Opps!. An error has occurred",
+ "error_already_5x7gqy0p4w6_html": "You have already subscribed!"
+ }
+ },
+ "presets": [
+ {
+ "name": "G1 Leads Page Sign Up"
+ }
+ ]
+}
+{% endschema %}

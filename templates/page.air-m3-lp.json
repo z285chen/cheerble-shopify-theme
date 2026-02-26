@@ -1,0 +1,83 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": "100%"
+      }
+    },
+    "slideshow_qgwhkN": {
+      "type": "slideshow",
+      "blocks": {
+        "image_BgTxrX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/am_preheat_banner_pc.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/am_preheat_banner_mobile_0088db2f-d4a9-4d01-a076-38882328fb09.jpg",
+            "content_max_width": 780,
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-start-center sm:text-center",
+            "subheading": "",
+            "title": "",
+            "heading_tag": "h0",
+            "button_text": "",
+            "button_link": "https:\/\/omniform1.com\/forms\/v1\/landingPage\/617263c96bb3a3001db4f4a2\/66f2920f7e4db7c407f22e0b",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 5,
+            "background": "",
+            "background_gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_BgTxrX"
+      ],
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": true,
+        "show_initial_transition": false,
+        "image_size": "auto",
+        "controls_type": "dots",
+        "transition_type": "fade_with_text",
+        "autoplay": false,
+        "cycle_speed": 6,
+        "background": "#f2f2f2",
+        "background_gradient": ""
+      }
+    },
+    "newsletter_AnPWcA": {
+      "type": "newsletter",
+      "settings": {
+        "full_width": true,
+        "show_icon": false,
+        "title": "Sign Up for Exclusive Launch Offer",
+        "content": "<p>Free Wicked Ball Air Outer Shell & Extra 10% Off for Wicked Ball M3<\/p>",
+        "button_text": "SIGN UP",
+        "subtext": "",
+        "background": "#000000",
+        "background_gradient": "",
+        "text_color": "#ffffff",
+        "button_background": "#008de6",
+        "button_text_color": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_qgwhkN",
+    "newsletter_AnPWcA"
+  ]
+}

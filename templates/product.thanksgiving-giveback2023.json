@@ -1,0 +1,537 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "badges": {
+          "type": "badges",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h2"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {
+            "show_empty": false
+          }
+        },
+        "payment_terms": {
+          "type": "payment_terms",
+          "settings": {}
+        },
+        "separator": {
+          "type": "separator",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "collapse_content": false
+          }
+        },
+        "b3bb3b1d-4955-4be3-9d65-1a2f9261b947": {
+          "type": "product_variations",
+          "settings": {
+            "option_name": "Product",
+            "option_value_metafield": "custom.variation_value",
+            "products": "{{ product.metafields.custom.variation_products.value }}"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": true,
+            "stack_blocks": true,
+            "size_chart_page": ""
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "e83b2d31-219d-4284-bedc-bf9833b01041": {
+          "type": "inventory",
+          "settings": {
+            "low_inventory_threshold": 10
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "a003b1af-443b-4e31-b13e-63cefe2a6b4a": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Cheerble Website Benefits<\/p>"
+          }
+        },
+        "bd6e25f1-ade6-4f13-bb10-794ef2727531": {
+          "type": "offer",
+          "settings": {
+            "text_alignment": "center",
+            "icon_position": "aligned",
+            "icon": "picto-percent",
+            "icon_width": 24,
+            "title": "{{ product.metafields.theme.special_offer.value }}",
+            "content": "<p>{{ product.metafields.theme.discount_text.value }}<\/p>",
+            "background": "#f0f0f0",
+            "text_color": "#1a1a1a"
+          }
+        },
+        "21e31e5f-39b7-4f02-96c2-03786c370e57": {
+          "type": "offer",
+          "settings": {
+            "text_alignment": "center",
+            "icon_position": "aligned",
+            "icon": "picto-plane",
+            "icon_width": 24,
+            "title": "",
+            "content": "<p>Free shipping on orders over US$35<\/p>",
+            "background": "#f0f0f0",
+            "text_color": "#1a1a1a"
+          }
+        },
+        "a551af36-531e-4e35-b63c-8dbad4121a8a": {
+          "type": "offer",
+          "settings": {
+            "text_alignment": "center",
+            "icon_position": "aligned",
+            "icon": "picto-timer",
+            "icon_width": 24,
+            "title": "",
+            "content": "<p>Orders processed within 24 hours<\/p>",
+            "background": "#f0f0f0",
+            "text_color": "#1a1a1a"
+          }
+        },
+        "6c709866-c750-459f-8e88-5bc4539cef3b": {
+          "type": "offer",
+          "settings": {
+            "text_alignment": "center",
+            "icon_position": "aligned",
+            "icon": "picto-money",
+            "icon_width": 24,
+            "title": "",
+            "content": "<p>30 days return & 12 months warranty<\/p>",
+            "background": "#f0f0f0",
+            "text_color": "#1a1a1a"
+          }
+        },
+        "920482cb-bbb9-4089-a9d2-9d3aded3cb26": {
+          "type": "associated_products",
+          "settings": {
+            "title": "Others also bought",
+            "stack_products": false,
+            "products_count": 3,
+            "background": "rgba(0,0,0,0)",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "badges",
+        "title",
+        "price",
+        "rating",
+        "payment_terms",
+        "separator",
+        "description",
+        "b3bb3b1d-4955-4be3-9d65-1a2f9261b947",
+        "variant_picker",
+        "quantity_selector",
+        "e83b2d31-219d-4284-bedc-bf9833b01041",
+        "buy_buttons",
+        "a003b1af-443b-4e31-b13e-63cefe2a6b4a",
+        "bd6e25f1-ade6-4f13-bb10-794ef2727531",
+        "21e31e5f-39b7-4f02-96c2-03786c370e57",
+        "a551af36-531e-4e35-b63c-8dbad4121a8a",
+        "6c709866-c750-459f-8e88-5bc4539cef3b",
+        "920482cb-bbb9-4089-a9d2-9d3aded3cb26"
+      ],
+      "settings": {
+        "full_width": false,
+        "show_fixed_add_to_cart": true,
+        "desktop_media_width": 55,
+        "desktop_media_layout": "carousel_thumbnails_left",
+        "mobile_media_size": "expanded",
+        "mobile_carousel_control": "floating_dots",
+        "enable_video_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3,
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "",
+        "input_background": "rgba(0,0,0,0)",
+        "input_text_color": ""
+      }
+    },
+    "e6cb51e7-904c-4ace-a9ef-22e2d7883201": {
+      "type": "media-with-text",
+      "blocks": {
+        "template--17012155678939__e6cb51e7-904c-4ace-a9ef-22e2d7883201-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img_v3_025d_8c3fa231-a12c-46e6-bb35-206bbd4f533g.jpg",
+            "media_width": 50,
+            "media_position": "start",
+            "text_position": "place-self-center text-center",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "",
+            "title": "Thanksgiving Giveback",
+            "content": "<p>Join us in giving more to a good cause! Order the Giveback Bundle by <strong>November 30th<\/strong>, and we'll donate <strong>5% <\/strong>of the revenue to help furry friends from <em><strong>Stray Cat Rescue<\/strong><\/em>, and friends who support this donation get a free CheerUp Gift Pouch.<\/p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "rgba(0,0,0,0)",
+            "background_gradient": "",
+            "text_color": "#1a1a1a",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17012155678939__e6cb51e7-904c-4ace-a9ef-22e2d7883201-image-1"
+      ],
+      "settings": {
+        "full_width": false,
+        "spacing": "small"
+      }
+    },
+    "84db28b1-151b-419a-a086-7bcbfa0429ea": {
+      "type": "multiple-images-with-text",
+      "blocks": {
+        "f901c4ed-e100-4fd6-a54c-9096255be4fe": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/stray3.jpg",
+            "image_rotation_degrees": 0,
+            "subheading": "",
+            "title": "Stray Cat Rescue",
+            "content": "<p>\" We are a non profit organisation ran completely by volunteers so this is just incredible. We’ve been going 21 years now and last year rehomed 325 cats! We take on all types of cats, strays, unwanted pets, injured, lost & elderly \"  --- <a href=\"https:\/\/www.instagram.com\/straycatrescue\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/straycatrescue\/\">@straycatrescue<\/a><\/p>",
+            "button_url": "",
+            "button_text": ""
+          }
+        },
+        "template--17012155678939__84db28b1-151b-419a-a086-7bcbfa0429ea-item-1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/stray2.jpg",
+            "image_rotation_degrees": -2,
+            "subheading": "",
+            "title": "",
+            "content": "",
+            "button_url": "",
+            "button_text": ""
+          }
+        },
+        "template--17012155678939__84db28b1-151b-419a-a086-7bcbfa0429ea-item-2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/stray1.jpg",
+            "image_rotation_degrees": 1.5,
+            "subheading": "",
+            "title": "",
+            "content": "",
+            "button_url": "",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "f901c4ed-e100-4fd6-a54c-9096255be4fe",
+        "template--17012155678939__84db28b1-151b-419a-a086-7bcbfa0429ea-item-1",
+        "template--17012155678939__84db28b1-151b-419a-a086-7bcbfa0429ea-item-2"
+      ],
+      "settings": {
+        "full_width": true,
+        "images_layout": "scattered",
+        "collage_images_alignment": "middle",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    },
+    "9fadb1f2-7174-492e-b4f5-3be7596c7d04": {
+      "type": "images-with-text-scrolling",
+      "blocks": {
+        "template--17012155678939__9fadb1f2-7174-492e-b4f5-3be7596c7d04-item-1": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img_v3_025d_8c3fa231-a12c-46e6-bb35-206bbd4f533g.jpg",
+            "icon": "none",
+            "icon_width": 48,
+            "title": "Thanksgiving Giveback",
+            "content": "<p>Join us in giving more to a good cause! Order the Giveback Bundle by <strong>November 30th<\/strong>, and we'll donate <strong>5% <\/strong>of the revenue to help furry friends from <em><strong>Stray Cat Rescue<\/strong><\/em>, and friends who support this donation get a free CheerUp Gift Pouch.<\/p>"
+          }
+        },
+        "template--17012155678939__9fadb1f2-7174-492e-b4f5-3be7596c7d04-item-2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/5_3c058f52-c7c9-4fb3-a64e-f58873d8e53c.jpg",
+            "icon": "none",
+            "icon_width": 48,
+            "title": "Green | Cat",
+            "content": "<p>Includes a Cheerble Ball, a Wicked Mouse PLUS and a free CheerUp Gift Pouch - Green.<\/p>"
+          }
+        },
+        "38b50a02-de01-4e17-a9bb-9aa01c899b22": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/4_e34c30e0-9d16-4069-9da4-e47e57ff8994.jpg",
+            "icon": "none",
+            "icon_width": 48,
+            "title": "Red | Dog",
+            "content": "<p>Includes a Wicked Ball - Cyclone, a Wickedbone and a free CheerUp Gift Pouch - Red.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--17012155678939__9fadb1f2-7174-492e-b4f5-3be7596c7d04-item-1",
+        "template--17012155678939__9fadb1f2-7174-492e-b4f5-3be7596c7d04-item-2",
+        "38b50a02-de01-4e17-a9bb-9aa01c899b22"
+      ],
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "show_counter": false,
+        "desktop_image_effect": "fade",
+        "image_position": "start",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": ""
+      }
+    },
+    "42d211b4-29d8-40ef-bdff-6fccd2b73475": {
+      "type": "media-with-text",
+      "blocks": {
+        "97a2ca38-f5d6-47b2-a517-b5b74832cb77": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/5_3c058f52-c7c9-4fb3-a64e-f58873d8e53c.jpg",
+            "media_width": 50,
+            "media_position": "end",
+            "text_position": "place-self-center text-center",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "",
+            "title": "Green | Cat",
+            "content": "<p>Includes a Cheerble Ball, a Wicked Mouse PLUS and a free CheerUp Gift Pouch - Green.<\/p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "rgba(0,0,0,0)",
+            "background_gradient": "",
+            "text_color": "#1a1a1a",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "97a2ca38-f5d6-47b2-a517-b5b74832cb77"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "spacing": "small"
+      }
+    },
+    "d44e5f26-5d10-47ce-9a1a-1653ef64c68f": {
+      "type": "media-with-text",
+      "blocks": {
+        "1ef87193-e9c7-4fef-ae35-92a4fc18ae98": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/4_e34c30e0-9d16-4069-9da4-e47e57ff8994.jpg",
+            "media_width": 50,
+            "media_position": "start",
+            "text_position": "place-self-center text-center",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "",
+            "title": "Red | Dog",
+            "content": "<p>Includes a Wicked Ball - Cyclone, a Wickedbone and a free CheerUp Gift Pouch - Red.<\/p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "rgba(0,0,0,0)",
+            "background_gradient": "",
+            "text_color": "#1a1a1a",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "1ef87193-e9c7-4fef-ae35-92a4fc18ae98"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "spacing": "small"
+      }
+    },
+    "2588bd67-a335-4aaa-bff7-516eeffc77b4": {
+      "type": "faq",
+      "blocks": {
+        "template--16759920918747__2588bd67-a335-4aaa-bff7-516eeffc77b4-1687224134d4a55b92-0": {
+          "type": "item",
+          "settings": {
+            "title": "Do you ship globally?",
+            "content": "<p>Yes, we ship to most countries in the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.<\/p>"
+          }
+        },
+        "25b0cd6c-e3aa-4ec5-b32a-5e67ade9727f": {
+          "type": "item",
+          "settings": {
+            "title": "What is your return policy?",
+            "content": "<p>All products purchased from our website may be returned or replaced within 30 days of purchase for a full refund less shipping costs, no questions asked. International return orders may be subject to return shipping fees. To initiate such a return please <a href=\"\/pages\/contact-us\" target=\"_blank\" title=\"Contact Us\">contact us<\/a>.<\/p>"
+          }
+        },
+        "template--16759920918747__2588bd67-a335-4aaa-bff7-516eeffc77b4-1687224134d4a55b92-1": {
+          "type": "item",
+          "settings": {
+            "title": "How long will it take to get my orders?",
+            "content": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.<\/p>"
+          }
+        },
+        "2dfe43f3-c818-4794-84c4-873c09647ed9": {
+          "type": "item",
+          "settings": {
+            "title": "Where can I download the user manual?",
+            "content": "{{ product.metafields.custom.user_manual | metafield_tag }}"
+          }
+        },
+        "7b617c38-e215-4a6a-b330-c48ed63d3453": {
+          "type": "item",
+          "settings": {
+            "title": "Frequently asked questions about the {{ product.title }}",
+            "content": "{{ product.metafields.custom.faq | metafield_tag }}"
+          }
+        },
+        "template--16759920918747__2588bd67-a335-4aaa-bff7-516eeffc77b4-1687224134d4a55b92-2": {
+          "type": "item",
+          "settings": {
+            "title": "Any other questions?",
+            "content": "<p>You can contact us through our <a href=\"\/pages\/contact-us\" target=\"_blank\" title=\"Contact Us\">contact page<\/a>! We will be happy to assist you.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--16759920918747__2588bd67-a335-4aaa-bff7-516eeffc77b4-1687224134d4a55b92-0",
+        "25b0cd6c-e3aa-4ec5-b32a-5e67ade9727f",
+        "template--16759920918747__2588bd67-a335-4aaa-bff7-516eeffc77b4-1687224134d4a55b92-1",
+        "2dfe43f3-c818-4794-84c4-873c09647ed9",
+        "7b617c38-e215-4a6a-b330-c48ed63d3453",
+        "template--16759920918747__2588bd67-a335-4aaa-bff7-516eeffc77b4-1687224134d4a55b92-2"
+      ],
+      "settings": {
+        "full_width": false,
+        "subheading": "Support",
+        "title": "Have a question ? We are here to help.",
+        "content": "<p>Check out the most common questions our customers asked. Still have questions?\u2028Contact our customer support.<\/p>",
+        "team_avatar": "shopify:\/\/shop_images\/team-fff.webp",
+        "team_avatar_width": 160,
+        "support_hours": "Our customer support is available Monday to Friday: 9.30am-6:30pm HKT.",
+        "answer_time": "Average answer time: 24h",
+        "button_text": "",
+        "button_url": "",
+        "text_position": "start",
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": ""
+      }
+    },
+    "1687175660ee6da1e5": {
+      "type": "apps",
+      "settings": {
+        "full_width": false,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "#f0f0f0",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "recommendations_count": 4,
+        "products": [],
+        "full_width": false,
+        "stack_products": false,
+        "show_progress_bar": false,
+        "products_per_row_mobile": "1",
+        "products_per_row_desktop": 4,
+        "subheading": "",
+        "title": "You may also like",
+        "content": "",
+        "background": "rgba(0,0,0,0)",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "#ffffff",
+        "product_card_text_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "e6cb51e7-904c-4ace-a9ef-22e2d7883201",
+    "84db28b1-151b-419a-a086-7bcbfa0429ea",
+    "9fadb1f2-7174-492e-b4f5-3be7596c7d04",
+    "42d211b4-29d8-40ef-bdff-6fccd2b73475",
+    "d44e5f26-5d10-47ce-9a1a-1653ef64c68f",
+    "2588bd67-a335-4aaa-bff7-516eeffc77b4",
+    "1687175660ee6da1e5",
+    "related-products"
+  ]
+}

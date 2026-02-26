@@ -1,0 +1,139 @@
+<section class="cust-sticky-bar">
+  <div class="top-bar-pos"></div>
+  <ul class="cust-sticky-bar__list" id="topBar">
+    {% for block in section.blocks %}
+      <li class="cust-sticky-bar__item">
+        <button data-target="{{ block.settings.target_section }}"class="cust-sticky-bar__link" aria-label="button">
+          {{ block.settings.stricky_bar_headding }}
+        </button>
+      </li>
+    {% endfor %}
+  </ul>
+  {% comment %}
+  
+{% endcomment %}
+</section>
+  <script>
+    (function () {
+      const topBar = document.getElementById('topBar');
+      const topBarPos = document.querySelector('.top-bar-pos');
+      const buttons = topBar.querySelectorAll('button');
+  
+      function getValidTargetSections() {
+        return Array.from(buttons)
+          .map((button) => document.getElementById(button.getAttribute('data-target')))
+          .filter((section) => section !== null);
+      }
+  
+      function updateActiveButton() {
+        const scrollPosition = window.scrollY;
+        const validSections = getValidTargetSections();
+  
+        validSections.forEach((temp, index) => {
+          const section = temp.closest(".shopify-section");
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+
+          if (scrollPosition >= (sectionTop - 220) && scrollPosition < sectionTop + sectionHeight) {
+            buttons.forEach((btn) => btn.classList.remove('active'));
+            buttons[index].classList.add('active');
+          }
+        });
+      }
+  
+      function toggleStickyBar() {
+        const scrollPosition = window.scrollY;
+        const topBarPosTop = topBarPos.getBoundingClientRect().top + window.scrollY;
+        const validSections = getValidTargetSections();
+  
+        if (validSections.length > 0) {
+          const lastSection = validSections[validSections.length - 1];
+          const lastSectionBottom = lastSection.offsetTop + lastSection.offsetHeight;
+  
+          if (scrollPosition > topBarPosTop && scrollPosition < lastSectionBottom) {
+            topBar.classList.add('sticky');
+          } else {
+            topBar.classList.remove('sticky');
+          }
+        } else {
+          // If no valid sections, just use the topBarPosTop
+          if (scrollPosition > topBarPosTop) {
+            topBar.classList.add('sticky');
+          } else {
+            topBar.classList.remove('sticky');
+          }
+        }
+      }
+  
+      function handleResize() {
+        toggleStickyBar();
+      }
+  
+      window.addEventListener('scroll', () => {
+        updateActiveButton();
+        toggleStickyBar();
+      });
+  
+      window.addEventListener('resize', handleResize);
+  
+      buttons.forEach((button) => {
+        button.addEventListener('click', (e) => {
+          const targetId = e.target.getAttribute('data-target');
+          const targetSection = document.getElementById(targetId);
+          console.log(targetSection);
+          if (targetSection) {
+            buttons.forEach((btn) => btn.classList.remove('active'));
+            e.target.classList.add('active');
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+            // if(window.innerWidth < 769){
+            //   window.scrollTo({
+            //     top: targetSection.offsetTop - 40,
+            //     behavior: 'smooth'
+            //   })
+            // }else{
+            //   window.scrollTo({
+            //     top: targetSection.offsetTop,
+            //     behavior: 'smooth'
+            //   })
+            // }
+          }
+        });
+      });
+      
+  
+      updateActiveButton();
+      handleResize(); // Initialize on page load
+    })();
+  </script>
+{% schema %}
+  {
+    "name": "Cust stricky bar",
+    "settings": [],
+    "blocks": [
+      {
+      "type": "cust-sticky-bar-block",
+      "name": "Cust stricky bar block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "stricky_bar_headding",
+          "label": "Stricky bar headding"
+        },
+        {
+          "type": "text",
+          "id": "target_section",
+          "label": "target id"
+        },
+      ]
+    }
+  ],
+    "presets": [
+        {
+            "name": "Cust stricky bar",
+            "category": "Custom Sections",
+            "settings": {
+            }
+        }
+    ]
+  }
+{% endschema %}

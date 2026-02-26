@@ -1,0 +1,1129 @@
+{%- liquid 
+  assign SETTINGS = shop.metafields.ecomposer.popup_exit.value
+
+  #Font
+    assign google_fonts = SETTINGS.google_font_css
+    assign custom_fonts = SETTINGS.custom_font_css
+
+  # Product list typo
+    assign typo_p_heading = SETTINGS.typo_rcm_heading
+    assign typo_p_heading__tablet = SETTINGS.typo_rcm_heading__tablet
+    assign typo_p_heading__mobile = SETTINGS.typo_rcm_heading__mobile
+    assign typo_p_title = SETTINGS.typo_title
+    assign typo_p_title__tablet = SETTINGS.typo_title__tablet
+    assign typo_p_title__mobile = SETTINGS.typo_title__mobile
+    assign typo_p_price = SETTINGS.typo_price
+    assign typo_p_price__tablet = SETTINGS.typo_price__tablet
+    assign typo_p_price__mobile = SETTINGS.typo_price__mobile
+  
+  # Banner typo
+    assign typo_b_heading = SETTINGS.typo_banner_heading
+    assign typo_b_heading__tablet = SETTINGS.typo_banner_heading__tablet
+    assign typo_b_heading__mobile = SETTINGS.typo_banner_heading__mobile
+    assign typo_b_subheading = SETTINGS.typo_banner_subheading
+    assign typo_b_subheading__tablet = SETTINGS.typo_banner_subheading__tablet
+    assign typo_b_subheading__mobile = SETTINGS.typo_banner_subheading__mobile
+    assign typo_b_discount = SETTINGS.typo_banner_discount
+    assign typo_b_discount__tablet = SETTINGS.typo_banner_discount__tablet
+    assign typo_b_discount__mobile = SETTINGS.typo_banner_discount__mobile
+    assign typo_b_description = SETTINGS.typo_banner_description
+    assign typo_b_description__tablet = SETTINGS.typo_banner_description__tablet
+    assign typo_b_description__mobile = SETTINGS.typo_banner_description__mobile
+    assign typo_b_button = SETTINGS.typo_banner_button
+    assign typo_b_button__tablet = SETTINGS.typo_banner_button__tablet
+    assign typo_b_button__mobile = SETTINGS.typo_banner_button__mobile
+  
+  # Newsletter typo
+    assign typo_n_heading = SETTINGS.typo_newslt_heading
+    assign typo_n_heading__tablet = SETTINGS.typo_newslt_heading__tablet
+    assign typo_n_heading__mobile = SETTINGS.typo_newslt_heading__mobile
+    assign typo_n_subheading = SETTINGS.typo_newslt_subheading
+    assign typo_n_subheading__tablet = SETTINGS.typo_newslt_subheading__tablet
+    assign typo_n_subheading__mobile = SETTINGS.typo_newslt_subheading__mobile
+    assign typo_n_input = SETTINGS.typo_newslt_input
+    assign typo_n_input__tablet = SETTINGS.typo_newslt_input__tablet
+    assign typo_n_input__mobile = SETTINGS.typo_newslt_input__mobile
+    assign typo_n_button = SETTINGS.typo_newslt_button
+    assign typo_n_button__tablet = SETTINGS.typo_newslt_button__tablet
+    assign typo_n_button__mobile = SETTINGS.typo_newslt_button__mobile
+
+  # Page for show
+    assign show_where = SETTINGS.show_where
+    assign check = false
+    if show_where == 'all_page' or show_where == 'custom' and SETTINGS.custom_show_on contains request.page_type 
+      assign check = true
+    endif
+-%}
+
+{% if SETTINGS.enable and check %}
+<style>
+{% if google_fonts.size > 0 -%}{%- for css in google_fonts -%}{{ css }}{%- endfor -%}{%- endif -%}
+{%- if custom_fonts.size > 0 -%}{%- for css in custom_fonts -%}{{ css }}{%- endfor -%}{%- endif %}
+.ecom-popupExit {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1001;
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+  text-align: center;
+}
+.ecom-popupExit-show {
+  opacity: 1;
+  visibility: visible;
+}
+.ecom-popupExit::before {
+  content: "";
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.ecom-popupExit-content {
+  position: relative;
+  margin: 30px auto;
+  background: #fff;
+  transition: 0.35s ease;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: calc(100% - 60px);
+}
+.ecom-popupExit-appear-slide_up {
+  transform: translateY(40px);
+}
+.ecom-popupExit-appear-slide_down {
+  transform: translateY(-40px);
+}
+.ecom-popupExit-appear-slide_toRight {
+  transform: translateX(-40px);
+}
+.ecom-popupExit-appear-slide_toLeft {
+  transform: translateX(40px);
+}
+.ecom-popupExit-show .ecom-popupExit-content {
+  transform: translate(0);
+}
+.ecom-popupExit-row {
+  display: flex;
+}
+.ecom-popupExit-row > div {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ecom-popupExit-heading {
+  font-size: 28px;
+  line-height: 1.2;
+  margin-block: 0;
+}
+.ecom-popupExit-subheading {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  margin-bottom: 25px;
+  margin-top: 0;
+}
+{% comment %}+Banner style{% endcomment %}
+.ecom-popupExit-banner {
+  min-height: 400px;
+  padding: 100px 90px;
+  width: var(--b-width);
+}
+.ecom-popupExit-banner-heading {
+  margin-bottom: 16px;
+  color: var(--b-heading-color);
+  letter-spacing: 0;
+  {{ typo_b_heading }}
+}
+.ecom-popupExit-banner-subheading {
+  color: var(--b-subheading-color);
+  {{ typo_b_subheading }}
+}
+.ecom-popupExit-banner-discount {
+  display: flex;
+  margin-bottom: 25px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.ecom-popupExit-banner-discount:hover .ecom-popupExit-banner-code-tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, -7px);
+}
+.ecom-popupExit-banner-code {
+  display: inline-block;
+  color: var(--b-discount-color);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  padding: 11px 22px;
+  {{ typo_b_discount }}
+}
+.ecom-popupExit-banner-code-btn {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: var(--b-discount-color);
+  color: #fff;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.ecom-popupExit-banner-code-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, -2px);
+  background: var(--b-discount-color);
+  color: #fff;
+  padding: 5px 25px;
+  font-size: 14px;
+  text-wrap: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.25s;
+}
+.ecom-popupExit-banner-code-tooltip::after {
+  content: '';
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--b-discount-color);
+}
+.ecom-popupExit-banner-code-btn:hover .ecom-popupExit-banner-code-tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, -7px);
+}
+.ecom-popupExit-banner-description {
+  color: var(--b-description-color);
+  font-size: 14px;
+  line-height: 22px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  {{ typo_b_description }}
+}
+.ecom-popupExit-banner-btn {
+  display: inline-block;
+  padding: 15px 68px;
+  color: var(--b-button-color);
+  background: #222;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: 0.25s ease;
+  border-radius: 3px;
+  {{ typo_b_button }}
+}
+.ecom-popupExit-banner-btn:hover {
+  color: var(--b-button-color-hover);
+}
+{% comment %}End banner{% endcomment %}
+{% comment %}Newsletter style{% endcomment %}
+.ecom-popupExit-newslt {
+  padding: 90px 30px;
+  width: var(--n-width);
+}
+.ecom-popupExit-newslt-heading {
+  color: var(--n-heading-color);
+  {{ typo_n_heading }}
+}
+.ecom-popupExit-newslt-subheading {
+  color: var(--n-subheading-color);
+  {{ typo_n_subheading }}
+}
+.ecom-popupExit-newslt-form {
+  width: 100%;
+  max-width: 350px;
+}
+.ecom-popupExit-newslt-input {
+  margin-bottom: 20px;
+}
+.ecom-popupExit-newslt-input input {
+  border: 1px solid var(--n-border-color);
+  color: var(--n-input-color);
+  outline: none;
+  box-shadow: none;
+  height: 51px;
+  font-size: 14px;
+  padding: 8px 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  width: 100%;
+  background: transparent;
+  {{ typo_n_input }}
+}
+.ecom-popupExit-newslt-submit {
+  display: inline-block;
+  padding: 0 40px;
+  line-height: 54px;
+  height: 54px;
+  color: var(--n-button-color);
+  background: #222;
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: none;
+  transition: 0.25s ease;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  {{ typo_n_button }}
+}
+.ecom-popupExit-newslt-submit:hover {
+  color: var(--n-button-color-hover);
+}
+{% comment %}End newsletter{% endcomment %}
+{% comment %}+Products list style{% endcomment %}
+.ecom-popupExit-products {
+  align-items: flex-start !important;
+  text-align: left;
+  padding-left: 25px;
+  width: var(--p-width);
+  padding-top: 14px;
+  padding-bottom: 30px;
+}
+.ecom-popupExit-products-heading {
+  margin-top: 0;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 30px;
+  width: calc(100% - 20px);
+  color: var(--p-heading-color);
+  {{ typo_p_heading }}
+  position: relative;
+}
+.ecom-popupExit-products-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--p-heading-color); 
+  opacity: 0.2;
+}
+.ecom-popupExit-products-list {
+  overflow: auto;
+  max-height: 250px;
+  min-height: 250px;
+  width: 100%;
+  padding-right: 15px;
+}
+.ecom-popupExit-product {
+  display: flex;
+  margin-bottom: 10px;
+}
+.ecom-popupExit-product-link {
+  transition: 0.25s;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.ecom-popupExit-product-img img {
+  display: block;
+  width: 84px;
+  height: 117px;
+  object-fit: cover;
+}
+.ecom-popupExit-product-info {
+  padding-left: 14px;
+}
+.ecom-popupExit-product-info a {
+  text-decoration: none;
+}
+.ecom-popupExit-product-title {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  color: var(--p-title-color);
+  transition: 0.25s;
+  {{ typo_p_title }}
+}
+.ecom-popupExit-product-title:hover {
+  color: var(--p-title-color-hover);
+}
+.ecom-popupExit-product-price {
+  font-size: 14px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: var(--p-price-color);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  {{ typo_p_price }}
+}
+.ecom-popupExit-product-price--compare-at {
+  text-decoration: line-through;
+  font-weight: 400;
+}
+{% comment %}End products list{% endcomment %}
+.ecom-popupExit-banner, .ecom-popupExit-newslt, .ecom-popupExit-products {
+  display: none;
+}
+.ecom-popupExit-show-desktop,
+.ecom-popupExit-show-desktoptablet,
+.ecom-popupExit-show-desktopmobile,
+.ecom-popupExit-show-desktoptabletmobile {
+  display: flex;
+}
+.ecom-popupExit-close {
+  position: absolute;
+  padding: 20px;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  transition: .25s;
+  z-index: 1;
+  background: transparent !important;
+}
+.ecom-popupExit-close:hover {
+  transform: rotate(180deg)
+}
+.ecom-popupExit-close svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 1.5px;
+  display: inline-block;
+  color: #222222;
+  pointer-events: none;
+}
+.ecom-popupExit-products-list::-webkit-scrollbar {
+  width: 2px;
+}
+.ecom-popupExit-products-list::-webkit-scrollbar-thumb {
+  background: #D9D9D9;
+}
+.ecom-popupExit-toast {
+  visibility: hidden;
+  min-width: 250px;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+  font-size: 17px;
+  background-color:#fff;
+  text-align:left;
+  padding: 20px;
+  border-radius:4px;
+  max-width: 500px;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ecom-popupExit-toast svg {
+  fill: #ffffff;
+}
+.ecom-popupExit-toast .ecom-popupExit-toast-icon {
+  background-color: #2BDE3F;
+  width: 28px;
+  height: 28px;
+  padding: 7px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+.ecom-popupExit-toast .ecom-popupExit-toast-content {
+  margin-left: 15px;
+}
+.ecom-popupExit-toast-type {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: var(--n-toast-title-color);
+}
+.ecom-popupExit-toast-message {
+  margin: 0;
+  font-size: 14px;
+  color: var(--n-toast-content-color);
+}
+.ecom-popupExit-toast.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+.ecom-popupExit-toast::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #2BDE3F;
+  -webkit-animation: width 3s ease;
+  animation: width 3s ease;
+}
+@keyframes width {
+  from {width: 100%}
+  to {width: 0%}
+}
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+.ecom-popupExit__product-swatch-color-list {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.ecom-popupExit__product-swatch-color {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  box-shadow: 0 0 0 1px #fff, 0 0 0 2px #ebebeb;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.ecom-popupExit__product-swatch-color-active {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 2px #000;
+}
+@media screen and (max-width: 1024px) {
+  .ecom-popupExit-banner, .ecom-popupExit-newslt, .ecom-popupExit-products {
+    display: none;
+  }
+  .ecom-popupExit-show-desktoptabletmobile,
+  .ecom-popupExit-show-desktoptablet,
+  .ecom-popupExit-show-tablet,
+  .ecom-popupExit-show-tabletmobile {
+    display: flex;
+  }
+  .ecom-popupExit-banner {
+    padding: 80px 50px;
+    width: var(--b-width-tablet, auto);
+  }
+  .ecom-popupExit-banner-heading {
+    {{ typo_b_heading__tablet }}
+  }
+  .ecom-popupExit-banner-subheading {
+    {{ typo_b_subheading__tablet }}
+  }
+  .ecom-popupExit-banner-code {
+    {{ typo_b_discount__tablet }}
+  }
+  .ecom-popupExit-banner-description {
+    {{ typo_b_description__tablet }}
+  }
+  .ecom-popupExit-banner-btn {
+    {{ typo_b_button__tablet }}
+  }
+  .ecom-popupExit-newslt {
+    width: var(--n-width-tablet);
+  }
+  .ecom-popupExit-newslt-heading {
+    {{ typo_n_heading__tablet }}
+  }
+  .ecom-popupExit-newslt-subheading {
+    {{ typo_n_subheading__tablet }}
+  }
+  .ecom-popupExit-newslt-input input {
+    {{ typo_n_input__tablet }}
+  }
+  .ecom-popupExit-newslt-submit {
+    {{ typo_n_button__tablet }}
+  }
+  .ecom-popupExit-products {
+    width: var(--p-width-tablet);
+  }
+  .ecom-popupExit-products-heading {
+    {{ typo_p_heading__tablet }}
+  }
+  .ecom-popupExit-product-title {
+    {{ typo_p_title__tablet }}
+  }
+  .ecom-popupExit-product-price {
+    {{ typo_p_price__tablet }}
+  }
+  .ecom-popupExit-banner-code-btn:hover .ecom-popupExit-banner-code-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(-50%, -2px);
+  }
+}
+@media screen and (max-width: 767px) {
+  .ecom-popupExit-banner, .ecom-popupExit-newslt, .ecom-popupExit-products {
+    display: none;
+  }
+  .ecom-popupExit-show-desktoptabletmobile,
+  .ecom-popupExit-show-desktopmobile,
+  .ecom-popupExit-show-tabletmobile,
+  .ecom-popupExit-show-mobile {
+    display: flex;
+  }
+  .ecom-popupExit-row {
+    flex-wrap: wrap; 
+  }
+  .ecom-popupExit-banner {
+    width: var(--b-width-mobile);
+    padding: 60px 15px;
+  }
+  .ecom-popupExit-banner-heading {
+    {{ typo_b_heading__mobile }}
+  }
+  .ecom-popupExit-banner-subheading {
+    {{ typo_b_subheading__mobile }}
+  }
+  .ecom-popupExit-banner-code {
+    {{ typo_b_discount__mobile }}
+  }
+  .ecom-popupExit-banner-description {
+    {{ typo_b_description__mobile }}
+  }
+  .ecom-popupExit-banner-btn {
+    {{ typo_b_button__mobile }}
+  }
+  .ecom-popupExit-newslt {
+    width: var(--n-width-mobile);
+    padding: 60px 15px;
+  }
+  .ecom-popupExit-newslt-heading {
+    {{ typo_n_heading__mobile }}
+  }
+  .ecom-popupExit-newslt-subheading {
+    {{ typo_n_subheading__mobile }}
+  }
+  .ecom-popupExit-newslt-input input {
+    {{ typo_n_input__mobile }}
+  }
+  .ecom-popupExit-newslt-submit {
+    {{ typo_n_button__mobile }}
+  }
+  .ecom-popupExit-products {
+    width: var(--p-width-mobile);
+  }
+  .ecom-popupExit-products-heading {
+    {{ typo_p_heading__mobile }}
+  }
+  .ecom-popupExit-product-title {
+    {{ typo_p_title__mobile }}
+  }
+  .ecom-popupExit-product-price {
+    {{ typo_p_price__mobile }}
+  }
+  .ecom-popupExit-products-list {
+    max-height: 350px !important;
+  }
+  .ecom-popupExit-content {
+    max-width: calc(100% - 30px);
+  }
+}
+</style>
+{% assign hasNewsletter = false %}
+<div class="ecom-popupExit" data-ver="{{ SETTINGS.ver }}">
+  <div class="ecom-popupExit-content ecom-popupExit-appear-{{ SETTINGS.appear_effect }}">
+    <div class="ecom-popupExit-row">
+      {% for block in SETTINGS.popup_exit_items %}
+        {% case block.type %}
+          {% when 'banner' %}
+            {%- liquid
+                  assign settings = block.settings
+                  assign b_background = settings.background.native
+                  assign b_heading_color = settings.heading_color
+                  assign b_subheading_color = settings.subheading_color
+                  assign b_discount_color = settings.discount_color
+                  assign b_discount_bg = settings.discount_bg.native
+                  assign b_description_color = settings.description_color
+                  assign b_btn_color = settings.btn_color
+                  assign b_btn_color_hover = settings.btn_color_hover
+                  assign b_btn_bg = settings.btn_bg.native
+                  assign b_btn_bg_hover = settings.btn_bg_hover.native
+                  assign b_width = settings.width
+                  assign b_width_tablet = settings.width__tablet
+                  assign b_width_mobile = settings.width__mobile
+                  assign screen = screen | append: settings.show_on
+                  assign show_on = ''
+                  if settings.show_on contains 'desktop'
+                    assign show_on = show_on | append: 'desktop'
+                 endif
+                 if settings.show_on contains 'tablet'
+                    assign show_on = show_on | append: 'tablet'
+                 endif
+                 if settings.show_on contains 'mobile'
+                    assign show_on = show_on | append: 'mobile'
+                 endif
+            -%}
+            <div class="ecom-popupExit-banner ecom-popupExit-show-{{ show_on }}">
+              <h4 class="ecom-popupExit-heading ecom-popupExit-banner-heading">{{ settings.heading }}</h4>
+              <h5 class="ecom-popupExit-subheading ecom-popupExit-banner-subheading">{{ settings.subheading }}</h5>
+              {% if settings.discount != blank %}
+                <div  class="ecom-popupExit-banner-discount">
+                  <div class="ecom-popupExit-banner-code">{{ settings.discount }}</div>
+                  {% if settings.enable_copy_button %}
+                    <div class="ecom-popupExit-banner-code-btn">
+                      <span class="ecom-popupExit-banner-code-tooltip">Copy</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" viewBox="0 0 512 512" fill="currentColor"><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"></path></svg>
+                    </div>
+                  {% else %} 
+                    <span class="ecom-popupExit-banner-code-tooltip">Copy</span>
+                  {% endif %}
+                </div>
+              {% endif %}
+              <p class="ecom-popupExit-banner-description">{{ settings.description }}</p>
+              {% if settings.btn_label != blank %}
+                <a href="{{ settings.btn_link.href | default: '#'}}" class="ecom-popupExit-banner-btn">{{ settings.btn_label }}</a>
+              {% endif %}
+            </div>
+      
+          {% when 'newsletter' %}
+            {%- liquid
+                  assign settings = block.settings
+                  assign n_background = settings.background.native
+                  assign n_heading_color = settings.heading_color
+                  assign n_subheading_color = settings.subheading_color
+                  assign n_input_color = settings.input_color
+                  assign n_border_color = settings.input_border
+                  assign n_btn_color = settings.btn_color
+                  assign n_btn_color_hover = settings.btn_color_hover
+                  assign n_btn_bg = settings.btn_bg.native
+                  assign n_btn_bg_hover = settings.btn_bg_hover.native
+                  assign n_width = settings.width
+                  assign n_width_tablet = settings.width__tablet
+                  assign n_width_mobile = settings.width__mobile
+                  assign screen = screen | append: settings.show_on
+                  assign show_on = ''
+                  if settings.show_on contains 'desktop'
+                    assign show_on = show_on | append: 'desktop'
+                  endif
+                  if settings.show_on contains 'tablet'
+                    assign show_on = show_on | append: 'tablet'
+                  endif
+                  if settings.show_on contains 'mobile'
+                    assign show_on = show_on | append: 'mobile'
+                  endif
+
+                  assign hasNewsletter = true
+                  assign toast_title = settings.toast_title
+                  assign toast_content = settings.toast_content
+                  assign n_toast_title_color = settings.toast_title_color
+                  assign n_toast_content_color = settings.toast_content_color
+            -%}
+            <div class="ecom-popupExit-newslt ecom-popupExit-show-{{ show_on }}">
+              <h4 class="ecom-popupExit-heading ecom-popupExit-newslt-heading">{{ settings.heading }}</h4>
+              <h5 class="ecom-popupExit-subheading ecom-popupExit-newslt-subheading">{{ settings.subheading }}</h5>
+              {% form 'customer', class: "ecom-popupExit-newslt-form" %}
+                  <div class="ecom-popupExit-newslt-input">
+                    <input type="email" name="contact[email]" placeholder="{{ settings.placeholder }}" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" required>
+                  </div>
+                  <button type="submit" class="ecom-popupExit-newslt-submit">{{ settings.btn_label | default: 'Subscribe'}}</button>
+                {% endform %}
+            </div>
+      
+          {% when 'product_list' %}
+            {% liquid
+                assign settings = block.settings
+                assign p_background = settings.background.native
+                assign p_heading_color = settings.heading_color
+                assign p_title_color = settings.title_color
+                assign p_title_color_hover = settings.title_color_hover
+                assign p_price_color = settings.price_color
+                assign p_width = settings.width
+                assign p_width_tablet = settings.width__tablet
+                assign p_width_mobile = settings.width__mobile
+                assign screen = screen | append: settings.show_on
+                assign show_on = ''
+                if settings.show_on contains 'desktop'
+                  assign show_on = show_on | append: 'desktop'
+                endif
+                if settings.show_on contains 'tablet'
+                  assign show_on = show_on | append: 'tablet'
+                endif
+                if settings.show_on contains 'mobile'
+                  assign show_on = show_on | append: 'mobile'
+                endif
+              %}
+            <div class="ecom-popupExit-products ecom-popupExit-show-{{ show_on }}">
+              <h4 class="ecom-popupExit-products-heading">{{ settings.heading }}</h4>
+              <div class="ecom-popupExit-products-list">
+                {% if settings.products != blank %}
+                    {% for pd in settings.products %}
+                      {% assign product = all_products[pd.value] %}
+                      <div class="ecom-popupExit-product">
+                        <a href="{{ product.url }}" class="ecom-popupExit-product-link">
+                          <div class="ecom-popupExit-product-img">
+                            <img src="{{ shop.url }}/cdn/shop/{{ product.featured_image }}" />
+                          </div>
+                        </a>
+                        <div class="ecom-popupExit-product-info">
+                          <a href="{{ product.url }}"><div class="ecom-popupExit-product-title">{{ product.title }}</div></a>
+                          <div class="ecom-popupExit-product-price">
+                            <div class="ecom-popupExit-product-price--sale">{{ product.price | money_with_currency }}</div>
+                            <div class="ecom-popupExit-product-price--compare-at">{{ product.compare_at_price | money_with_currency }}</div>
+                          </div>
+                          {% assign colors = shop.metafields.ecomposer.colors %}
+                          {% if colors != blank %}
+                              {% for product_option in product.options_with_values %}
+                                  {% assign option = product_option.name | downcase %}
+                                  {% if option == 'color' %}
+                                    <div class="ecom-popupExit__product-swatch-color-list">
+                                      {% assign color_index = 'option' | append: forloop.index %}
+                                      {% for value in product_option.values %}
+                                          {% assign value_key = value | downcase | strip %}
+                                          {% assign featured_image = blank %}
+                                          {% for variant in product.variants %}
+                                              {% assign _variant = variant[color_index] | downcase %}
+                                              {% if _variant == value_key %}
+                                                  {% if variant.featured_image %}
+                                                      {% assign featured_image = variant.featured_image %}
+                                                  {% endif %}
+                                              {% endif %}
+                                          {% endfor %}
+                                          <span {% if featured_image != blank %}data-popupExit-swatch-color-image="{{ shop.url }}/cdn/shop/{{featured_image}}"{% endif %} class="ecom-popupExit__product-swatch-color" style="{{colors.value[value_key]}}"></span>
+                                      {% endfor %}
+                                    </div>
+                                  {% endif %}
+                              {% endfor %}
+                          {% endif %}
+                        </div>
+                      </div>
+                    {% endfor %}
+                  {% else %}
+                    {% for product in collections.all.products | limit: 5 %}
+                      <div class="ecom-popupExit-product">
+                        <a href="{{ product.url }}" class="ecom-popupExit-product-link">
+                          <div class="ecom-popupExit-product-img">
+                            <img src="{{ shop.url }}/cdn/shop/{{ product.featured_image }}" />
+                          </div>
+                        </a>
+                        <div class="ecom-popupExit-product-info">
+                           <a href="{{ product.url }}"><div class="ecom-popupExit-product-title">{{ product.title }}</div></a>
+                          <div class="ecom-popupExit-product-price">
+                            <div class="ecom-popupExit-product-price--sale">{{ product.price | money_with_currency }}</div>
+                            <div class="ecom-popupExit-product-price--compare-at">{{ product.compare_at_price | money_with_currency }}</div>
+                          </div>
+                          {% assign colors = shop.metafields.ecomposer.colors %}
+                          {% if colors != blank %}
+                              {% for product_option in product.options_with_values %}
+                                  {% assign option = product_option.name | downcase %}
+                                  {% if option == 'color' %}
+                                    <div class="ecom-popupExit__product-swatch-color-list">
+                                      {% assign color_index = 'option' | append: forloop.index %}
+                                      {% for value in product_option.values %}
+                                          {% assign value_key = value | downcase | strip %}
+                                          {% assign featured_image = blank %}
+                                          {% for variant in product.variants %}
+                                              {% assign _variant = variant[color_index] | downcase %}
+                                              {% if _variant == value_key %}
+                                                  {% if variant.featured_image %}
+                                                      {% assign featured_image = variant.featured_image %}
+                                                  {% endif %}
+                                              {% endif %}
+                                          {% endfor %}
+                                          <span {% if featured_image != blank %}data-popupExit-swatch-color-image="{{ shop.url }}/cdn/shop/{{featured_image}}"{% endif %} class="ecom-popupExit__product-swatch-color" style="{{colors.value[value_key]}}"></span>
+                                      {% endfor %}
+                                    </div>
+                                  {% endif %}
+                              {% endfor %}
+                          {% endif %}
+                        </div>
+                      </div>
+                    {% endfor %}
+                {% endif %}
+              </div>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+    <button class="ecom-popupExit-close">
+      <svg viewBox="0 0 16 14"><path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path></svg>
+    </button>
+  </div> 
+</div>
+{% if hasNewsletter %}
+  <div class="ecom-popupExit-toast">
+    <div class="ecom-popupExit-toast-icon">
+      <svg version="1.1" class="toast__svg" width="14px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+    <g><g><path d="M504.502,75.496c-9.997-9.998-26.205-9.998-36.204,0L161.594,382.203L43.702,264.311c-9.997-9.998-26.205-9.997-36.204,0    c-9.998,9.997-9.998,26.205,0,36.203l135.994,135.992c9.994,9.997,26.214,9.99,36.204,0L504.502,111.7    C514.5,101.703,514.499,85.494,504.502,75.496z"></path>
+      </g></g>
+      </svg>
+    </div>
+    <div class="ecom-popupExit-toast-content">
+      <p class="ecom-popupExit-toast-type">{{ toast_title }}</p>
+      <p class="ecom-popupExit-toast-message">{{ toast_content }}</p>
+    </div>
+  </div>
+{% endif %}
+<style>
+:root {
+  --b-heading-color: {{ b_heading_color | default: "#fff"}};
+  --b-subheading-color: {{ b_subheading_color | default: "#fff"}};
+  --b-discount-color: {{ b_discount_color | default: "#000"}};
+  --b-description-color: {{ b_description_color | default: "#fff"}};
+  --b-button-color: {{ b_btn_color | default: "#fff"}};
+  --b-button-color-hover: {{ b_btn_color_hover | default: b_btn_color | default: "#fff"}};
+  --b-width: {{ b_width }};
+  --b-width-tablet: {{ b_width_tablet }};
+  --b-width-mobile: {{ b_width_mobile | default: "100%"}};
+
+  --n-heading-color: {{ n_heading_color | default: "#000"}};
+  --n-subheading-color: {{ n_subheading_color | default: "#878787"}};
+  --n-input-color: {{ n_input_color | default: "#686868"}};
+  --n-border-color: {{ n_border_color | default: "#686868"}};
+  --n-button-color: {{ n_btn_color | default: "#fff"}};
+  --n-button-color-hover: {{ n_btn_color_hover | default: n_btn_color | default: "#fff"}};
+  --n-width: {{ n_width }};
+  --n-width-tablet: {{ n_width_tablet }};
+  --n-width-mobile: {{ n_width_mobile | default: "100%"}};
+  --n-toast-title-color: {{ n_toast_title_color | default: "#000" }};
+  --n-toast-content-color: {{ n_toast_content_color | default: "#878787" }};
+
+  --p-heading-color: {{ p_heading_color | default: "#000"}};
+  --p-title-color: {{ p_title_color | default: "#000"}};
+  --p-title-color-hover: {{ p_title_color_hover | default: p_title_color | default: "#000"}};
+  --p-price-color: {{ p_price_color | default: "#000"}};
+  --p-width: {{ p_width }};
+  --p-width-tablet: {{ p_width_tablet }};
+  --p-width-mobile: {{ p_width_mobile | default: "100%"}};
+}
+{% comment %}Banner style{% endcomment %}
+.ecom-popupExit-banner {
+  {{ b_background }}
+}
+.ecom-popupExit-banner-discount {
+  {{ b_discount_bg }}
+  {% if b_discount_bg == blank %}
+    border: 1px solid var(--b-discount-color);
+  {% endif %}
+} 
+.ecom-popupExit-banner-btn {
+  {{ b_btn_bg }}
+}
+.ecom-popupExit-banner-btn:hover {
+  {{ b_btn_bg_hover }}
+} 
+{% comment %}End banner{% endcomment %}
+{% comment %}Newsletter style{% endcomment %}
+.ecom-popupExit-newslt {
+  {{ n_background }}
+}
+.ecom-popupExit-newslt-submit {
+  {{ n_btn_bg }}
+}
+.ecom-popupExit-newslt-submit:hover {
+  {{ n_btn_bg_hover }}
+}
+{% comment %}End newsletter{% endcomment %}
+{% comment %}Products list style{% endcomment %}
+.ecom-popupExit-products {
+  {{ p_background }}
+}
+{% comment %}End products list{% endcomment %}
+{% unless screen contains "desktop" %}
+  .ecom-popupExit {
+    display: none;
+  }
+  @media screen and (max-width: 1024px) {
+    .ecom-popupExit {
+      display: block;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .ecom-popupExit {
+      display: block;
+    }
+  }
+{% endunless %}
+{% unless screen contains "tablet" %}
+  @media screen and (max-width: 1024px) {
+    .ecom-popupExit {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .ecom-popupExit {
+      display: block;
+    }
+  }
+{% endunless %}
+{% unless screen contains "mobile" %}
+  @media screen and (max-width: 767px) {
+    .ecom-popupExit {
+      display: none;
+    }
+  }
+{% endunless %}
+</style>
+
+<script>
+(function() {
+  var popup = document.querySelector('.ecom-popupExit-content');
+  var overlay = document.querySelector('.ecom-popupExit');
+  var products_list = document.querySelector('.ecom-popupExit-products-list');
+
+  // Cookie manager
+  let time_delete_cookie = '{{ SETTINGS.time_delete_cookie }}' ? parseInt('{{ SETTINGS.time_delete_cookie }}') : 400;
+  var version = overlay.getAttribute('data-ver');
+  var cookie_ver = getCookie('ecom-popupExit-ver');
+  if(version != cookie_ver) {
+    setCookie('ecom-popupExit', 'true', time_delete_cookie);
+    setCookie('ecom-popupExit-ver', version, time_delete_cookie);
+  }
+
+
+  // Show toast when subscribe in newsletter
+  const urlParams = new URLSearchParams(window.location.search);
+  var toast = document.querySelector('.ecom-popupExit-toast');
+  if(toast && (urlParams.get('customer_posted') == 'true' || urlParams.get('form_type') == 'customer')){
+    toast.classList.add('show');
+    setTimeout(function() {toast.classList.remove('show')}, 3000);
+  }
+
+  // Show popup manager
+  var isClosed = false;
+  if(getCookie('ecom-popupExit') == 'true' || getCookie('ecom-popupExit') == '') {
+    {% case SETTINGS.show_when %}
+      {% when 'hover' %}
+        document.addEventListener('mouseleave', showPopup);
+        if(window.innerWidth < 1024) {
+          window.addEventListener('scroll', showOnEndPage);
+        }
+      {% when 'scroll_end' %}
+        window.addEventListener('scroll', showOnEndPage);
+      {% when 'after_time' %}
+        setTimeout(showPopup, {{ SETTINGS.time | default: 0 | times: 1000 }});
+    {% endcase %}
+  }
+  function showOnEndPage() {
+    if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight)
+      showPopup();
+  }
+  function showPopup() { 
+    if(isClosed == false && getCookie('ecom-popupExit') != 'false') overlay.classList.add('ecom-popupExit-show');
+  }
+  overlay.addEventListener('click', (e) => {
+    if(e.target.classList.contains('ecom-popupExit') || e.target.classList.contains('ecom-popupExit-close')){
+      overlay.classList.remove('ecom-popupExit-show');
+      setCookie("ecom-popupExit", "false", time_delete_cookie);
+      isClosed = true;
+    }
+  })
+  
+  
+  // Set product list height
+  var products_heading = document.querySelector('.ecom-popupExit-products-heading');
+  var products_heading_height = products_heading ? products_heading.offsetHeight : 0;
+  var height_header = products_heading_height + 27;
+  var height = popup.offsetHeight - height_header - 27;
+  if(products_list) products_list.style.maxHeight = height + 'px';
+  // Set copy button width
+  var copy_btn = document.querySelector('.ecom-popupExit-banner-code-btn');
+  if(copy_btn) copy_btn.style.width = copy_btn.offsetHeight + 'px';
+
+  // Window resize event
+  window.addEventListener('resize', function() {
+    if(products_list) products_list.style.maxHeight = '0px';
+    var height_header = products_heading_height + 27;
+    var height = popup.offsetHeight - height_header - 27;
+    if(products_list) products_list.style.maxHeight = height + 'px';
+
+    if(copy_btn) copy_btn.style.width = copy_btn.offsetHeight + 'px';
+    
+    {% if SETTINGS.show_when == 'hover' %}
+      window.innerWidth < 1024 ? window.addEventListener('scroll', showOnEndPage) : window.removeEventListener('scroll', showOnEndPage);
+    {% endif %}
+  })
+
+  
+  // Click to copy discount code banner
+  var codeclick = document.querySelector('.ecom-popupExit-banner-discount');
+  if(codeclick) {
+    codeclick.addEventListener('click', function(e) {
+      var discount_code = document.querySelector('.ecom-popupExit-banner-code');
+      if (discount_code)
+        navigator.clipboard.writeText(discount_code.innerText);
+      codeclick.querySelector('.ecom-popupExit-banner-code-tooltip').innerHTML = 'Copied';
+    });
+    codeclick.addEventListener('mouseleave', function() {
+      setTimeout(function() {
+        codeclick.querySelector('.ecom-popupExit-banner-code-tooltip').innerHTML = 'Copy';
+      }, 250);
+    })
+  }
+  
+  // Set, get cookie
+  function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    let expires = 'expires='+d.toUTCString();
+    document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/';
+  }
+  function getCookie(cname) {
+    let name = cname + '=';
+    let ca = document.cookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return '';
+  }
+  var swatch_color = document.querySelectorAll('.ecom-popupExit__product-swatch-color');
+  swatch_color.forEach(function(item) {
+    item.addEventListener('click', function() {
+      var active = item.parentElement.querySelector('.ecom-popupExit__product-swatch-color-active');
+      if(active)
+          active.classList.remove('ecom-popupExit__product-swatch-color-active');
+      var image = item.getAttribute('data-popupExit-swatch-color-image');
+      if(!image)
+          return;
+      item.classList.add('ecom-popupExit__product-swatch-color-active');
+      item.parentElement.parentElement.parentElement.querySelector('.ecom-popupExit-product-img img').src = image;
+    })
+  })
+  var swatch_color_list = document.querySelectorAll('.ecom-popupExit__product-swatch-color-list');
+  swatch_color_list.forEach(function(item) {
+    var first_item = item.querySelector('.ecom-popupExit__product-swatch-color');
+    if(!first_item)
+      return;
+    var image = first_item.getAttribute('data-popupExit-swatch-color-image');
+    if(!image)
+        return;
+    first_item.classList.add('ecom-popupExit__product-swatch-color-active');
+    first_item.parentElement.parentElement.parentElement.querySelector('.ecom-popupExit-product-img img').src = image;
+  })
+}())
+</script>
+{% endif %}

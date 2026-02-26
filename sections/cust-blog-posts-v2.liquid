@@ -1,0 +1,203 @@
+{%- render 'section-spacing-collapsing' -%}
+
+{%- comment -%}
+------------------------------------------------------------------------------------------------------------------------
+CSS
+------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<style>
+  #shopify-section-{{ section.id }} .blog-post-list {
+    --product-list-gap: var(--container-outer-width);
+    --product-list-items-per-row: 1;
+    --product-list-carousel-item-width: calc(var(--container-inner-width) / 1 - (var(--product-list-column-gap) / 1 * {{ 1 | minus: 1 }}));
+    --product-list-grid: auto / auto-flow var(--product-list-carousel-item-width);
+  }
+</style>
+
+{%- comment -%}
+------------------------------------------------------------------------------------------------------------------------
+LIQUID
+------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<div {% render 'section-properties' %} id="{{ section.settings.target_section }}">
+  <div class="section-stack cust-carousel">
+    {%- render 'section-header', subheading: section.settings.subheading, heading: section.settings.title, heading_color: section.settings.heading_color, heading_gradient: section.settings.heading_gradient, content: section.settings.content -%}
+
+    <div class="scrollable-with-controls">
+      {%- assign scroll_area_id = 'cust-post-scroll-area-' | append: section.id -%}
+
+      <scroll-carousel selector="blog-post-card" id="{{ scroll_area_id }}" class="scroll-area bleed {% if section.blocks.size > 1 %}is-scrollable{% endif %}">
+          <div class="blog-post-list">
+            {%- for block in section.blocks -%}
+              {%- render 'cust-blog-post-card', article: block.settings.article, show_excerpt: section.settings.show_excerpt, show_date: section.settings.show_date, show_author: section.settings.show_author, show_comments_count: section.settings.show_comments_count, show_category: section.settings.show_category, sizes: sizes, position: forloop.index -%}
+            {%- endfor -%}
+          </div>
+      </scroll-carousel>
+      {%- assign default_progress = 1 | times: 1.0 | divided_by: section.blocks.size -%}
+      {%- render 'scrollbar', observes: scroll_area_id, default_progress: default_progress, show_buttons: true -%}
+      
+      <div class="cust-carousel_dots">
+        {% for block in section.blocks %}
+          <span class="dot-item {% if forloop.first %} active {% endif %}"></span>
+        {% endfor %} 
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Cust blog posts v2",
+  "class": "shopify-section--product-recommendations cust-blog-posts-v2",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "target_section",
+      "label": "Sticky section id"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": true
+    },
+        {
+      "type": "checkbox",
+      "id": "show_excerpt",
+      "label": "Show excerpt",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_hidden_excerpt",
+      "label": "Hidden excerpt mobile device",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "label": "Show date",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "label": "Show author",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_comments_count",
+      "label": "Show comments count",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_category",
+      "label": "Show category",
+      "info": "Add tag organize blog posts [Learn more](https://help.shopify.com/en/manual/online-store/blogs/writing-blogs#add-tags-to-a-blog-post).",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "products_per_row_mobile",
+      "label": "Blogs per row (mobile)",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "range",
+      "id": "products_per_row_desktop",
+      "min": 1,
+      "max": 5,
+      "label": "Products per row (desktop)",
+      "default": 1
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "header",
+      "content": "Colors",
+      "info": "Gradient replaces solid colors when set."
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background"
+    },
+    {
+      "type": "color_background",
+      "id": "background_gradient",
+      "label": "Background gradient"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color"
+    },
+    {
+      "type": "color_background",
+      "id": "heading_gradient",
+      "label": "Heading gradient"
+    }
+  ],
+  "blocks": [
+   {
+      "type": "article",
+      "name": "Blog post",
+      "settings": [
+        {
+          "type": "article",
+          "id": "article",
+          "label": "Blog post"
+        },
+        {
+          "type": "color",
+          "id": "background",
+          "label": "Background"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cust blog posts v2"
+    }
+  ]
+}
+{% endschema %}

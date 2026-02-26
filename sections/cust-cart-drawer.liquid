@@ -1,0 +1,428 @@
+{% liquid
+  assign empty_cartdrawer_description = section.settings.empty_cartdrawer_description
+  assign cartdrawer_button_text_1 = section.settings.cartdrawer_button_text_1
+  assign cartdrawer_button_link_1 = section.settings.cartdrawer_button_link_1
+  assign cartdrawer_button_text_2 = section.settings.cartdrawer_button_text_2
+  assign cartdrawer_button_link_2 = section.settings.cartdrawer_button_link_2
+  assign cartdrawer_button_text_3 = section.settings.cartdrawer_button_text_3
+  assign cartdrawer_button_link_3 = section.settings.cartdrawer_button_link_3
+  assign cartdrawer_button_text_4 = section.settings.cartdrawer_button_text_4
+  assign cartdrawer_button_link_4 = section.settings.cartdrawer_button_link_4
+  assign cartdrawer_bottom_image = section.settings.cartdrawer_bottom_image
+  assign cartdrawer_bottom_link = section.settings.cartdrawer_bottom_link
+%}
+<style>
+  #shopify-section-{{ section.id }} .product-list {
+    --product-list-gap: {% if section.settings.stack_products %}{% if section.settings.products_per_row_mobile == '1' %}var(--grid-gutter){% else %}var(--product-list-row-gap){% endif %} var(--spacing-2){% else %}var(--product-list-row-gap) var(--product-list-column-gap){% endif %};
+    --product-list-items-per-row: {{ section.settings.products_per_row_mobile | times: 1 }};
+    --product-list-carousel-item-width: 74vw;
+    --product-list-grid: {% if section.settings.stack_products %}auto / repeat(var(--product-list-items-per-row), minmax(0, 1fr)){% else %}auto / auto-flow var(--product-list-carousel-item-width){% endif %};
+  }
+
+  @media screen and (min-width: 700px) {
+    #shopify-section-{{ section.id }} .product-list {
+      --product-list-gap: var(--product-list-row-gap) var(--product-list-column-gap);
+      --product-list-items-per-row: 2;
+      --product-list-carousel-item-width: 36vw;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    #shopify-section-{{ section.id }} .product-list {
+      --product-list-items-per-row: {{ section.settings.products_per_row_desktop }};
+      --product-list-carousel-item-width: calc(var(--container-inner-width) / {{ section.settings.products_per_row_desktop }} - (var(--product-list-column-gap) / {{ section.settings.products_per_row_desktop }} * {{ section.settings.products_per_row_desktop | minus: 1 }}));
+    }
+  }
+</style>
+
+<cart-drawer
+  {% if request.design_mode %}
+    handle-section-events
+  {% endif %}
+  class="cust-cart-drawer cart-drawer drawer drawer--lg"
+  id="cart-drawer"
+>
+  {%- if cart.item_count == 0 -%}
+    <button is="close-button" aria-label="{{ 'general.accessibility.close' | t | escape }}">
+      {%- render 'icon' with 'close' -%}
+    </button>
+
+    <div class="empty-state align-self-center">
+      <div class="empty-state__icon-wrapper  hidden">
+        {%- render 'icon' with 'cart', width: 32, height: 32, stroke_width: 1 -%}
+        <span class="count-bubble count-bubble--lg">0</span>
+      </div>
+
+      <div class="prose">
+        <p class="h5">{{ 'cart.general.empty' | t }}</p>
+
+        <p class="cust-cartdrawer-empty__description">{{ empty_cartdrawer_description }}</p>
+
+        <div class="cust-cartdrawer__buttons">
+          {%- if cartdrawer_button_text_1 != blank -%}
+            <a href="{{ cartdrawer_button_link_1 | default: "/" }}" class="cust-cartdrawer__button button ">
+              <span class="cust-cartdrawer__button-text">{{ cartdrawer_button_text_1 }}</span>
+              <i class="cust-cartdrawer__button-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" viewBox="0 0 6 10" fill="none">
+                  <path d="M1 9L5 5L1 1" stroke="#002FA7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </i>
+            </a>
+          {%- endif -%}
+          {%- if cartdrawer_button_text_2 != blank -%}
+            <a href="{{ cartdrawer_button_link_2 | default: "/" }}" class="cust-cartdrawer__button button ">
+              <span class="cust-cartdrawer__button-text">{{ cartdrawer_button_text_2 }}</span>
+              <i class="cust-cartdrawer__button-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" viewBox="0 0 6 10" fill="none">
+                  <path d="M1 9L5 5L1 1" stroke="#002FA7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </i>
+            </a>
+          {%- endif -%}
+          {%- if cartdrawer_button_text_3 != blank -%}
+            <a href="{{ cartdrawer_button_link_3 | default: "/" }}" class="cust-cartdrawer__button button ">
+              <span class="cust-cartdrawer__button-text">{{ cartdrawer_button_text_3 }}</span>
+              <i class="cust-cartdrawer__button-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" viewBox="0 0 6 10" fill="none">
+                  <path d="M1 9L5 5L1 1" stroke="#002FA7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </i>
+            </a>
+          {%- endif -%}
+          {%- if cartdrawer_button_text_4 != blank -%}
+            <a href="{{ cartdrawer_button_link_4 | default: "/" }}" class="cust-cartdrawer__button button ">
+              <span class="cust-cartdrawer__button-text">{{ cartdrawer_button_text_4 }}</span>
+              <i class="cust-cartdrawer__button-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" viewBox="0 0 6 10" fill="none">
+                  <path d="M1 9L5 5L1 1" stroke="#002FA7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </i>
+            </a>
+          {%- endif -%}
+        </div>
+
+        {% comment %}
+          {%- assign button_content = 'cart.general.continue_shopping' | t -%}
+          {%- render 'button', href: settings.cart_empty_button_link, size: 'xl', content: button_content -%}
+        {% endcomment %}
+      </div>
+    {% if cartdrawer_bottom_image != blank %}
+      <a href="{{ cartdrawer_bottom_link }}" class="cust-cartdrawer-bottom__image-wrapper">
+        {{ cartdrawer_bottom_image | image_url: width: cartdrawer_bottom_image.width | image_tag: loading: 'lazy' }}
+      </a>
+    {% endif %}
+    </div>
+  {%- else -%}
+    <div class="cart-drawer__inner">
+      <div class="cart-drawer__top">
+        <div class="h-stack items-center justify-between">
+          <div class="h-stack grow gap-2 sm:gap-2.5">
+            <p class="h5">{{- 'cart.general.title' | t -}}</p>
+            <cart-count class="count-bubble count-bubble--md">{{ cart.item_count }}</cart-count>
+          </div>
+
+          <button type="button" is="close-button" class="drawer__close-icon">
+            <span class="sr-only">{{ 'general.accessibility.close' | t }}</span>
+            {%- render 'icon' with 'close' -%}
+          </button>
+        </div>
+      <hr class="cust-top-cart__hr">
+        {%- if settings.cart_show_free_shipping_threshold -%}
+          {%- render 'free-shipping-bar' -%}
+        {%- endif -%}
+      </div>
+
+      <div class="v-stack gap-6 sm:gap-8">
+        <div class="cart-drawer__line-items">
+          {%- for line_item in cart.items -%}
+            {%- render 'cust-line-item', line_item: line_item, show_desktop_quantity: true -%}
+          {%- endfor -%}
+        </div>
+
+         {%- if section.settings.products.count > 0 -%}
+          <div class="cart-drawer__recommendations">
+            <div class="v-stack gap-2.5 sm:gap-4">
+              {%- capture carousel_id -%}cart-drawer-recommendations{%- endcapture -%}
+
+              {%- liquid
+                assign horizontal_products_blends = true
+                assign product_card_background = section.settings.product_card_background | default: product.settings.product_card_background
+
+                if product_card_background != 'rgba(0,0,0,0)' and product_card_background != blank and product_card_background != settings.dialog_background
+                  assign horizontal_products_blends = false
+                endif
+
+                assign rendered_recommendations = 0
+
+                capture recommendations
+                  for recommended_product in section.settings.products
+                    assign item_count_in_cart = cart | line_items_for: recommended_product
+
+                    if item_count_in_cart.size == 0
+                      comment
+                      render 'horizontal-product', product: recommended_product, show_add_to_cart: true, background: section.settings.product_card_background, text_color: section.settings.product_card_text_color
+                      endcomment
+                      assign add_to_cart = 'cart.general.add_to_cart' | t
+                      render 'cust-product-card', product: recommended_product, position: forloop.index, background: section.settings.product_card_background, text_color: section.settings.product_card_text_color, show_badges: true, quick_add_label: add_to_cart
+                      assign rendered_recommendations = rendered_recommendations | plus: 1
+                    endif
+                  endfor
+                endcapture
+              -%}
+
+              {%- if rendered_recommendations > 0 -%}
+                <div class="h-stack justify-between gap-4">
+                  {%- if section.settings.recommendations_title != blank -%}
+                    <p>{{ section.settings.recommendations_title | escape }}</p>
+                  {%- endif -%}
+
+                  {%- if rendered_recommendations > 1 -%}
+                    <div class="h-stack gap-2 sm:flex">
+                      <button is="prev-button" class="circle-chevron hover:colors" aria-controls="{{ carousel_id }}" aria-label="{{ 'general.accessibility.previous' | t | escape }}" disabled>{%- render 'icon' with 'chevron-left-small', direction_aware: true -%}</button>
+                      <button is="next-button" class="circle-chevron hover:colors" aria-controls="{{ carousel_id }}" aria-label="{{ 'general.accessibility.next' | t | escape }}">{%- render 'icon' with 'chevron-right-small', direction_aware: true -%}</button>
+                    </div>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+
+              {%- if recommendations != blank -%}
+                <scroll-carousel selector="product-card" id="{{ carousel_id }}" class="horizontal-product-list-carousel {% unless horizontal_products_blends %}separate{% endunless %} scroll-area bleed">
+                  <div class="horizontal-product-list {% if horizontal_products_blends %}divide-x{% else %}separate{% endif %}">
+                    {{- recommendations -}}
+                  </div>
+                </scroll-carousel>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="v-stack gap-4 sm:gap-6 cust-cart__footer" slot="footer">
+      <div class="v-stack gap-1">
+        {% for discount_application in cart.cart_level_discount_applications %}
+          <div class="h-stack gap-4 justify-between">
+            <div class="badge">
+              {%- render 'icon' with 'discount' -%}
+              {{- discount_application.title -}}
+            </div>
+
+            <span class="text-subdued">-{{ discount_application.total_allocated_amount | money }}</span>
+          </div>
+        {% endfor %}
+
+        <div class="h-stack gap-4 justify-between">
+          <span class="h5 cust-cart-footer__title">{{ 'cart.general.total' | t }}</span>
+          <span class="h5 cust-cart-footer__price">{{- cart.total_price | money_with_currency -}}</span>
+        </div>
+
+        {%- if section.settings.show_shipping_text -%}
+          {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
+            <p class="text-subdued text-sm">
+              {{ 'cart.general.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
+            </p>
+          {%- elsif cart.taxes_included -%}
+            <p class="text-subdued text-sm">{{ 'cart.general.taxes_included_but_shipping_at_checkout' | t }}</p>
+          {%- elsif shop.shipping_policy.body != blank -%}
+            <p class="text-subdued text-sm">
+              {{ 'cart.general.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
+            </p>
+          {%- else -%}
+            <p class="text-subdued text-sm">{{ 'cart.general.taxes_and_shipping_at_checkout' | t }}</p>
+          {%- endif -%}
+        {%- endif -%}
+
+        {%- if section.settings.show_cart_note -%}
+          <button type="button" class="justify-self-start" aria-controls="cart-drawer-note">
+            <span class="link text-sm text-subdued">
+              {%- if cart.note == blank -%}
+                {{- 'cart.general.add_order_note' | t -}}
+              {%- else -%}
+                {{- 'cart.general.edit_order_note' | t -}}
+              {%- endif -%}
+            </span>
+          </button>
+
+          <cart-note-dialog id="cart-drawer-note" class="cart-drawer__note">
+            <div class="cart-drawer__note-inner">
+              <div class="v-stack gap-4 sm:gap-6">
+                <p class="h5">{{ 'cart.general.order_note' | t }}</p>
+
+                <cart-note class="v-stack gap-4">
+                  {%- assign order_note = 'cart.general.order_note' | t -%}
+                  {%- assign order_save_label = 'cart.general.save_note' | t -%}
+
+                  {%- render 'input', name: 'note', multiline: 3, label: order_note, value: cart.note -%}
+
+                  <div class="justify-self-start">
+                    {%- render 'button',
+                      type: 'button',
+                      content: order_save_label,
+                      size: 'lg',
+                      is: 'close-button',
+                      secondary: true
+                    -%}
+                  </div>
+                </cart-note>
+              </div>
+            </div>
+          </cart-note-dialog>
+        {%- endif -%}
+      </div>
+
+      <form
+        action="{{ routes.cart_url }}"
+        method="POST"
+        class="buy-buttons {% if section.settings.show_checkout_button %}buy-buttons--compact{% endif %}"
+      >
+        {%- assign checkout_label = 'cart.general.checkout' | t -%}
+
+        {%- if section.settings.show_view_cart_button or section.settings.show_checkout_button == false -%}
+          <a
+            href="{{ routes.cart_url }}"
+            class="button button--xl {% if section.settings.show_checkout_button %}button--secondary{% endif %}"
+            data-no-instant
+          >
+            {{- 'cart.general.view_cart' | t -}}
+          </a>
+        {%- endif -%}
+
+        {%- if section.settings.show_checkout_button -%}
+          {%- render 'button',
+            type: 'submit',
+            content: checkout_label,
+            icon: 'picto-lock',
+            name: 'checkout',
+            size: 'xl'
+          -%}
+        {%- endif -%}
+      </form>
+    </div>
+  {%- endif -%}
+</cart-drawer>
+
+{% schema %}
+{
+  "name": "Cust cart drawer",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Cart drawer won't appear to your customers if you have set the cart type to Page in the global theme settings."
+    },
+    {
+      "type": "paragraph",
+      "content": "Free shipping bar can be configured in global cart settings."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cart_note",
+      "label": "Show cart note",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shipping_text",
+      "label": "Show shipping text",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_cart_button",
+      "label": "Show view cart button",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_checkout_button",
+      "label": "Show checkout button",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Product recommendations"
+    },
+    {
+      "type": "text",
+      "id": "recommendations_title",
+      "label": "Heading",
+      "default": "Trending this month"
+    },
+    {
+      "type": "product_list",
+      "id": "products",
+      "label": "Recommendations",
+      "info": "Suggest additional products to your customers. Recommendations already in the cart are automatically hidden.",
+      "limit": 10
+    },
+    {
+      "type": "color",
+      "id": "product_card_background",
+      "label": "Product card background"
+    },
+    {
+      "type": "color",
+      "id": "product_card_text_color",
+      "label": "Product card text"
+    },
+    {
+      "type": "header",
+      "content": "Cust Empty Cart Drawer About",
+    },
+    {
+      "type": "html",
+      "id": "empty_cartdrawer_description",
+      "label": "Empty Cart Drawer Description"
+    },
+    {
+      "type": "text",
+      "id": "cartdrawer_button_text_1",
+      "label": "Cart Drawer Button Text 1"
+    },
+    {
+      "type": "url",
+      "id": "cartdrawer_button_link_1",
+      "label": "Cart Drawer Button Link 1"
+    },
+    {
+      "type": "text",
+      "id": "cartdrawer_button_text_2",
+      "label": "Cart Drawer Button Text 2"
+    },
+    {
+      "type": "url",
+      "id": "cartdrawer_button_link_2",
+      "label": "Cart Drawer Button Link 2"
+    },
+    {
+      "type": "text",
+      "id": "cartdrawer_button_text_3",
+      "label": "Cart Drawer Button Text 3"
+    },
+    {
+      "type": "url",
+      "id": "cartdrawer_button_link_3",
+      "label": "Cart Drawer Button Link 3"
+    },
+    {
+      "type": "text",
+      "id": "cartdrawer_button_text_4",
+      "label": "Cart Drawer Button Text 4"
+    },
+    {
+      "type": "url",
+      "id": "cartdrawer_button_link_4",
+      "label": "Cart Drawer Button Link 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "cartdrawer_bottom_image",
+      "label": "Cart Drawer Bottom Image"
+    },
+    {
+      "type": "url",
+      "id": "cartdrawer_bottom_link",
+      "label": "Cart Drawer Bottom Link"
+    }
+  ]
+}
+{% endschema %}

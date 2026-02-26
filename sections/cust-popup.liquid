@@ -1,0 +1,314 @@
+{% liquid
+    assign popup_button_text = section.settings.popup_button_text
+    assign popup_button_text_color = section.settings.popup_button_text_color
+    assign popup_button_bg_color = section.settings.popup_button_bg_color
+
+    assign popup_image = section.settings.popup_image
+    assign popup_main_content_bg_color = section.settings.popup_main_content_bg_color
+    assign popup_main_heading = section.settings.popup_main_heading 
+    assign popup_sub_heading_1 = section.settings.popup_sub_heading_1
+    assign popup_input_placeholder_1 = section.settings.popup_input_placeholder_1
+    assign popup_sub_heading_2 = section.settings.popup_sub_heading_2
+    assign popup_input_placeholder_2 = section.settings.popup_input_placeholder_2
+    assign popup_main_btn_text = section.settings.popup_main_btn_text
+    assign popup_main_btn_text_color = section.settings.popup_main_btn_text_color
+    assign popup_main_btn_bg_color = section.settings.popup_main_btn_bg_color
+
+    assign popup_unlocked_heading = section.settings.popup_unlocked_heading
+    assign popup_unlocked_subheading = section.settings.popup_unlocked_subheading
+    assign popup_unlocked_input_bg_color = section.settings.popup_unlocked_input_bg_color
+    assign popup_unlocked_btn_text = section.settings.popup_unlocked_btn_text
+    assign popup_unlocked_btn_text_color = section.settings.popup_unlocked_btn_text_color
+    assign popup_unlocked_btn_bg_color = section.settings.popup_unlocked_btn_bg_color
+    assign get_reward_content = section.settings.get_reward_code
+%}
+{% comment %}
+  {{ 'custom.css' | asset_url | stylesheet_tag }}
+<script src="custom.js" defer></script>
+{% endcomment %}
+
+{%- assign posted_successfully = false -%}
+{%- assign newsletter_id = 'newsletter-' | append: section.id -%}
+{%- capture _temporary -%}
+  {%- form 'customer', id: newsletter_id, class: 'form' -%}
+    {%- assign posted_successfully = form.posted_successfully? -%}
+  {%- endform -%}
+{%- endcapture -%}
+{% if customer == blank %}
+<section class="cust-popup {% if section.settings.only_hp_show and template.name != 'index' %}hidden{% endif %}">
+  
+      <div 
+          class="cust-popup_button"
+          style="
+              --popup_button_bg_color: {{ popup_button_bg_color }};
+              {% if section.settings.only_hp_show %}{% unless template.name == 'index' %}display: none;{% endunless %}{% endif %}">
+          <button 
+              style="
+              --popup_button_text_color: {{ popup_button_text_color }}; 
+              --popup_button_bg_color: {{ popup_button_bg_color }};">
+              {{ popup_button_text }}
+          </button>
+      </div>
+       
+    
+
+    <div class="popup-main_container {% if posted_successfully %}open{% endif %} " style="z-index:-1;">
+        <div class="popup_main-inner">
+            <div class="popup_close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <path d="M1 1L21 21" stroke="#1C1C1E" stroke-width="2"/>
+                    <path d="M21 1L1 21" stroke="#1C1C1E" stroke-width="2"/>
+                </svg>
+            </div>
+            {% if popup_image != blank %}
+            <div class="popup_top-image">
+                {{  popup_image
+                    | image_url: width: popup_image.width
+                    | image_tag:
+                    loading: "lazy"                
+                }}
+            </div>
+            {% endif %}
+
+            <div class="popup_main-content" style="--popup_main_content_bg_color: {{ popup_main_content_bg_color }};">
+                <div class="before_unlocked">
+                    <h2 class="popup_h2 popup_main_heading">{{ popup_main_heading }}</h2>
+                    <div clsee="beforeu-inner">
+                    {%- form 'customer', id: newsletter_id, class: 'signup-popup-form' -%}
+                      {% if popup_sub_heading_1 != blank %}
+                      <p class="popup_subheading-p popup_sub_heading">{{ popup_sub_heading_1 }}</p>
+                      {% endif %}
+                      <div class="popup_input popup_input_1">
+                          <input type="email" name="contact[email]" required placeholder="{{ popup_input_placeholder_1 }}">
+                      </div>
+                      {% if popup_sub_heading_2 != blank %}
+                      <p class="popup_subheading-p popup_sub_heading">{{ popup_sub_heading_2 }}</p>
+                      {% endif %}
+                      <div class="popup_input popup_input_2">
+                        {% comment %}
+                          <input type="text" placeholder="{{ popup_input_placeholder_2 }}">
+                        {% endcomment %}
+                        <select onchange="updateColor(this)" class="select-placeholder-bak" name="contact[tags]" aria-label="select" required>
+                          <!-- <option value="" selected disabled>{{ popup_input_placeholder_2 }}</option> -->
+                          <option value="Cat" selected>Cat</option>
+                          <option value="Dog">Dog</option>
+                          <option value="Dog and cat">Dog and cat</option>
+                          <option value="Other">Other</option>
+                        </select>
+                      </div>
+                      <button 
+                          type="submit"
+                          id="before_unlocked-btn"
+                          class="popup_main-button before_unlocked-btn" 
+                          style="
+                          --popup_main_btn_text_color: {{ popup_main_btn_text_color }};
+                          --popup_main_btn_bg_color: {{ popup_main_btn_bg_color }};">
+                               {{ popup_main_btn_text }}
+                      </button>
+                      {%- endform -%}
+                    </div>
+                </div>
+                <div class="unlocked_after">
+                    <h2 class="popup_h2 popup_unlocked_heading">{{ popup_unlocked_heading }}</h2>
+                    {% if popup_unlocked_subheading != blank %}
+                    <p class="popup_subheading-p popup_unlocked_subheading">{{ popup_unlocked_subheading }}</p>
+                    {% endif %}
+                    <div class="unlocked_popup_input" style="--popup_unlocked_input_bg_color: {{ popup_unlocked_input_bg_color }};">
+                        <div class="popup_unlocked-input-inner">{{ get_reward_content | default: 'DMMO10' }}</div>
+                        <div class="popup_unlocked-input-btn" data-code="{{ get_reward_content | default: 'DMMO10' }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="none">
+                                <path d="M10.5 25H9.5C7.28333 25 5.5 23.2167 5.5 21V9C5.5 6.78333 7.28333 5 9.5 5H21.5C23.7167 5 25.5 6.78333 25.5 9V10M19.5 15H31.5C32.5609 15 33.5783 15.4214 34.3284 16.1716C35.0786 16.9217 35.5 17.9391 35.5 19V31C35.5 32.0609 35.0786 33.0783 34.3284 33.8284C33.5783 34.5786 32.5609 35 31.5 35H19.5C18.4391 35 17.4217 34.5786 16.6716 33.8284C15.9214 33.0783 15.5 32.0609 15.5 31V19C15.5 18.4747 15.6035 17.9546 15.8045 17.4693C16.0055 16.984 16.3001 16.543 16.6716 16.1716C17.043 15.8001 17.484 15.5055 17.9693 15.3045C18.4546 15.1035 18.9747 15 19.5 15Z" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <button 
+                        id="popup_unlocked_btn"
+                        class="popup_main-button btn-unlocked_after" 
+                        style="--popup_unlocked_btn_text_color: {{ popup_unlocked_btn_text_color }}; 
+                               --popup_unlocked_btn_bg_color: {{ popup_unlocked_btn_bg_color }};">
+                        {{ popup_unlocked_btn_text }}
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="confetti-container"></div>
+    </div>
+    
+</section>
+{% endif %}
+<script>
+  function updateColor(select) {
+    if (select.value === "") {
+      select.classList.add("select-placeholder");
+    } else {
+      select.classList.remove("select-placeholder");
+    }
+  }
+    window.confettiConfig = {
+        confettiDuration: {{ section.settings.animation_duration | default: 3 }} * 1000
+    };
+</script>
+                              
+{% schema %}
+  {
+    "name": "Cust Popup",
+    "settings": [
+        {
+            "type": "text",
+            "id": "popup_button_text",
+            "label": "Popup Button Text",
+            "default": "Mystery Offer"
+        },
+        {
+            "type": "color",
+            "id": "popup_button_text_color",
+            "label": "Popup Button Text Color",
+            "default": "#1C1C1E"
+        },
+        {
+            "type": "color",
+            "id": "popup_button_bg_color",
+            "label": "Popup Button Background Color",
+            "default": "#C7E0FF"
+        },
+        {
+            "type": "image_picker",
+            "id": "popup_image",
+            "label": "Popup Image"
+        },
+        {
+            "type": "color",
+            "id": "popup_main_content_bg_color",
+            "label": "Popup Main Content Background Color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "text",
+            "id": "popup_main_heading",
+            "label": "Popup Main Heading",
+            "default": "Mystery Discount"
+        },
+        {
+            "type": "html",
+            "id": "popup_sub_heading_1",
+            "label": "Popup Subheading 1"
+        },
+        {
+            "type": "text",
+            "id": "popup_input_placeholder_1",
+            "label": "Popup Input Placeholder 1",
+            "default": "Enter your email"
+        },
+        {
+            "type": "html",
+            "id": "popup_sub_heading_2",
+            "label": "Popup Sub Heading 2"
+        },
+        {
+            "type": "text",
+            "id": "popup_input_placeholder_2",
+            "label": "Popup Input Placeholder 2",
+            "default": "Cat"
+        },
+        {
+            "type": "text",
+            "id": "popup_main_btn_text",
+            "label": "Popup Main Button Text",
+            "default": "Unlock now"
+        },
+        {
+            "type": "color",
+            "id": "popup_main_btn_text_color",
+            "label": "Popup Main Button Text Color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "color",
+            "id": "popup_main_btn_bg_color",
+            "label": "Popup Main Button Background Color",
+            "default": "#002fa7"
+        },
+        {
+            "type": "text",
+            "id": "popup_unlocked_heading",
+            "label": "Popup Unlocked Heading",
+            "default": "Unlocked!"
+        },
+        {
+            "type": "html",
+            "id": "popup_unlocked_subheading",
+            "label": "Popuo Unlocked Subheading"
+        },
+        {
+          "type": "text",
+          "id": "get_reward_code",
+          "label": "Popup Unlocked Get reward content",
+          "default": "DMMO10"
+        },
+        {
+            "type": "color",
+            "id": "popup_unlocked_input_bg_color",
+            "label": "Popup Unlocked Input Background Color",
+            "default": "#002fa7"
+        },
+        {
+            "type": "text",
+            "id": "popup_unlocked_btn_text",
+            "label": "Popup Unlocked Button Text",
+            "default": "apply & start saving"
+        },
+        {
+            "type": "color",
+            "id": "popup_unlocked_btn_text_color",
+            "label": "Popup Unlocked Button Text Color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "color",
+            "id": "popup_unlocked_btn_bg_color",
+            "label": "Popup Unlocked Button Background Color",
+            "default": "#002fa7"
+        },
+        {
+            "type": "range",
+            "id": "animation_duration",
+            "label": "Animation duration",
+            "min": 3,
+            "max": 18,
+            "step": 3,
+            "default": 3
+        },
+        {
+            "type": "range",
+            "id": "delay_popup_times",
+            "label": "Delay until the popup appers",
+            "unit": "sec",
+            "min": 3,
+            "max": 18,
+            "step": 1,
+            "default": 5
+        },
+        {
+            "type": "checkbox",
+            "id": "only_hp_show",
+            "label": "Only show on homepage",
+            "default": false
+        },
+        {
+            "type": "checkbox",
+            "id": "show_once_to_visitor",
+            "label": "Show once to visitor",
+            "default": false
+        }
+    ],
+    "presets": [
+        {
+            "name": "Cust Popup",
+            "category": "Custom Sections",
+            "settings": {
+            }
+        }
+    ]
+  }
+{% endschema %}

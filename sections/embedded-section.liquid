@@ -1,0 +1,45 @@
+<div class="embed-wrapper">{{ page.content }}</div>
+
+<style>
+body:has(.embed-wrapper){
+  overflow: hidden;
+}
+
+body:has(.embed-wrapper) .cust-popup,
+body:has(.embed-wrapper) inbox-online-store-chat,
+body:has(.embed-wrapper) .footer__back-to-top{
+    display: none !important;
+    position: unset !important;
+}
+.embed-wrapper{
+  margin: 60px 0px;
+}
+.embed-wrapper [data-tf-widget] {
+  position: relative !important;
+  height: calc(100dvh - var(--announcement-bar-height) - var(--header-height) - 120px) !important;
+    z-index: 20 !important;
+}
+
+.embed-wrapper iframe{
+  border-radius: 30px !important;
+}
+
+@media screen and (max-width: 989px) {
+  .embed-wrapper{
+    margin: 32px 0px;
+    width: 100%;
+  }
+  .embed-wrapper [data-tf-widget]{
+    height: calc(100dvh - var(--announcement-bar-height) - var(--header-height) - 64px) !important;
+  }
+
+}
+</style>
+
+{% schema %}
+{
+    "name": "Embed Code",
+    "settings": [
+    ]
+}
+{% endschema %}

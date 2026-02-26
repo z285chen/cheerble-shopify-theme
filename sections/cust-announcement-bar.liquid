@@ -1,0 +1,319 @@
+{%- if section.blocks.size > 0 -%}
+    {%- comment -%}
+    ------------------------------------------------------------------------------------------------------------------------
+    CSS
+    ------------------------------------------------------------------------------------------------------------------------
+    {%- endcomment -%}
+    <style>
+      :root {
+        --sticky-announcement-bar-enabled: {%- if section.settings.enable_sticky -%}1{% else %}0{% endif %};
+      }
+  
+      {%- if section.settings.enable_sticky -%}
+        #shopify-section-{{ section.id }} {
+          position: sticky;
+          top: 0;
+          z-index: 20;
+        }
+  
+        .shopify-section--header ~ #shopify-section-{{ section.id }} {
+          top: calc(var(--sticky-header-enabled, 0) * var(--header-height, 0px));
+        }
+      {%- endif -%}
+    </style>
+  
+    {%- comment -%}
+    ------------------------------------------------------------------------------------------------------------------------
+    LIQUID
+    ------------------------------------------------------------------------------------------------------------------------
+    {%- endcomment -%}
+  
+    {%- for block in section.blocks -%}
+        {% style %}
+          .announcement-bar__block-{{ block.id }}{
+            --countdown-bg-color: rgba({{block.settings.countdown_block_background.red}},{{block.settings.countdown_block_background.green}},{{block.settings.countdown_block_background.blue}}, 0.4);
+            --countdown-text-color: {{block.settings.countdown_block_text_color}};
+          }
+        {% endstyle %}
+    {% endfor %}
+    <height-observer variable="announcement-bar">
+      <div {% render 'surface', class: 'announcement-bar', background_gradient: section.settings.background_gradient, background: section.settings.background, text_color: section.settings.text_color %}>
+        {%- if section.settings.navigation_mode == 'scrolling' -%}
+          <marquee-text scrolling-speed="{{ section.settings.scrolling_speed }}" class="announcement-bar__scrolling-list">
+            {%- capture content -%}
+              {%- for block in section.blocks -%}
+                <div class="{{ section.settings.text_size }} announcement-bar__block announcement-bar__block-{{ block.id }} {% if block.settings.countdown_end_date != blank %} has-countdown{% endif %}" {{ block.shopify_attributes }}>
+                   <div class="bold content-text"> 
+                     {{ block.settings.text }}
+                     {% if block.settings.btn_label != blank %}
+                       <span class="content-btn"><span style="margin:0px 5px;">｜ </span> <a href="{{ block.settings.btn_link }}">{{ block.settings.btn_label }}</a></span>
+                     {% endif %}
+                   </div>
+                   {% if block.settings.countdown_end_date != blank %}
+                     <div class="countdown_wrapper custom_countdown" data-countdown-end-date="{{ block.settings.countdown_end_date }}">
+                        <div class="star_countdown">
+                           <div class="days">
+                              <div><span class="block days_num">-</span><span>{{ "header.announcement.countdown.days" | t }}</span></div>
+                           </div>
+                           <div class="hours">
+                              <div><span class="block hours_num">-</span><span>{{ "header.announcement.countdown.hours" | t }}</span></div>
+                           </div>
+                           <div class="mins">
+                              <div><span class="block mins_num">-</span><span>{{ "header.announcement.countdown.mins" | t }}</span></div>
+                           </div>
+                           <div class="sec">
+                              <div><span class="block sec_num">-</span><span>{{ "header.announcement.countdown.sec" | t }}</span></div>
+                           </div>
+                        </div>
+                        {% if block.settings.btn_label != blank %}
+                         <span class="content-btn hide-desktop"><a href="{{ block.settings.btn_link }}">{{ block.settings.btn_label }}</a></span>
+                       {% endif %}
+                      </div>
+                  {% endif %}
+                </div>
+                
+                <span class="shape-circle shape--sm"></span>
+              {%- endfor -%}
+            {%- endcapture -%}
+  
+            {%- for i in (1..10) -%}
+              <span class="announcement-bar__item" {% unless forloop.first %}aria-hidden="true"{% endunless %}>
+                {{- content -}}
+              </span>
+            {%- endfor -%}
+          </marquee-text>
+        {%- else -%}
+          <div class="container">
+            {% if section.settings.refer_info != blank %}
+            <div class="announcement-bar__refer-info">
+              <span class="refer-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M3.33333 9.16675V12.5001C3.33333 15.2501 3.33333 16.6251 4.1875 17.4792C5.04167 18.3334 6.41667 18.3334 9.16667 18.3334H10.8333C13.5833 18.3334 14.9583 18.3334 15.8125 17.4792C16.6667 16.6251 16.6667 15.2501 16.6667 12.5001V9.16675M10 4.88091C10 4.02846 9.66137 3.21093 9.05859 2.60816C8.45582 2.00538 7.63828 1.66675 6.78583 1.66675H6.48833C5.66667 1.66675 5 2.33258 5 3.15508C5 3.86542 5.28218 4.54666 5.78447 5.04895C6.28675 5.55123 6.96799 5.83341 7.67833 5.83341H10M10 4.88091V5.83341M10 4.88091C10 4.02846 10.3386 3.21093 10.9414 2.60816C11.5442 2.00538 12.3617 1.66675 13.2142 1.66675H13.5117C14.3333 1.66675 15 2.33258 15 3.15508C15 3.50681 14.9307 3.85508 14.7961 4.18004C14.6615 4.50499 14.4642 4.80024 14.2155 5.04895C13.9668 5.29765 13.6716 5.49494 13.3466 5.62954C13.0217 5.76414 12.6734 5.83341 12.3217 5.83341H10M10 9.16675V18.3334M2.5 7.50008C2.5 6.87675 2.5 6.56508 2.6675 6.33341C2.7863 6.17424 2.94377 6.04803 3.125 5.96675C3.415 5.83341 3.80417 5.83341 4.58333 5.83341H15.4167C16.1958 5.83341 16.585 5.83341 16.875 5.96675C17.065 6.05508 17.2225 6.18175 17.3325 6.33341C17.5 6.56508 17.5 6.87675 17.5 7.50008C17.5 8.12341 17.5 8.43425 17.3325 8.66675C17.2137 8.82592 17.0562 8.95213 16.875 9.03341C16.585 9.16675 16.1958 9.16675 15.4167 9.16675H4.58333C3.80417 9.16675 3.415 9.16675 3.125 9.03341C2.94377 8.95213 2.7863 8.82592 2.6675 8.66675C2.5 8.43425 2.5 8.12341 2.5 7.50008Z" stroke="#1C1C1E" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <a href="{{ section.settings.refer_link }}" class="refer-text" >{{ section.settings.refer_info }}</a>
+            </div>
+            {% endif %}
+            <div class="announcement-bar__wrapper {% if section.blocks.size == 1 %}justify-center{% else %}justify-between{% endif %}">
+              {%- if section.blocks.size > 1 -%}
+                <button class="tap-area" is="prev-button" aria-controls="announcement-bar" aria-label="{{ 'general.accessibility.previous' | t }}">
+                  {%- render 'icon' with 'chevron-left', direction_aware: true -%}
+                </button>
+              {%- endif -%}
+              <announcement-bar swipeable {% if section.settings.autoplay %}autoplay="{{ section.settings.cycle_speed }}"{% endif %} id="announcement-bar" class="announcement-bar__static-list">
+                {%- for block in section.blocks -%}
+                  <div class="announcement-bar__block announcement-bar__block-{{ block.id }} {{ section.settings.text_size }} {% unless forloop.first %}reveal-invisible{% endunless %} {% if block.settings.countdown_end_date != blank %} has-countdown{% endif %}" {{ block.shopify_attributes }}>
+                      <div class="bold content-text">
+                       {{ block.settings.text }}
+                       {% if block.settings.btn_label != blank %}
+                         <span class="content-btn"><span style="margin:0px 5px;">｜ </span>  <a href="{{ block.settings.btn_link }}">{{ block.settings.btn_label }}</a></span>
+                       {% endif %}
+                      </div>
+                     {% if block.settings.countdown_end_date != blank %}
+                       <div class="countdown_wrapper custom_countdown" data-countdown-end-date="{{ block.settings.countdown_end_date }}">
+                          <div class="star_countdown">
+                             <div class="days">
+                                <div><span class="block days_num">-</span><span>{{ "header.announcement.countdown.days" | t }}</span></div>
+                             </div>
+                             <div class="hours">
+                                <div><span class="block hours_num">-</span><span>{{ "header.announcement.countdown.hours" | t }}</span></div>
+                             </div>
+                             <div class="mins">
+                                <div><span class="block mins_num">-</span><span>{{ "header.announcement.countdown.mins" | t }}</span></div>
+                             </div>
+                             <div class="sec">
+                                <div><span class="block sec_num">-</span><span>{{ "header.announcement.countdown.sec" | t }}</span></div>
+                             </div>
+                          </div>
+                          {% if block.settings.btn_label != blank %}
+                           <span class="content-btn hide-desktop"><a href="{{ block.settings.btn_link }}">{{ block.settings.btn_label }}</a></span>
+                         {% endif %}
+                        </div>
+                    {% endif %}
+                  </div>
+                {%- endfor -%}
+              </announcement-bar>
+  
+              {%- if section.blocks.size > 1 -%}
+                <button class="tap-area" is="next-button" aria-controls="announcement-bar" aria-label="{{ 'general.accessibility.next' | t }}">
+                  {%- render 'icon' with 'chevron-right', direction_aware: true -%}
+                </button>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </height-observer>
+  
+    <script>
+      document.documentElement.style.setProperty('--announcement-bar-height', Math.round(document.getElementById('shopify-section-{{ section.id }}').clientHeight) + 'px');
+    </script>
+  {%- endif -%}
+  
+  {% schema %}
+  {
+    "name": "Cust Announcement bar",
+    "class": "shopify-section--announcement-bar cust-announcement-bar",
+    "tag": "aside",
+    "max_blocks": 5,
+    "blocks": [
+      {
+        "type": "message",
+        "name": "Message",
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text",
+            "default": "Announce something here"
+          },
+          {
+            "type": "text",
+            "id": "btn_label",
+            "label": "Button label",
+            "default": "SHOP NOW"
+          },
+          {
+            "type": "url",
+            "id": "btn_link",
+            "label": "Button link"
+          },
+          {
+            "type": "header",
+            "content": "Countdown Info",
+            "info": "If empty, it will not be displayed."
+          },
+          {
+             "type":"text",
+             "id":"countdown_end_date",
+             "label":"Countdown end date",
+             "default":"Jun 17, 2023 15:00:00",
+             "info": "Date format for reference: Jun 17, 2023 15:00:00"
+          },
+          {
+             "type":"color",
+             "id":"countdown_block_background",
+             "label":"Countdown Block Background",
+             "default":"#000000"
+          },
+          {
+             "type":"color",
+             "id":"countdown_block_text_color",
+             "label":"Countdown Block Text color",
+             "default":"#ffffff"
+          }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_sticky",
+        "label": "Enable sticky bar",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "autoplay",
+        "label": "Auto rotate between messages",
+        "info": "Ignored when using auto-scrolling.",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "cycle_speed",
+        "min": 4,
+        "max": 20,
+        "step": 1,
+        "unit": "sec",
+        "label": "Change messages every",
+        "default": 6
+      },
+      {
+        "type": "select",
+        "id": "text_size",
+        "label": "Text size",
+        "options": [
+          {
+            "value": "text-xxs",
+            "label": "X-Small"
+          },
+          {
+            "value": "text-xs",
+            "label": "Small"
+          },
+          {
+            "value": "text-base",
+            "label": "Medium"
+          },
+          {
+            "value": "text-lg",
+            "label": "Large"
+          }
+        ],
+        "default": "text-xs"
+      },
+      {
+        "type": "select",
+        "id": "navigation_mode",
+        "label": "Multiple message navigation",
+        "options": [
+          {
+            "value": "arrows",
+            "label": "Arrows"
+          },
+          {
+            "value": "scrolling",
+            "label": "Auto-scrolling"
+          }
+        ],
+        "default": "arrows"
+      },
+      {
+        "type": "range",
+        "id": "scrolling_speed",
+        "label": "Scrolling speed",
+        "min": 10,
+        "max": 30,
+        "unit": "s",
+        "default": 20
+      },
+      {
+        "type": "header",
+        "content": "Colors",
+        "info": "Gradient replaces solid colors when set."
+      },
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background"
+      },
+      {
+        "type": "color_background",
+        "id": "background_gradient",
+        "label": "Background gradient"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text"
+      },
+      {
+        "type": "header",
+        "content": "Refer info",
+        "info": "If navigation_mode is scrolling, it will not be displayed."
+      },
+      {
+        "type": "text",
+        "id": "refer_info",
+        "label": "Refer info text",
+        "default": "Refer a Friend to a Cheerble Smart Toy"
+      },
+      {
+        "type": "url",
+        "id": "refer_link",
+        "label": "Refer link"
+      }
+    ]
+  }
+  {% endschema %}

@@ -1,0 +1,528 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": "100%"
+      }
+    },
+    "33eca328-a247-4cb9-b5da-fbfe6639c3a1": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "template--16799679906011__33eca328-a247-4cb9-b5da-fbfe6639c3a1-richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p><strong>Get a free gift pouch with Cheerble toys<\/strong><\/p>"
+          }
+        },
+        "template--16799679906011__33eca328-a247-4cb9-b5da-fbfe6639c3a1-heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Your Pets Also Deserve Gifts",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "template--16799679906011__33eca328-a247-4cb9-b5da-fbfe6639c3a1-richtext-1",
+        "template--16799679906011__33eca328-a247-4cb9-b5da-fbfe6639c3a1-heading-1"
+      ],
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": true,
+        "enable_parallax": true,
+        "image_size": "auto",
+        "image": "shopify:\/\/shop_images\/free_gift_pouch_banner.webp",
+        "mobile_image": "shopify:\/\/shop_images\/free_gift_pouch_banner_mobile.webp",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center-start sm:text-start",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 20
+      }
+    },
+    "5fbbb76c-d832-4aeb-9563-2bcd464459a6": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16799679906011__5fbbb76c-d832-4aeb-9563-2bcd464459a6-heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Order Steps",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "1d75eb93-03a0-48d7-bce5-78d9b604ddd9": {
+          "type": "richtext",
+          "settings": {
+            "content": "<ol><li>Add a CheerUp Gift Pouch to the cart<\/li><li>Pick a toy from the selection below<\/li><li>Checkout and pet your dog\/cat<\/li><\/ol>"
+          }
+        },
+        "ff990aac-fec3-4ef7-8d49-482dececf4c2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Snapinsta.app_328340219_158134563666725_9001257157617135650_n_1080.jpg",
+            "width_mode": "custom",
+            "max_width": 300,
+            "mobile_max_width": 250
+          }
+        }
+      },
+      "block_order": [
+        "template--16799679906011__5fbbb76c-d832-4aeb-9563-2bcd464459a6-heading-1",
+        "1d75eb93-03a0-48d7-bce5-78d9b604ddd9",
+        "ff990aac-fec3-4ef7-8d49-482dececf4c2"
+      ],
+      "custom_css": [],
+      "settings": {
+        "full_width": false,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "#ffffff",
+        "background_gradient": "radial-gradient(rgba(NaN, NaN, NaN, 0), rgba(NaN, NaN, NaN, 0) 100%, rgba(249, 32, 32, 1) 100%)",
+        "text_color": "#1a1a1a"
+      }
+    },
+    "45188c35-90b3-4c38-a106-806e7a885d11": {
+      "type": "featured-product",
+      "blocks": {
+        "template--16799679906011__45188c35-90b3-4c38-a106-806e7a885d11-title-1": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h2"
+          }
+        },
+        "template--16799679906011__45188c35-90b3-4c38-a106-806e7a885d11-badges-1": {
+          "type": "badges",
+          "settings": {}
+        },
+        "template--16799679906011__45188c35-90b3-4c38-a106-806e7a885d11-price-1": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "template--16799679906011__45188c35-90b3-4c38-a106-806e7a885d11-rating-1": {
+          "type": "rating",
+          "settings": {
+            "show_empty": false
+          }
+        },
+        "template--16799679906011__45188c35-90b3-4c38-a106-806e7a885d11-separator-1": {
+          "type": "separator",
+          "settings": {}
+        },
+        "template--16799679906011__45188c35-90b3-4c38-a106-806e7a885d11-variant_picker-1": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "size_chart_page": ""
+          }
+        },
+        "template--16799679906011__45188c35-90b3-4c38-a106-806e7a885d11-quantity_selector-1": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "4d054264-cf0e-4b42-8a79-25750aabc038": {
+          "type": "inventory",
+          "settings": {
+            "low_inventory_threshold": 0
+          }
+        },
+        "template--16799679906011__45188c35-90b3-4c38-a106-806e7a885d11-buy_buttons-1": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": false,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "#f0c417",
+            "atc_button_text_color": "#1a1a1a",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "f4242587-80d8-40f5-88c6-928e1019940a": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Cheerble Website Benefits<\/p>"
+          }
+        },
+        "3feb5c3f-230c-4e2a-bb38-ba52406835b1": {
+          "type": "offer",
+          "settings": {
+            "text_alignment": "center",
+            "icon_position": "aligned",
+            "icon": "picto-award-gift",
+            "icon_width": 24,
+            "title": "",
+            "content": "<p>Grab a free gift pouch with any toy below!<\/p>",
+            "background": "#f0f0f0",
+            "text_color": "#1a1a1a"
+          }
+        },
+        "ce7f4052-3793-452b-8bb0-12f02178abcc": {
+          "type": "offer",
+          "settings": {
+            "text_alignment": "center",
+            "icon_position": "aligned",
+            "icon": "picto-plane",
+            "icon_width": 24,
+            "title": "",
+            "content": "<p>Free shipping on orders over US$35<\/p>",
+            "background": "#f0f0f0",
+            "text_color": "#1a1a1a"
+          }
+        },
+        "c46a69a8-10ee-45ac-a758-962a67bb74ce": {
+          "type": "offer",
+          "settings": {
+            "text_alignment": "center",
+            "icon_position": "aligned",
+            "icon": "picto-timer",
+            "icon_width": 24,
+            "title": "",
+            "content": "<p>Orders processed within 24 hours<\/p>",
+            "background": "#f0f0f0",
+            "text_color": "#1a1a1a"
+          }
+        },
+        "342c4ca3-14cc-4c1f-9f21-aff0aca341d4": {
+          "type": "offer",
+          "settings": {
+            "text_alignment": "center",
+            "icon_position": "aligned",
+            "icon": "picto-money",
+            "icon_width": 24,
+            "title": "",
+            "content": "<p>30 days return & 12 months warranty<\/p>",
+            "background": "#f0f0f0",
+            "text_color": "#1a1a1a"
+          }
+        }
+      },
+      "block_order": [
+        "template--16799679906011__45188c35-90b3-4c38-a106-806e7a885d11-title-1",
+        "template--16799679906011__45188c35-90b3-4c38-a106-806e7a885d11-badges-1",
+        "template--16799679906011__45188c35-90b3-4c38-a106-806e7a885d11-price-1",
+        "template--16799679906011__45188c35-90b3-4c38-a106-806e7a885d11-rating-1",
+        "template--16799679906011__45188c35-90b3-4c38-a106-806e7a885d11-separator-1",
+        "template--16799679906011__45188c35-90b3-4c38-a106-806e7a885d11-variant_picker-1",
+        "template--16799679906011__45188c35-90b3-4c38-a106-806e7a885d11-quantity_selector-1",
+        "4d054264-cf0e-4b42-8a79-25750aabc038",
+        "template--16799679906011__45188c35-90b3-4c38-a106-806e7a885d11-buy_buttons-1",
+        "f4242587-80d8-40f5-88c6-928e1019940a",
+        "3feb5c3f-230c-4e2a-bb38-ba52406835b1",
+        "ce7f4052-3793-452b-8bb0-12f02178abcc",
+        "c46a69a8-10ee-45ac-a758-962a67bb74ce",
+        "342c4ca3-14cc-4c1f-9f21-aff0aca341d4"
+      ],
+      "settings": {
+        "full_width": false,
+        "product": "cheerup-gift-pouch",
+        "desktop_media_width": 50,
+        "desktop_media_layout": "carousel_thumbnails_left",
+        "mobile_media_size": "expanded",
+        "mobile_carousel_control": "floating_dots",
+        "enable_video_autoplay": true,
+        "enable_video_looping": false,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "input_background": "rgba(0,0,0,0)",
+        "input_text_color": ""
+      }
+    },
+    "a8dd352d-626d-494f-beef-b4be195d6605": {
+      "type": "text-with-icons",
+      "blocks": {
+        "template--16799679906011__a8dd352d-626d-494f-beef-b4be195d6605-item-1": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-gift",
+            "custom_icon": "shopify:\/\/shop_images\/dog.png",
+            "mobile_icon_width": 40,
+            "icon_width": 48,
+            "icon_background_type": "circle",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Pick One for Your Dogs",
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16799679906011__a8dd352d-626d-494f-beef-b4be195d6605-item-1"
+      ],
+      "settings": {
+        "full_width": false,
+        "stack_on_mobile": false,
+        "title": "",
+        "heading_tag": "h4",
+        "text_alignment": "center",
+        "icon_spacing": "small",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "d93615df-610e-4394-a151-c9de2323ab5d": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "",
+        "products": [
+          "wickedball",
+          "wicked-ball-pe",
+          "wicked-ball-se"
+        ],
+        "full_width": true,
+        "stack_products": false,
+        "show_progress_bar": false,
+        "products_count": 3,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 3,
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "link_url": "",
+        "link_text": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": ""
+      }
+    },
+    "44aaacc9-9117-4b74-9cfb-40282a2286c4": {
+      "type": "text-with-icons",
+      "blocks": {
+        "22ca9824-e9fc-4cca-8f59-ab7bcf9172b3": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "custom_icon": "shopify:\/\/shop_images\/cat.png",
+            "mobile_icon_width": 40,
+            "icon_width": 48,
+            "icon_background_type": "circle",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Pick One for Your Cats",
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "22ca9824-e9fc-4cca-8f59-ab7bcf9172b3"
+      ],
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "title": "",
+        "heading_tag": "h4",
+        "text_alignment": "center",
+        "icon_spacing": "small",
+        "background": "rgba(0,0,0,0)",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "1c55a78d-4bfc-435c-83ee-ec22fff71a56": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "",
+        "products": [
+          "cheerble-ball",
+          "cheerble-ice-cream-ball",
+          "wicked-mouse"
+        ],
+        "full_width": true,
+        "stack_products": false,
+        "show_progress_bar": false,
+        "products_count": 3,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 3,
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "link_url": "",
+        "link_text": "",
+        "background": "rgba(0,0,0,0)",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": ""
+      }
+    },
+    "6faf1eaf-75aa-454a-920c-949ce4eea7e9": {
+      "type": "video",
+      "settings": {
+        "full_width": false,
+        "allow_transparent_header": false,
+        "autoplay": true,
+        "video_size": "lg",
+        "video": "shopify:\/\/files\/videos\/狗袋.mp4",
+        "external_video_url": "",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 10
+      }
+    },
+    "db1bb79f-f5de-4a0a-b376-8a5846d6b859": {
+      "type": "press",
+      "blocks": {
+        "template--16799679906011__db1bb79f-f5de-4a0a-b376-8a5846d6b859-quote-1": {
+          "type": "quote",
+          "settings": {
+            "logo_width": 100,
+            "author": "Michal K.",
+            "content": "A really funny bag you can use as a gift bag and after that for your doggo stuff when you travel with your dog. I recommend this product.",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "template--16799679906011__db1bb79f-f5de-4a0a-b376-8a5846d6b859-quote-2": {
+          "type": "quote",
+          "settings": {
+            "logo_width": 100,
+            "author": "Gypsy H.",
+            "content": "I love it. It's the best ball pressy Ma and Pa have ever brought me. Have to go now balls started up again.",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "template--16799679906011__db1bb79f-f5de-4a0a-b376-8a5846d6b859-quote-3": {
+          "type": "quote",
+          "settings": {
+            "logo_width": 100,
+            "author": "Ann L.",
+            "content": "Thank you, people! God bless you!!! My dog so excited.",
+            "show_rating": true,
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "template--16799679906011__db1bb79f-f5de-4a0a-b376-8a5846d6b859-quote-1",
+        "template--16799679906011__db1bb79f-f5de-4a0a-b376-8a5846d6b859-quote-2",
+        "template--16799679906011__db1bb79f-f5de-4a0a-b376-8a5846d6b859-quote-3"
+      ],
+      "settings": {
+        "full_width": false,
+        "content_size": "medium",
+        "background": "#f2f2f2",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "logo_item_background": "",
+        "logo_item_border": ""
+      }
+    },
+    "ff0783ec-8b0e-43a1-ab81-14f579b4107b": {
+      "type": "faq",
+      "blocks": {
+        "d1b2121a-ad8c-4b3d-a527-e7ee4d7ec403": {
+          "type": "item",
+          "settings": {
+            "title": "How does this campaign work?",
+            "content": "<p>In this campaign, you'll receive a complimentary CheerUp Gift Pouch with the purchase of any selected products, including <strong>Cheerble Ball<\/strong>, <strong>Ice Cream Ball<\/strong>, <strong>Wicked Mouse<\/strong>, and <strong>Wicked Ball, Wicked Ball PE & SE<\/strong>. Note: please ensure to add the gift pouch in your cart before checkout.<\/p>"
+          }
+        },
+        "template--16799679906011__ff0783ec-8b0e-43a1-ab81-14f579b4107b-item-2": {
+          "type": "item",
+          "settings": {
+            "title": "Is there a minimum purchase?",
+            "content": "<p>Just add any of the products listed on this page to your cart.<\/p>"
+          }
+        },
+        "18417689-5018-46a4-8db7-c55e35541022": {
+          "type": "item",
+          "settings": {
+            "title": "Can I get more than one pouch?",
+            "content": "<p>No, the offer is limited to one CheerUp Gift Pouch per order. However, you can place multiple orders to receive additional pouches.<\/p>"
+          }
+        },
+        "1afe7807-972d-489a-bfd0-9a8364cbcce2": {
+          "type": "item",
+          "settings": {
+            "title": "Can I return or exchange the gift pouch?",
+            "content": "<p>The free CheerUp Gift Pouch cannot be returned or exchanged. However, if you wish to return or exchange the purchased product(s), please refer to our standard <a href=\"\/policies\/refund-policy\" target=\"_blank\" title=\"Refund Policy\">refund policy<\/a>.<\/p>"
+          }
+        },
+        "a7cb627a-2430-4a66-9724-b621298bbc39": {
+          "type": "item",
+          "settings": {
+            "title": "Can this offer be combined with other discounts or promotions?",
+            "content": "<p>Due to system limitations, this offer cannot automatically combine with other discounts or promotions. <\/p><p>However, we're committed to making Cheerble an affordable gift option for every pet family. To combine offers, <strong>simply leave an order note or send a message indicating the discount code you'd like to apply.<\/strong><\/p>"
+          }
+        },
+        "template--16799679906011__ff0783ec-8b0e-43a1-ab81-14f579b4107b-item-3": {
+          "type": "item",
+          "settings": {
+            "title": "Any other questions or need assistance with your order?",
+            "content": "<p>You can <a href=\"\/pages\/contact-us\" target=\"_blank\" title=\"Contact Us\">contact us<\/a> through our contact page! We will be happy to assist you.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "d1b2121a-ad8c-4b3d-a527-e7ee4d7ec403",
+        "template--16799679906011__ff0783ec-8b0e-43a1-ab81-14f579b4107b-item-2",
+        "18417689-5018-46a4-8db7-c55e35541022",
+        "1afe7807-972d-489a-bfd0-9a8364cbcce2",
+        "a7cb627a-2430-4a66-9724-b621298bbc39",
+        "template--16799679906011__ff0783ec-8b0e-43a1-ab81-14f579b4107b-item-3"
+      ],
+      "settings": {
+        "full_width": false,
+        "subheading": "Support",
+        "title": "Got a question? No Worry!",
+        "content": "<p>Check out the most common questions our customers asked. Still have questions?\u2028Contact our customer support.<\/p>",
+        "team_avatar": "shopify:\/\/shop_images\/team-fff.webp",
+        "team_avatar_width": 160,
+        "support_hours": "Our customer support is available Monday to Friday: 9.30am-6:30pm HKT.",
+        "answer_time": "Average answer time: 24h",
+        "button_text": "Contact Us",
+        "button_url": "shopify:\/\/pages\/contact-us",
+        "text_position": "start",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "33eca328-a247-4cb9-b5da-fbfe6639c3a1",
+    "5fbbb76c-d832-4aeb-9563-2bcd464459a6",
+    "45188c35-90b3-4c38-a106-806e7a885d11",
+    "a8dd352d-626d-494f-beef-b4be195d6605",
+    "d93615df-610e-4394-a151-c9de2323ab5d",
+    "44aaacc9-9117-4b74-9cfb-40282a2286c4",
+    "1c55a78d-4bfc-435c-83ee-ec22fff71a56",
+    "6faf1eaf-75aa-454a-920c-949ce4eea7e9",
+    "db1bb79f-f5de-4a0a-b376-8a5846d6b859",
+    "ff0783ec-8b0e-43a1-ab81-14f579b4107b"
+  ]
+}

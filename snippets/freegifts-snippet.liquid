@@ -1,0 +1,98 @@
+<style>
+    {% comment %} button.bogos-bp-more-btn,
+    .bogos-bp-product-variant-selected-title,
+    .bogos-bp-header-title,
+    .bogos-bp-header-subtitle,
+    .bogos-bp-products-info .bogos-bp-step-header-title,
+    .bogos-bp-products-info .bogos-bp-step-header-subtitle,
+    .bogos-bp-products-info a.bogos-bp-product-title,
+    .bogos-bp-products-info .bogos-bp-product-price.transcy-money {
+        color: #fff !important;
+    } {% endcomment %}
+    #bogos-bundle-page-body {
+        font-family: var(--heading-font-family) !important;
+    }
+    {% comment %} .bogos-bundle-page-container,
+    .shopify-section--apps:has(.bogos-bundle-page-view-block) {
+        background-color: #000 !important;
+    } {% endcomment %}
+    input.bogos-bp-quantity-input.input-box {
+        color: #000;
+    }
+    .bogos-step-notification,
+    .bogos-bundle-page-container .bogos-bp-step-title {
+        {% comment %} color: #303030; {% endcomment %}
+        font-weight: 600;
+    }
+    .bogos-step-notification{
+    color: #303030;
+    }
+    @media (min-width:600px){
+    a.bogos-bp-product-title,
+    .bogos-bp-product-price.transcy-money,
+    span.bogos-step-item-blank-title,
+    span.bogos-step-items-header-title,
+    button.bogos-bp-more-btn,
+    .bogos-bp-total-title span,
+    button.bogos-bp-button-add {
+        font-size: 20px !important;
+    }
+    .bogos-bp-widget-description,
+    .bogos-bp-product-variant-selected-title,
+    button.bogos-bp-btn-add-product,
+    .bogos-bp-step-header-subtitle,
+    .bogos-bp-step-title {
+        font-size: 18px !important;
+    }
+    .bogos-bp-widget-title {
+        font-size: 30px !important;
+    }
+    .bogos-bp-header-subtitle{
+        font-size: 28px !important;
+    }
+    .bogos-bp-header-title {
+        font-size: 60px !important;
+    }
+
+
+    .shopify-section--apps #bogos-bundle-page-body {
+        max-width: unset !important;
+    }
+    .bogos-bundle-page-container .bogos-bp-product-card{
+        gap: 10px !important;
+    }
+    .bogos-bundle-page-container .bogos-bp-products-grid{
+        gap: 40px !important;
+    }
+    .bogos-bp-widget-title,
+    span.bogos-step-items-header-title,
+    .bogos-bp-step-header-title,
+    .bogos-step-item-blank {
+        margin-bottom: 10px;
+    }
+    .shopify-section--apps .bogos-bundle-page-header{
+        padding-block-end: var(--calculated-section-spacing-block-end);
+    }
+    }
+    @media (max-width:599px){
+     .bogos-bundle-page-container {
+          gap: 30px !important;
+     }
+  }
+  @media only screen and (max-width: 768px) {
+    .bogos-bp-widget-container .bogos-bp-widget {
+        position: unset !important;
+        box-shadow: unset !important;
+    }
+    .bogos-bundle-page-container .bogos-bp-widget-header {
+        padding: 25px 0px 12px !important;
+    }
+}
+</style>
+<script>
+  document.addEventListener("bogos:bundle-page-render", async () => {
+    setTimeout(() => {
+      document.querySelectorAll(".bogos-bundle-page-body .bogos-bp-widget").forEach(el => el.classList.add("active"));
+    }, 1200)
+})
+</script>

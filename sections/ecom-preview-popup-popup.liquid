@@ -1,0 +1,191 @@
+{% comment %}
+ EComposer (https://ecomposer.io)
+ You SHOULD NOT modify source code in this page because
+ It is automatically generated from EComposer
+ At 2026-02-11 09:13:40
+ {% endcomment %} 
+ 
+ {% assign ecom_root_url = routes.root_url %}
+ {% if ecom_root_url != '/'%}
+ {% assign ecom_root_url = routes.root_url | append: '/' %}
+ {% endif %}
+ <link rel="stylesheet" media="all" id="ecom-vendors-css_ecomposer_base" href="https://cdn.ecomposer.app/vendors/css/ecom-base.css?v=2.1" /><noscript><link rel="stylesheet" media="all" id="ecom-vendors-css_ecomposer_base" href="https://cdn.ecomposer.app/vendors/css/ecom-base.css?v=2.1" /></noscript>
+{%- assign headless = true -%}{%- render "ecom_theme_helper" -%}{%capture section_id %}ecom-preview-popup-popup{% endcapture%}{% if section and section_id == section.id and headless == true %}
+{{ content_for_header }}
+{% render 'ecom_header', ECOM_THEME: true %}{% endif %}<link href="https://fonts.googleapis.com/css?family=Albert+Sans:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet"/>
+{{'ecom-preview-template-popup.css' | asset_url | stylesheet_tag }}
+<script src="{{'ecom-preview-template-popup.js' | asset_url }}" defer="defer"></script>
+<script type="text/javascript" class="ecom-page-info">
+ window.EComposer = window.EComposer || {};
+ window.EComposer.TEMPLATE_ID="preview-template-popup";
+ window.EComposer.POPUP = {"title":"G1 Popup -v3","type":"popup","slug":"ecom-preview-popup","plan_id":4,"template_id":"preview-template-popup"};
+ </script>
+<dialog class="ecom-popups-container"><div class="ecom-popups-wrapper ecom-popup-position-center ecom-popup-animation-none"><div class="ecom-popup-close-button"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L9 9M1 9L9 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ecom-popups-wrapper-inner"><div class="ecom-builder" id="ecom-preview-popup"><div class="ecom-sections" data-section-id="{{section.id}}"><section class="ecom-row ecom-core ecom-section ecom-byo9o2my4x9" data-id="ecom-byo9o2my4x9" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first ecom-hj42d49fzos"><div class="core__column--wrapper" id="ecom-hj42d49fzos"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block ecom-0uuvn8iy8c6i"><div class="ecom__element element__heading ecom-element ecom-html ecom-type-deffault" section_id="ecom-byo9o2my4x9" deep="1"><h3 class="ecom__heading ecom-db">Choose Your Early Bird Discount</h3></div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-zfveqopupf"><div class="core__column--wrapper" id="ecom-zfveqopupf"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-6oo8rwpp7ly"><div class="ecom-row ecom-core core__block ecom-vu3byuj51d9" data-id="ecom-vu3byuj51d9" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first ecom-7bifnf03o8v"><div class="core__column--wrapper" id="ecom-7bifnf03o8v"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block ecom-width-mb elmspace ecom-zbf3vq6fcq"><div data-v-6a92e952="" class="ecom__element ecom-element element__code exporting" section_id="ecom-byo9o2my4x9" deep="2">{% assign p = all_products["pet-feeder-match-g1-first-8-hour-special"] %}
+{% assign v = p.variants.first %}
+<div class="g1-comp-img">
+ <img src="{{ v.featured_image | default: p.featured_image | img_url: '400x' }}" 
+ style="width:100%; height:auto; border-radius:12px; display:block; object-fit:contain; border:1px solid #f5f5f5;">
+</div></div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-cntkz211ub g1-atomic-container"><div class="core__column--wrapper" id="ecom-cntkz211ub"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block ecom-dcs1uco4a04"><div data-v-6a92e952="" class="ecom__element ecom-element element__code exporting" section_id="ecom-byo9o2my4x9" deep="2">{% assign p = all_products["pet-feeder-match-g1-first-8-hour-special"] %}
+<div class="g1-front-1">
+ <h4 style="font-size:16px; font-weight:700; color:#1a1a1a; margin:0; line-height:1.2; text-align:left;">
+ {{ p.title }}
+ </h4>
+</div></div></div> <div class="ecom-block ecom-core core__block ecom-dk059mggatl"><div data-v-6a92e952="" class="ecom__element ecom-element element__code exporting" section_id="ecom-byo9o2my4x9" deep="2">{% assign p = all_products["pet-feeder-match-g1-first-8-hour-special"] %}
+{% assign v = p.variants.first %}
+<div class="g1-front-1" style="display:flex; align-items:baseline; gap:8px; margin:0px 0;">
+ <span style="font-size:18px; font-weight:800; color:#002fa7;">{{ v.price | money }}</span>
+ {% if v.compare_at_price > v.price %}
+ <span style="font-size:13px; color:#afafb4; text-decoration:line-through;">{{ v.compare_at_price | money }}</span>
+ {% endif %}
+</div></div></div> <div class="ecom-block ecom-core core__block ecom-t5x9fao5ov"><div data-v-6a92e952="" class="ecom__element ecom-element element__code exporting" section_id="ecom-byo9o2my4x9" deep="2">{% assign p = all_products["pet-feeder-match-g1-super-early-bird"] %}
+{% assign v = p.variants.first %}
+<div class="g1-front-1" style="text-align:left; line-height:1.4;">
+ <div style="font-size:11px; color:#555;">Remaining: <span style="font-weight:700; color:#000;">{{ v.inventory_quantity | at_least: 0 }}</span> / 500</div>
+ <div style="font-size:10px; color:#afafb4; margin-top:2px;">Estimated Shipping: Early March</div>
+</div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-tk27722abh"><div class="ecom-row ecom-core core__block ecom-spb9pajrc" data-id="ecom-spb9pajrc" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first ecom-yw28m6djxtq"><div class="core__column--wrapper" id="ecom-yw28m6djxtq"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-s0dts2f174m"><div class="ecom-core ecom-group core__block ecom-qcuw8ydjjd8"> <div class="core__group--wrapper ecom-accordion__wrapper ecom-flex ecom-column ecom-w__full ecom__element ecom__accordion ecom-accordion-close-all" data-r="" style=""><div class="core__group--items"><div id="ecom-0le24n5zxqho" class="core__group--item ecom-accordion__item" data-id="ecom-0le24n5zxqho" style=""><div class="ecom-accordion__title ecom-flex ecom-w__full ecom-al_center ecom-items" data-target="#undefined" data-target-id="#ecom-0le24n5zxqho"><div class="ecom-accordion_nav--icon ecom-items--icon" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><path d="M488 231.1C501.3 231.1 512 242.7 512 255.1C512 269.3 501.3 279.1 488 279.1H280V488C280 501.3 269.3 512 255.1 512C242.7 512 231.1 501.3 231.1 488V279.1H23.1C10.74 279.1-.0006 269.3-.0006 255.1C-.0006 242.7 10.74 231.1 23.1 231.1H231.1V24C231.1 10.75 242.7 0 255.1 0C269.3 0 280 10.75 280 24V231.1H488z"></path></svg></div><div class="ecom-accordion_nav--icon ecom-items--icon ecom-items-icon-active" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M432 256C432 269.3 421.3 280 408 280H40c-13.25 0-24-10.74-24-23.99C16 242.8 26.75 232 40 232h368C421.3 232 432 242.8 432 256z"></path></svg></div><div class="ecom-accordion_wrapper-info ecom-flex ecom-al_center"><span class="ecom-items--icon ecom-accordion_icon-title" data-image="false"></span><p class="ecom-accordion__title-text ecom-items--text">Learn More</p></div></div><div class="core__group--body ecom-accordion__body"><div class="ec-flex-wp ecom-flex"><div class="core__blocks"><div class="ecom-block ecom-core core__block elmspace ecom-uv287bhdu8b"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-byo9o2my4x9" deep="3"><div class="text-content ecom-html has-drop-cap-view-framed">Included in the Box:<div><br>• 1x TourBox G1 Console<br>• 1x Braided USB-C Cable<br>• 1x Safety Storage Case<br>• 1x Quick Start Guide<br>• 1x Warranty Card<br>• 1x Exclusive Gift Pack<br>• 1x Protective Film</div></div></div></div> </div></div></div></div></div></div> </div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-8hstl9md25e"><div class="core__column--wrapper" id="ecom-8hstl9md25e"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block ecom-uc45e084e3e"><div data-v-6a92e952="" class="ecom__element ecom-element element__code exporting" section_id="ecom-byo9o2my4x9" deep="3">{% assign p = all_products["pet-feeder-match-g1-first-8-hour-special"] %}
+{% assign v = p.variants.first %}
+<button onclick="g1AtomicAdd('{{ v.id }}', this)" 
+ style="width:100%; background:#002fa7; color:#fff; border:none; border-radius:18px; font-size:14px; font-weight:700; cursor:pointer; text-transform: capitaliza; padding-top: 10px; padding-bottom:10px; padding-left:12px; padding-right: 12px;">
+ Preorder Now
+</button>
+<script>
+ function g1AtomicAdd(vId, btn) {
+ const oldText = btn.textContent; btn.textContent = "...";
+ fetch('/cart/add.js', {
+ method: 'POST',
+ headers: {'Content-Type': 'application/json'},
+ body: JSON.stringify({items: [{id: parseInt(vId), quantity: 1}]})
+ }).then(res => {
+ if(res.ok) {
+ btn.textContent = "ADDED!";
+ document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', {bubbles: true}));
+ setTimeout(() => { 
+ const cartIcon = document.querySelector('.header__icon--cart, #cart-icon-bubble');
+ if(cartIcon) cartIcon.click();
+ btn.textContent = oldText;
+ }, 800);
+ }
+ });
+ }
+</script></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> <div class="ecom-block ecom-core core__block elmspace ecom-faun2jdxywu"><div class="ecom-row ecom-core core__block ecom-d4kk1tjd9dr" data-id="ecom-d4kk1tjd9dr" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first ecom-zixt4z2g67a"><div class="core__column--wrapper" id="ecom-zixt4z2g67a"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-kvvqt5d77t"><div data-v-6a92e952="" class="ecom__element ecom-element element__code exporting" section_id="ecom-byo9o2my4x9" deep="2">{% assign p = all_products["pet-feeder-match-g1-super-early-bird"] %}
+{% assign v = p.variants.first %}
+<div class="g1-comp-img">
+ <img src="{{ v.featured_image | default: p.featured_image | img_url: '400x' }}" 
+ style="width:100%; height:auto; border-radius:12px; display:block; object-fit:contain; border:1px solid #f5f5f5;">
+</div></div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-bg6yr6v8sli g1-atomic-container"><div class="core__column--wrapper" id="ecom-bg6yr6v8sli"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block ecom-9km3q5809pb"><div data-v-6a92e952="" class="ecom__element ecom-element element__code exporting" section_id="ecom-byo9o2my4x9" deep="2">{% assign p = all_products["pet-feeder-match-g1-super-early-bird"] %}
+<div class="g1-front-1">
+ <h4 style="font-size:16px; font-weight:700; color:#1a1a1a; margin:0; line-height:1.2; text-align:left;">
+ {{ p.title }}
+ </h4>
+</div></div></div> <div class="ecom-block ecom-core core__block ecom-beaqn97dc0s"><div data-v-6a92e952="" class="ecom__element ecom-element element__code exporting" section_id="ecom-byo9o2my4x9" deep="2">{% assign p = all_products["pet-feeder-match-g1-super-early-bird"] %}
+{% assign v = p.variants.first %}
+<div class="g1-front-1" style="display:flex; align-items:baseline; gap:8px; margin:0px 0;">
+ <span style="font-size:18px; font-weight:800; color:#002fa7;">{{ v.price | money }}</span>
+ {% if v.compare_at_price > v.price %}
+ <span style="font-size:13px; color:#afafb4; text-decoration:line-through;">{{ v.compare_at_price | money }}</span>
+ {% endif %}
+</div></div></div> <div class="ecom-block ecom-core core__block ecom-53k75kvmrer"><div data-v-6a92e952="" class="ecom__element ecom-element element__code exporting" section_id="ecom-byo9o2my4x9" deep="2">{% assign p = all_products["pet-feeder-match-g1-super-early-bird"] %}
+{% assign v = p.variants.first %}
+<div class="g1-front-1" style="text-align:left; line-height:1.4;">
+ <div style="font-size:11px; color:#555;">Remaining: <span style="font-weight:700; color:#000;">{{ v.inventory_quantity | at_least: 0 }}</span> / 500</div>
+ <div style="font-size:10px; color:#afafb4; margin-top:2px;">Estimated Shipping: Early March</div>
+</div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-16v8x4e0ljo"><div class="ecom-row ecom-core core__block ecom-4vxo6ggfxvr" data-id="ecom-4vxo6ggfxvr" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first ecom-ubygqsdq58"><div class="core__column--wrapper" id="ecom-ubygqsdq58"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-viqgpat3hm"><div class="ecom-core ecom-group core__block ecom-0a7cdyycyk4m"> <div class="core__group--wrapper ecom-accordion__wrapper ecom-flex ecom-column ecom-w__full ecom__element ecom__accordion ecom-accordion-close-all" data-r="" style=""><div class="core__group--items"><div id="ecom-ruoh2ypzv9" class="core__group--item ecom-accordion__item" data-id="ecom-ruoh2ypzv9" style=""><div class="ecom-accordion__title ecom-flex ecom-w__full ecom-al_center ecom-items" data-target="#undefined" data-target-id="#ecom-ruoh2ypzv9"><div class="ecom-accordion_nav--icon ecom-items--icon" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><path d="M488 231.1C501.3 231.1 512 242.7 512 255.1C512 269.3 501.3 279.1 488 279.1H280V488C280 501.3 269.3 512 255.1 512C242.7 512 231.1 501.3 231.1 488V279.1H23.1C10.74 279.1-.0006 269.3-.0006 255.1C-.0006 242.7 10.74 231.1 23.1 231.1H231.1V24C231.1 10.75 242.7 0 255.1 0C269.3 0 280 10.75 280 24V231.1H488z"></path></svg></div><div class="ecom-accordion_nav--icon ecom-items--icon ecom-items-icon-active" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M432 256C432 269.3 421.3 280 408 280H40c-13.25 0-24-10.74-24-23.99C16 242.8 26.75 232 40 232h368C421.3 232 432 242.8 432 256z"></path></svg></div><div class="ecom-accordion_wrapper-info ecom-flex ecom-al_center"><span class="ecom-items--icon ecom-accordion_icon-title" data-image="false"></span><p class="ecom-accordion__title-text ecom-items--text">Learn More</p></div></div><div class="core__group--body ecom-accordion__body"><div class="ec-flex-wp ecom-flex"><div class="core__blocks"><div class="ecom-block ecom-core core__block elmspace ecom-de4przyjr7t"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-byo9o2my4x9" deep="3"><div class="text-content ecom-html has-drop-cap-view-framed">Included in the Box:<div><br>• 1x TourBox G1 Console<br>• 1x Braided USB-C Cable<br>• 1x Safety Storage Case<br>• 1x Quick Start Guide<br>• 1x Warranty Card<br>• 1x Exclusive Gift Pack<br>• 1x Protective Film</div></div></div></div> </div></div></div></div></div></div> </div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-dqe3p5tff8q"><div class="core__column--wrapper" id="ecom-dqe3p5tff8q"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-1e3uby8twue"><div data-v-6a92e952="" class="ecom__element ecom-element element__code exporting" section_id="ecom-byo9o2my4x9" deep="3">{% assign p = all_products["pet-feeder-match-g1-super-early-bird"] %}
+{% assign v = p.variants.first %}
+<button onclick="g1AtomicAdd('{{ v.id }}', this)" 
+ style="width:100%; background:#002fa7; color:#fff; border:none; border-radius:18px; font-size:14px; font-weight:700; cursor:pointer; text-transform: capitaliza; padding-top: 10px; padding-bottom:10px; padding-left:12px; padding-right: 12px;">
+ Preorder Now
+</button>
+<script>
+ function g1AtomicAdd(vId, btn) {
+ const oldText = btn.textContent; btn.textContent = "...";
+ fetch('/cart/add.js', {
+ method: 'POST',
+ headers: {'Content-Type': 'application/json'},
+ body: JSON.stringify({items: [{id: parseInt(vId), quantity: 1}]})
+ }).then(res => {
+ if(res.ok) {
+ btn.textContent = "ADDED!";
+ document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', {bubbles: true}));
+ setTimeout(() => { 
+ const cartIcon = document.querySelector('.header__icon--cart, #cart-icon-bubble');
+ if(cartIcon) cartIcon.click();
+ btn.textContent = oldText;
+ }, 800);
+ }
+ });
+ }
+</script></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> <div class="ecom-block ecom-core core__block elmspace ecom-80eqok9k6mr"><div class="ecom-row ecom-core core__block ecom-dxhar0foq3q" data-id="ecom-dxhar0foq3q" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first ecom-basr7i0tavi"><div class="core__column--wrapper" id="ecom-basr7i0tavi"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-9oggb28w6nq"><div data-v-6a92e952="" class="ecom__element ecom-element element__code exporting" section_id="ecom-byo9o2my4x9" deep="2">{% assign p = all_products["pet-feeder-match-g1-early-bird"] %}
+{% assign v = p.variants.first %}
+<div class="g1-comp-img">
+ <img src="{{ v.featured_image | default: p.featured_image | img_url: '400x' }}" 
+ style="width:100%; height:auto; border-radius:12px; display:block; object-fit:contain; border:1px solid #f5f5f5;">
+</div></div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-uzmgo5v7hnl g1-atomic-container"><div class="core__column--wrapper" id="ecom-uzmgo5v7hnl"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block ecom-056h5qajubd3"><div data-v-6a92e952="" class="ecom__element ecom-element element__code exporting" section_id="ecom-byo9o2my4x9" deep="2">{% assign p = all_products["pet-feeder-match-g1-early-bird"] %}
+<div class="g1-front-1">
+ <h4 style="font-size:16px; font-weight:700; color:#1a1a1a; margin:0; line-height:1.2; text-align:left;">
+ {{ p.title }}
+ </h4>
+</div></div></div> <div class="ecom-block ecom-core core__block ecom-yewv3c6o1gi"><div data-v-6a92e952="" class="ecom__element ecom-element element__code exporting" section_id="ecom-byo9o2my4x9" deep="2">{% assign p = all_products["pet-feeder-match-g1-early-bird"] %}
+{% assign v = p.variants.first %}
+<div class="g1-front-1" style="display:flex; align-items:baseline; gap:8px; margin:0px 0;">
+ <span style="font-size:18px; font-weight:800; color:#002fa7;">{{ v.price | money }}</span>
+ {% if v.compare_at_price > v.price %}
+ <span style="font-size:13px; color:#afafb4; text-decoration:line-through;">{{ v.compare_at_price | money }}</span>
+ {% endif %}
+</div></div></div> <div class="ecom-block ecom-core core__block ecom-0mzllb62mai9"><div data-v-6a92e952="" class="ecom__element ecom-element element__code exporting" section_id="ecom-byo9o2my4x9" deep="2">{% assign p = all_products["pet-feeder-match-g1-early-bird"] %}
+{% assign v = p.variants.first %}
+<div class="g1-front-1" style="text-align:left; line-height:1.4;">
+ <div style="font-size:11px; color:#555;">Remaining: <span style="font-weight:700; color:#000;">{{ v.inventory_quantity | at_least: 0 }}</span> / 500</div>
+ <div style="font-size:10px; color:#afafb4; margin-top:2px;">Estimated Shipping: Early March</div>
+</div></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-ccr9yeccgxl"><div class="ecom-row ecom-core core__block ecom-jhdhaij66b" data-id="ecom-jhdhaij66b" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first ecom-2cdval75br7"><div class="core__column--wrapper" id="ecom-2cdval75br7"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-8n05ykx9cur"><div class="ecom-core ecom-group core__block ecom-synga7jheoj"> <div class="core__group--wrapper ecom-accordion__wrapper ecom-flex ecom-column ecom-w__full ecom__element ecom__accordion ecom-accordion-close-all" data-r="" style=""><div class="core__group--items"><div id="ecom-7y5f8u5czx" class="core__group--item ecom-accordion__item" data-id="ecom-7y5f8u5czx" style=""><div class="ecom-accordion__title ecom-flex ecom-w__full ecom-al_center ecom-items" data-target="#undefined" data-target-id="#ecom-7y5f8u5czx"><div class="ecom-accordion_nav--icon ecom-items--icon" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><path d="M488 231.1C501.3 231.1 512 242.7 512 255.1C512 269.3 501.3 279.1 488 279.1H280V488C280 501.3 269.3 512 255.1 512C242.7 512 231.1 501.3 231.1 488V279.1H23.1C10.74 279.1-.0006 269.3-.0006 255.1C-.0006 242.7 10.74 231.1 23.1 231.1H231.1V24C231.1 10.75 242.7 0 255.1 0C269.3 0 280 10.75 280 24V231.1H488z"></path></svg></div><div class="ecom-accordion_nav--icon ecom-items--icon ecom-items-icon-active" style="order: 1;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M432 256C432 269.3 421.3 280 408 280H40c-13.25 0-24-10.74-24-23.99C16 242.8 26.75 232 40 232h368C421.3 232 432 242.8 432 256z"></path></svg></div><div class="ecom-accordion_wrapper-info ecom-flex ecom-al_center"><span class="ecom-items--icon ecom-accordion_icon-title" data-image="false"></span><p class="ecom-accordion__title-text ecom-items--text">Learn More</p></div></div><div class="core__group--body ecom-accordion__body"><div class="ec-flex-wp ecom-flex"><div class="core__blocks"><div class="ecom-block ecom-core core__block elmspace ecom-hv9w063s158"><div class="ecom__element ecom-element element__text ecom-type-deffault" section_id="ecom-byo9o2my4x9" deep="3"><div class="text-content ecom-html has-drop-cap-view-framed">Included in the Box:<div><br>• 1x TourBox G1 Console<br>• 1x Braided USB-C Cable<br>• 1x Safety Storage Case<br>• 1x Quick Start Guide<br>• 1x Warranty Card<br>• 1x Exclusive Gift Pack<br>• 1x Protective Film</div></div></div></div> </div></div></div></div></div></div> </div></div> </div></div></div></div> <div class="ecom-column ecom-core core__column--last ecom-xk1mcj5crub"><div class="core__column--wrapper" id="ecom-xk1mcj5crub"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-ypekef7n6da"><div data-v-6a92e952="" class="ecom__element ecom-element element__code exporting" section_id="ecom-byo9o2my4x9" deep="3">{% assign p = all_products["pet-feeder-match-g1-early-bird"] %}
+{% assign v = p.variants.first %}
+<button onclick="g1AtomicAdd('{{ v.id }}', this)" 
+ style="width:100%; background:#002fa7; color:#fff; border:none; border-radius:18px; font-size:14px; font-weight:700; cursor:pointer; text-transform: capitaliza; padding-top: 10px; padding-bottom:10px; padding-left:12px; padding-right: 12px;">
+ Preorder Now
+</button>
+<script>
+ function g1AtomicAdd(vId, btn) {
+ const oldText = btn.textContent; btn.textContent = "...";
+ fetch('/cart/add.js', {
+ method: 'POST',
+ headers: {'Content-Type': 'application/json'},
+ body: JSON.stringify({items: [{id: parseInt(vId), quantity: 1}]})
+ }).then(res => {
+ if(res.ok) {
+ btn.textContent = "ADDED!";
+ document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', {bubbles: true}));
+ setTimeout(() => { 
+ const cartIcon = document.querySelector('.header__icon--cart, #cart-icon-bubble');
+ if(cartIcon) cartIcon.click();
+ btn.textContent = oldText;
+ }, 800);
+ }
+ });
+ }
+</script></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </section>
+</div></div></div></div></dialog><div class="ecom-popup-placeholder ecom-section"><div class="ecom-popup-placeholder-inner core__row--columns"><img src="https://ecomposer.app/images/placeholder-popup.jpg" alt="Popup placeholder"></div></div>
+ <style>
+ .ecom-popups-container{animation-name: none;} .ecom-popups-container .ecom-popups-wrapper{width: 780px;max-width: 780px;height: 496px;max-height: 496px;}.ecom-popups-container::backdrop{background-color: rgba(0, 0, 0, 0.5);} .ecom-popups-container::backdrop{backdrop-filter: blur(1px);}.ecom-popups-container .ecom-popups-wrapper .ecom-popups-wrapper-inner{}.ecom-popups-container .ecom-popups-wrapper{box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.5);} .ecom-popups-container .ecom-popups-wrapper, .ecom-popups-container .ecom-popups-wrapper .ecom-popups-wrapper-inner{border-radius: 10px;} .ecom-popups-wrapper{padding: 20px;}.ecom-popups-container .ecom-popups-wrapper-inner{overflow: hidden;} .ecom-popups-wrapper .ecom-popup-close-button{top: 10px;left: none;right: 10px;width: 30px;height: 30px;border-radius: 50%;padding: 10px;}.ecom-popups-wrapper .ecom-popup-close-button, .ecom-popups-wrapper .ecom-popup-close-button svg, .ecom-popups-wrapper .ecom-popup-close-button svg path{color: #000000 !important;fill: #000000 !important;}.ecom-popups-wrapper .ecom-popup-close-button{background-color: #efefef;border-style: none;}@media screen and (max-width: 1024px) and (min-width: 768px){ .ecom-popups-container .ecom-popups-wrapper{width: 100%;max-width: 90%;height: 416px;} .ecom-popups-wrapper{padding: 10px;margin: 0px;}}@media screen and (max-width: 767px) and (min-width: 101px){ .ecom-popups-container .ecom-popups-wrapper{width: 333px;max-width: 333px;height: 533px;max-height: 663px;} .ecom-popups-wrapper{padding-right: 10px;padding-left: 10px;} .ecom-popups-wrapper .ecom-popup-close-button{top: 10px;width: 20px;height: 20px;padding: 5px;}}.ecom-popup-placeholder{display:none;position:fixed;z-index:99;top:0;left:0;height:auto;width:100%;background-color:#fff}.ecom-popup-placeholder-inner{width:80%;margin:0 auto}.ecom-popup-placeholder-inner img{height:auto;width:100%}
+ </style><script>
+ // JS minify
+ !function(){let e=window.location.pathname.includes(`${window.EComposer.proxy_path}/preview/`);if(e){let o=document.querySelector(".ecom-popup-placeholder");o&&(o.style.display="block")}}();
+ </script>
+{% schema %}
+{
+ "name": "G1 Popup -v3",
+ "settings": [
+ {
+ "type": "header",
+ "content": "The section was generated by [Ecomposer](https:\/\/ecomposer.io).",
+ "info": "\n EComposer is a Visual Page Builder app on Shopify AppStore.\n It provides 100+ pre-built templates in library,\n so you can build unlimited pages that you can imagine with it.\n Please don't add Shopify sections to EComposer's page in the theme customize. If you do this, Shopify sections will be deleted when you republish your page in EComposer\n "
+ },
+ {
+ "type": "header",
+ "content": "[EDIT WITH EComposer APP \u2192](https:\/\/ecomposer.app\/shop?open_builder=1&page=popup&id=preview-template-popup&utm_source=theme-customize)",
+ "info": "(*You must install the app to start editing this section [Learn more](https:\/\/help.ecomposer.io\/docs\/getting-started\/installation\/))"
+ }
+ ],
+ "locales": {
+ "en": {}
+ }
+}
+{% endschema %}

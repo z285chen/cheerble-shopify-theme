@@ -1,0 +1,445 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": "100%"
+      }
+    },
+    "video_FWLaG4": {
+      "type": "video",
+      "blocks": {
+        "play_wyzKhJ": {
+          "type": "play",
+          "disabled": true,
+          "settings": {}
+        },
+        "heading_JzeJGh": {
+          "type": "heading",
+          "settings": {
+            "text": "ELEVATE PLAYING ELEVATE LIVING",
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "play_wyzKhJ",
+        "heading_JzeJGh"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 767px) {{display: block; }}",
+        "@media screen and (max-width: 767px) {{display: none; }}"
+      ],
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "autoplay": true,
+        "video_size": "auto",
+        "video": "shopify:\/\/files\/videos\/am video banner pc.mp4",
+        "mobile_video": "shopify:\/\/files\/videos\/am video banner mobile.mp4",
+        "external_video_url": "",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "video_3RBmUW": {
+      "type": "video",
+      "blocks": {
+        "play_86kHXf": {
+          "type": "play",
+          "disabled": true,
+          "settings": {}
+        },
+        "heading_GUFyUH": {
+          "type": "heading",
+          "settings": {
+            "text": "ELEVATE PLAYING ELEVATE LIVING",
+            "heading_tag": "h3"
+          }
+        }
+      },
+      "block_order": [
+        "play_86kHXf",
+        "heading_GUFyUH"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 768px) {{display: none; }}",
+        "@media screen and (max-width: 768px) {{display: block; }}"
+      ],
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "autoplay": true,
+        "video_size": "md",
+        "video": "shopify:\/\/files\/videos\/am video banner mobile.mp4",
+        "external_video_url": "",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "newsletter_KcxCne": {
+      "type": "newsletter",
+      "settings": {
+        "full_width": true,
+        "show_icon": false,
+        "title": "Begin the Smart Play",
+        "content": "<p>Sign up to get the exclusive offers!<\/p>",
+        "button_text": "Sign Up",
+        "subtext": "",
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    },
+    "rich_text_H8jrC3": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_XViJiV": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "Stronger Bonds, Happier Pets",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_XViJiV"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "images_with_text_scrolling_UUARgB": {
+      "type": "images-with-text-scrolling",
+      "blocks": {
+        "item_WtVaky": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hands-free_interaction.jpg",
+            "icon": "none",
+            "icon_width": 48,
+            "title": "Hands-Free Interaction",
+            "content": "<p>Cheerble toys are designed with smart features that allow pets to engage independently or alongside their owners, ensuring quality time for both.<\/p>"
+          }
+        },
+        "item_HMKNgn": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/mental_stimulation.jpg",
+            "icon": "none",
+            "icon_width": 48,
+            "title": "Mental Stimulation",
+            "content": "<p>With dynamic LED lights, realistic movements, and sound cues, Cheerble toys provide full-sensory engagement, promoting mental well-being during play.<\/p>"
+          }
+        },
+        "item_kNagzC": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/building_closer_connections.jpg",
+            "icon": "none",
+            "icon_width": 48,
+            "title": "Building Closer Connections",
+            "content": "<p>By providing your pet with enriching play, Cheerble helps foster a deeper connection, creating moments that strengthen your relationship.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_WtVaky",
+        "item_HMKNgn",
+        "item_kNagzC"
+      ],
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "show_counter": true,
+        "desktop_image_effect": "reveal",
+        "image_position": "end",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": ""
+      }
+    },
+    "rich_text_thtxEN": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_jfnYi4": {
+          "type": "heading",
+          "settings": {
+            "text": "Enhanced Interactive Play",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_jfnYi4"
+      ],
+      "custom_css": [
+        "{margin-bottom: -50px;}"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "#f1f1f1",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "media_with_text_ErDciF": {
+      "type": "media-with-text",
+      "blocks": {
+        "video_FXy3Lh": {
+          "type": "video",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/AIR-模式-2.mov",
+            "external_video_url": "",
+            "autoplay": true,
+            "media_width": 50,
+            "media_position": "start",
+            "text_position": "place-self-center-start text-start",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "",
+            "title": "3 Interactive Modes",
+            "content": "<p>Both Wicked Ball Air and Wicked Ball M3 allow you to switch between three modes to cater to your pet's different play styles and energy levels, ensuring endless fun and stimulation.<\/p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "rgba(0,0,0,0)",
+            "background_gradient": "",
+            "text_color": "#1a1a1a",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        },
+        "video_P3Fhhq": {
+          "type": "video",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/材质-2.mov",
+            "external_video_url": "",
+            "autoplay": true,
+            "media_width": 50,
+            "media_position": "end",
+            "text_position": "place-self-center-start text-start",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "",
+            "title": "Safer, Stronger, Replaceable",
+            "content": "<p>The replaceable outer shell of Wicked Ball Air is made of E-TPU that is super chew-proof, FDA certified, and eco-friendly.<\/p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "rgba(0,0,0,0)",
+            "background_gradient": "",
+            "text_color": "#1a1a1a",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        },
+        "video_PGmt9p": {
+          "type": "video",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/M3-地毯场景.mov",
+            "external_video_url": "",
+            "autoplay": true,
+            "media_width": 50,
+            "media_position": "start",
+            "text_position": "place-self-center-start text-start",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "",
+            "title": "Indoor Performance Up!",
+            "content": "<p>Enhanced power enables the Wicked Ball M3 to play on multiple surfaces, even shag carpets.<\/p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "rgba(0,0,0,0)",
+            "background_gradient": "",
+            "text_color": "#1a1a1a",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_FXy3Lh",
+        "video_P3Fhhq",
+        "video_PGmt9p"
+      ],
+      "custom_css": [
+        "{background-color: #f1f1f1;}"
+      ],
+      "settings": {
+        "full_width": true,
+        "spacing": "small"
+      }
+    },
+    "image_with_text_overlay_fJhydV": {
+      "type": "image-with-text-overlay",
+      "disabled": true,
+      "custom_css": [
+        "{margin-bottom: 50px;}"
+      ],
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "auto",
+        "image": "shopify:\/\/shop_images\/img_v3_02f7_bb3fb60d-1da9-4b1b-86d1-f71b1a1c8d3g.jpg",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "press_fiewLz": {
+      "type": "press",
+      "blocks": {
+        "quote_yfrKik": {
+          "type": "quote",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/allaboutcats-logo.png",
+            "logo_width": 140,
+            "author": "",
+            "content": "Cheerble Wicked Ball is an exciting concept and a rugged, well-designed toy that’s a great option for multi-pet homes.",
+            "show_rating": false,
+            "rating": 4
+          }
+        }
+      },
+      "block_order": [
+        "quote_yfrKik"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_size": "small",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "logo_item_background": "",
+        "logo_item_border": ""
+      }
+    },
+    "impact_text_znk99E": {
+      "type": "impact-text",
+      "blocks": {
+        "item_6ghJPn": {
+          "type": "item",
+          "settings": {
+            "title": "1,500,000+",
+            "subheading": "Furiends chose Wicked Toys",
+            "content": "",
+            "button_text": "",
+            "button_url": "",
+            "animate_impact_text": false,
+            "animate_impact_text_duration": 2
+          }
+        }
+      },
+      "block_order": [
+        "item_6ghJPn"
+      ],
+      "custom_css": [],
+      "settings": {
+        "full_width": true,
+        "stack_mobile": true,
+        "text_alignment": "center",
+        "impact_text_style": "fill",
+        "text_divider": "none",
+        "impact_text_size_ratio": 1,
+        "background": "rgba(0,0,0,0)",
+        "background_gradient": "",
+        "heading_text_color": "",
+        "heading_gradient": "",
+        "text_color": "",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    },
+    "image_with_text_overlay_E6AQVD": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_9MPJ4Q": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "text": "Subheading"
+          }
+        },
+        "heading_73Ln44": {
+          "type": "heading",
+          "settings": {
+            "text": "Where Pet Love Leads to Innovation",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_M6qE4y": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Cheerble starts with a whole lotta love for pets. We listen to what you and your furry friends say and keep making our toys and stuff even better. All so our pets can be happy and healthy, and the bond between you and your pet gets stronger than ever. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_9MPJ4Q",
+        "heading_73Ln44",
+        "richtext_M6qE4y"
+      ],
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "auto",
+        "image": "shopify:\/\/shop_images\/am_design_draft.jpg",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#1a1a1a",
+        "overlay_opacity": 20
+      }
+    }
+  },
+  "order": [
+    "main",
+    "video_FWLaG4",
+    "video_3RBmUW",
+    "newsletter_KcxCne",
+    "rich_text_H8jrC3",
+    "images_with_text_scrolling_UUARgB",
+    "rich_text_thtxEN",
+    "media_with_text_ErDciF",
+    "image_with_text_overlay_fJhydV",
+    "press_fiewLz",
+    "impact_text_znk99E",
+    "image_with_text_overlay_E6AQVD"
+  ]
+}

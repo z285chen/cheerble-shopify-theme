@@ -1,0 +1,505 @@
+{% comment %}
+ EComposer (https://ecomposer.io)
+ You SHOULD NOT modify source code in this page because
+ It is automatically generated from EComposer
+ At 2026-02-11 03:26:54
+ {% endcomment %} 
+ 
+ {% assign ecom_root_url = routes.root_url %}
+ {% if ecom_root_url != '/'%}
+ {% assign ecom_root_url = routes.root_url | append: '/' %}
+ {% endif %}
+ <link rel="stylesheet" media="all" id="ecom-vendors-css_ecomposer_base" href="https://cdn.ecomposer.app/vendors/css/ecom-base.css?v=2.1" /><noscript><link rel="stylesheet" media="all" id="ecom-vendors-css_ecomposer_base" href="https://cdn.ecomposer.app/vendors/css/ecom-base.css?v=2.1" /></noscript>
+{%capture section_id %}ecom-g1-popup-v2602-popup{% endcapture%}{% if section and section_id == section.id and headless == true %}
+{{ content_for_header }}
+{% render 'ecom_header', ECOM_THEME: true %}{% endif %}
+{{'ecom-698bddb44e07f8721a0fb438.css' | asset_url | stylesheet_tag }}
+<script src="{{'ecom-698bddb44e07f8721a0fb438.js' | asset_url }}" defer="defer"></script>
+<script type="text/javascript" class="ecom-page-info">
+ window.EComposer = window.EComposer || {};
+ window.EComposer.TEMPLATE_ID="698bddb44e07f8721a0fb438";
+ window.EComposer.POPUP = {"title":"G1 Popup -v2602","type":"popup","slug":"ecom-g1-popup-v2602","plan_id":4,"template_id":"698bddb44e07f8721a0fb438"};
+ </script>
+<dialog class="ecom-popups-container"><div class="ecom-popups-wrapper ecom-popup-position-center ecom-popup-animation-none"><div class="ecom-popup-close-button"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L9 9M1 9L9 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ecom-popups-wrapper-inner"><div class="ecom-builder" id="ecom-g1-popup-v2602"><div class="ecom-sections" data-section-id="{{section.id}}"><section class="ecom-row ecom-core ecom-section ecom-byo9o2my4x9" data-id="ecom-byo9o2my4x9" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-hj42d49fzos"><div class="core__column--wrapper" id="ecom-hj42d49fzos"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-oforx7kkjg"><div class="ecom-row ecom-core core__block ecom-ryzlpa3tvba" data-id="ecom-ryzlpa3tvba" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-ax452iyhff8"><div class="core__column--wrapper" id="ecom-ax452iyhff8"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-0uuvn8iy8c6i"><div class="ecom__element element__heading ecom-element ecom-html ecom-type-deffault" section_id="ecom-byo9o2my4x9" deep="2"><h3 class="ecom__heading ecom-db">{{ 'sections.ecom-g1-popup-v2602-popup.headingtext_0uuvn8iy8c6i_html' | t }}</h3></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> <div class="ecom-block ecom-core core__block elmspace ecom-suji02ghfbb"><div class="ecom-row ecom-core core__block ecom-3shd0djg8hx" data-id="ecom-3shd0djg8hx" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-h5e9dr76yjf"><div class="core__column--wrapper" id="ecom-h5e9dr76yjf"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-4a6m4tnbxme"><div data-v-6a92e952="" class="ecom__element ecom-element element__code exporting" section_id="ecom-byo9o2my4x9" deep="2">
+{% assign target_product_handle = "pet-feeder-match-g1-first-8-hour-special" %}
+{% assign total_limit = 500 %}
+{% assign shipping_time = "Early March" %}
+{% assign g1_prod = all_products[target_product_handle] %}
+{% assign target_variant = g1_prod.selected_or_first_available_variant %}
+<div class="tm-premium-card">
+ 
+ <div class="tm-img-side">
+ <img src="{{ target_variant.featured_image | default: g1_prod.featured_image | image_url: width: 400 }}" class="tm-hero-img">
+ </div>
+ <div class="tm-content-side">
+ 
+ <div class="tm-info-viewport">
+ 
+ 
+ <div class="tm-pane tm-pane-front">
+ <h4 class="tm-p-title">{{ g1_prod.title }}</h4>
+ <div class="tm-p-price">
+ <span class="p-now">{{ target_variant.price | money }}</span>
+ {% if target_variant.compare_at_price > target_variant.price %}
+ <span class="p-old">{{ target_variant.compare_at_price | money }}</span>
+ {% endif %}
+ </div>
+ <div class="tm-p-meta">
+ <div class="meta-line">Remaining: <span class="meta-high">{{ target_variant.inventory_quantity | at_least: 0 }}</span> / Total: {{ total_limit }}</div>
+ <div class="meta-shipping">Estimated Shipping: {{ shipping_time }}</div>
+ </div>
+ </div>
+ 
+ <div class="tm-pane tm-pane-back">
+ <div class="tm-list-hd">Included in the Box</div>
+ 
+ <div class="tm-list-scroll-box">
+ <ul>
+ <li>• 1x TourBox G1 Console</li>
+ <li>• 1x Braided USB-C Cable</li>
+ <li>• 1x Safety Storage Case</li>
+ <li>• 1x Quick Start Guide</li>
+ <li>• 1x Warranty Card</li>
+ <li>• 1x Exclusive Gift Pack</li>
+ <li>• 1x Protective Film</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+ 
+ <div class="tm-p-footer">
+ <div class="tm-ui-btn btn-outline" onclick="toggleMiniG1(this)">
+ <span class="btn-txt">Learn More</span>&nbsp;<span class="btn-sym">+</span>
+ </div>
+ <button class="tm-ui-btn btn-solid" onclick="ajaxAddToCartG1('{{ target_variant.id }}', this)">
+ Preorder Now
+ </button>
+ </div>
+ </div>
+</div>
+<style>
+ .tm-premium-card {
+ display: flex; width: 100%; height: 230px; 
+ background: #fff !important; border: 1px solid #eeeeee !important; border-radius: 12px !important; 
+ margin-bottom: 15px; overflow: visible !important; box-sizing: border-box; 
+ }
+ .tm-img-side { width: 34%; background: #f7f7f7; position: relative; flex-shrink: 0; border-top-left-radius: 12px; border-bottom-left-radius: 12px;}
+ .tm-hero-img { 
+ width: 100%; height: 100%; object-fit: cover; 
+ border-top-left-radius: 12px; border-bottom-left-radius: 12px; 
+ }
+ .tm-content-side { 
+ flex: 1; padding: 15px 20px; display: flex; flex-direction: column; 
+ justify-content: space-between; overflow: visible !important; 
+ }
+ /* --- 核心修复：锁定内容区高度 --- */
+ .tm-info-viewport { 
+ height: 145px; /* 强制锁定此高度，防止底部按钮跳动 */
+ display: flex; flex-direction: column; 
+ justify-content: center; /* 正面内容垂直居中 */
+ pointer-events: none; 
+ }
+ .tm-pane { width: 100%; height: 100%; animation: tmFade 0.3s ease; }
+ .tm-pane-back { display: none; flex-direction: column; justify-content: flex-start; text-align: left;}
+ /* 文字样式 */
+ .tm-p-title { font-size: 16px; color: #111; margin: 0 0 5px 0; font-weight: 700; line-height: 1.2; text-align: left; }
+ .tm-p-price { display: flex; align-items: baseline; gap: 8px; margin-bottom: 5px; }
+ .p-now { font-size: 20px; color: #002fa7; font-weight: 800; }
+ .p-old { font-size: 13px; color: #afafb4; text-decoration: line-through; }
+ .tm-p-meta { text-align: left; margin-top: 20px;}
+ .meta-line { font-size: 12px; color: #555; }
+ .meta-high { color: #111; font-weight: 700; }
+ .meta-shipping { font-size: 11px; color: #afafb4; margin-top: 2px; }
+ /* --- 背面清单滚动逻辑 --- */
+ .tm-list-hd { font-size: 11px; font-weight: 700; color: #111; margin-bottom: 5px; text-transform: uppercase; border-bottom: 1px solid #f5f5f5; padding-bottom: 3px;}
+ .tm-list-scroll-box { 
+ flex: 1; /* 占据 viewport 的剩余高度 */
+ overflow-y: auto; /* 开启垂直滚动 */
+ scrollbar-width: none; 
+ pointer-events: auto !important; /* 允许在清单区域滑动 */
+ }
+ .tm-list-scroll-box::-webkit-scrollbar { display: none; }
+ .tm-list-scroll-box li { font-size: 12px; color: #666; line-height: 1.6; margin-bottom: 2px; display: block !important; }
+ /* 底部按钮区：由于上方 Viewport 高度固定，这里位置绝对不动 */
+ .tm-p-footer { 
+ display: flex; flex-direction: row; gap: 10px; 
+ margin-top: 5px; flex-shrink: 0; background: transparent !important; 
+ pointer-events: auto !important; 
+ }
+ .tm-ui-btn { height: 38px; border-radius: 19px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; cursor: pointer; transition: 0.2s; text-transform: uppercase; flex: 1; border: none; }
+ .btn-solid { background: #002fa7; color: #fff; }
+ .btn-outline { border: 1px solid #d9d9d9 !important; color: #1a1a1a; background: #fff; text-transform: capitalize; }
+ /* 激活状态切换 */
+ .tm-premium-card.is-active .tm-pane-front { display: none; }
+ .tm-premium-card.is-active .tm-pane-back { display: flex; }
+ @keyframes tmFade { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: translateY(0); } }
+ /* 移动端适配 */
+ @media (max-width: 768px) {
+ .tm-premium-card { height: auto; min-height: 230px; flex-direction: column; }
+ .tm-img-side { width: 100%; height: 160px; border-radius: 12px 12px 0 0; }
+ .tm-info-viewport { height: auto; min-height: 120px; }
+ }
+</style>
+<script>
+if (typeof toggleMiniG1 !== 'function') {
+ window.toggleMiniG1 = function(el) {
+ const card = el.closest('.tm-premium-card');
+ if (!card) return;
+ const isEx = card.classList.toggle('is-active');
+ const sym = card.querySelector('.btn-sym');
+ if (sym) sym.textContent = isEx ? '-' : '+';
+ };
+ window.ajaxAddToCartG1 = function(variantId, btn) {
+ const originalText = btn.textContent;
+ btn.textContent = "..."; btn.disabled = true;
+ fetch('/cart/add.js', {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json' },
+ body: JSON.stringify({ items: [{ id: parseInt(variantId), quantity: 1 }] })
+ })
+ .then(async (res) => {
+ if (res.ok) {
+ btn.textContent = "ADDED!";
+ // 清理弹窗与刷新购物车逻辑...
+ document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true }));
+ setTimeout(() => {
+ const cartTrigger = document.querySelector('.header__icon--cart, #cart-icon-bubble');
+ if (cartTrigger) cartTrigger.click();
+ setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 2500);
+ }, 500);
+ }
+ });
+ };
+}
+</script></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-q34gtrfabj"><div data-v-6a92e952="" class="ecom__element ecom-element element__code exporting" section_id="ecom-byo9o2my4x9" deep="2">
+{% assign target_product_handle = "pet-feeder-match-g1-super-early-bird" %}
+{% assign total_limit = 500 %}
+{% assign shipping_time = "Early March" %}
+{% assign g1_prod = all_products[target_product_handle] %}
+{% assign target_variant = g1_prod.selected_or_first_available_variant %}
+<div class="tm-premium-card">
+ 
+ <div class="tm-img-side">
+ <img src="{{ target_variant.featured_image | default: g1_prod.featured_image | image_url: width: 400 }}" class="tm-hero-img">
+ </div>
+ <div class="tm-content-side">
+ 
+ <div class="tm-info-viewport">
+ 
+ 
+ <div class="tm-pane tm-pane-front">
+ <h4 class="tm-p-title">{{ g1_prod.title }}</h4>
+ <div class="tm-p-price">
+ <span class="p-now">{{ target_variant.price | money }}</span>
+ {% if target_variant.compare_at_price > target_variant.price %}
+ <span class="p-old">{{ target_variant.compare_at_price | money }}</span>
+ {% endif %}
+ </div>
+ <div class="tm-p-meta">
+ <div class="meta-line">Remaining: <span class="meta-high">{{ target_variant.inventory_quantity | at_least: 0 }}</span> / Total: {{ total_limit }}</div>
+ <div class="meta-shipping">Estimated Shipping: {{ shipping_time }}</div>
+ </div>
+ </div>
+ 
+ <div class="tm-pane tm-pane-back">
+ <div class="tm-list-hd">Included in the Box</div>
+ 
+ <div class="tm-list-scroll-box">
+ <ul>
+ <li>• 1x TourBox G1 Console</li>
+ <li>• 1x Braided USB-C Cable</li>
+ <li>• 1x Safety Storage Case</li>
+ <li>• 1x Quick Start Guide</li>
+ <li>• 1x Warranty Card</li>
+ <li>• 1x Exclusive Gift Pack</li>
+ <li>• 1x Protective Film</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+ 
+ <div class="tm-p-footer">
+ <div class="tm-ui-btn btn-outline" onclick="toggleMiniG1(this)">
+ <span class="btn-txt">Learn More</span>&nbsp;<span class="btn-sym">+</span>
+ </div>
+ <button class="tm-ui-btn btn-solid" onclick="ajaxAddToCartG1('{{ target_variant.id }}', this)">
+ Preorder Now
+ </button>
+ </div>
+ </div>
+</div>
+<style>
+ .tm-premium-card {
+ display: flex; width: 100%; height: 230px; 
+ background: #fff !important; border: 1px solid #eeeeee !important; border-radius: 12px !important; 
+ margin-bottom: 15px; overflow: visible !important; box-sizing: border-box; 
+ }
+ .tm-img-side { width: 34%; background: #f7f7f7; position: relative; flex-shrink: 0; border-top-left-radius: 12px; border-bottom-left-radius: 12px;}
+ .tm-hero-img { 
+ width: 100%; height: 100%; object-fit: cover; 
+ border-top-left-radius: 12px; border-bottom-left-radius: 12px; 
+ }
+ .tm-content-side { 
+ flex: 1; padding: 15px 20px; display: flex; flex-direction: column; 
+ justify-content: space-between; overflow: visible !important; 
+ }
+ /* --- 核心修复：锁定内容区高度 --- */
+ .tm-info-viewport { 
+ height: 145px; /* 强制锁定此高度，防止底部按钮跳动 */
+ display: flex; flex-direction: column; 
+ justify-content: center; /* 正面内容垂直居中 */
+ pointer-events: none; 
+ }
+ .tm-pane { width: 100%; height: 100%; animation: tmFade 0.3s ease; }
+ .tm-pane-back { display: none; flex-direction: column; justify-content: flex-start; text-align: left;}
+ /* 文字样式 */
+ .tm-p-title { font-size: 16px; color: #111; margin: 0 0 5px 0; font-weight: 700; line-height: 1.2; text-align: left; }
+ .tm-p-price { display: flex; align-items: baseline; gap: 8px; margin-bottom: 5px; }
+ .p-now { font-size: 20px; color: #002fa7; font-weight: 800; }
+ .p-old { font-size: 13px; color: #afafb4; text-decoration: line-through; }
+ .tm-p-meta { text-align: left; margin-top: 20px;}
+ .meta-line { font-size: 12px; color: #555; }
+ .meta-high { color: #111; font-weight: 700; }
+ .meta-shipping { font-size: 11px; color: #afafb4; margin-top: 2px; }
+ /* --- 背面清单滚动逻辑 --- */
+ .tm-list-hd { font-size: 11px; font-weight: 700; color: #111; margin-bottom: 5px; text-transform: uppercase; border-bottom: 1px solid #f5f5f5; padding-bottom: 3px;}
+ .tm-list-scroll-box { 
+ flex: 1; /* 占据 viewport 的剩余高度 */
+ overflow-y: auto; /* 开启垂直滚动 */
+ scrollbar-width: none; 
+ pointer-events: auto !important; /* 允许在清单区域滑动 */
+ }
+ .tm-list-scroll-box::-webkit-scrollbar { display: none; }
+ .tm-list-scroll-box li { font-size: 12px; color: #666; line-height: 1.6; margin-bottom: 2px; display: block !important; }
+ /* 底部按钮区：由于上方 Viewport 高度固定，这里位置绝对不动 */
+ .tm-p-footer { 
+ display: flex; flex-direction: row; gap: 10px; 
+ margin-top: 5px; flex-shrink: 0; background: transparent !important; 
+ pointer-events: auto !important; 
+ }
+ .tm-ui-btn { height: 38px; border-radius: 19px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; cursor: pointer; transition: 0.2s; text-transform: uppercase; flex: 1; border: none; }
+ .btn-solid { background: #002fa7; color: #fff; }
+ .btn-outline { border: 1px solid #d9d9d9 !important; color: #1a1a1a; background: #fff; text-transform: capitalize; }
+ /* 激活状态切换 */
+ .tm-premium-card.is-active .tm-pane-front { display: none; }
+ .tm-premium-card.is-active .tm-pane-back { display: flex; }
+ @keyframes tmFade { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: translateY(0); } }
+ /* 移动端适配 */
+ @media (max-width: 768px) {
+ .tm-premium-card { height: auto; min-height: 230px; flex-direction: column; }
+ .tm-img-side { width: 100%; height: 160px; border-radius: 12px 12px 0 0; }
+ .tm-info-viewport { height: auto; min-height: 120px; }
+ }
+</style>
+<script>
+if (typeof toggleMiniG1 !== 'function') {
+ window.toggleMiniG1 = function(el) {
+ const card = el.closest('.tm-premium-card');
+ if (!card) return;
+ const isEx = card.classList.toggle('is-active');
+ const sym = card.querySelector('.btn-sym');
+ if (sym) sym.textContent = isEx ? '-' : '+';
+ };
+ window.ajaxAddToCartG1 = function(variantId, btn) {
+ const originalText = btn.textContent;
+ btn.textContent = "..."; btn.disabled = true;
+ fetch('/cart/add.js', {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json' },
+ body: JSON.stringify({ items: [{ id: parseInt(variantId), quantity: 1 }] })
+ })
+ .then(async (res) => {
+ if (res.ok) {
+ btn.textContent = "ADDED!";
+ // 清理弹窗与刷新购物车逻辑...
+ document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true }));
+ setTimeout(() => {
+ const cartTrigger = document.querySelector('.header__icon--cart, #cart-icon-bubble');
+ if (cartTrigger) cartTrigger.click();
+ setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 2500);
+ }, 500);
+ }
+ });
+ };
+}
+</script></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-88oc0meo01v"><div data-v-6a92e952="" class="ecom__element ecom-element element__code exporting" section_id="ecom-byo9o2my4x9" deep="2">
+{% assign target_product_handle = "pet-feeder-match-g1-early-bird" %}
+{% assign total_limit = 500 %}
+{% assign shipping_time = "Early March" %}
+{% assign g1_prod = all_products[target_product_handle] %}
+{% assign target_variant = g1_prod.selected_or_first_available_variant %}
+<div class="tm-premium-card">
+ 
+ <div class="tm-img-side">
+ <img src="{{ target_variant.featured_image | default: g1_prod.featured_image | image_url: width: 400 }}" class="tm-hero-img">
+ </div>
+ <div class="tm-content-side">
+ 
+ <div class="tm-info-viewport">
+ 
+ 
+ <div class="tm-pane tm-pane-front">
+ <h4 class="tm-p-title">{{ g1_prod.title }}</h4>
+ <div class="tm-p-price">
+ <span class="p-now">{{ target_variant.price | money }}</span>
+ {% if target_variant.compare_at_price > target_variant.price %}
+ <span class="p-old">{{ target_variant.compare_at_price | money }}</span>
+ {% endif %}
+ </div>
+ <div class="tm-p-meta">
+ <div class="meta-line">Remaining: <span class="meta-high">{{ target_variant.inventory_quantity | at_least: 0 }}</span> / Total: {{ total_limit }}</div>
+ <div class="meta-shipping">Estimated Shipping: {{ shipping_time }}</div>
+ </div>
+ </div>
+ 
+ <div class="tm-pane tm-pane-back">
+ <div class="tm-list-hd">Included in the Box</div>
+ 
+ <div class="tm-list-scroll-box">
+ <ul>
+ <li>• 1x TourBox G1 Console</li>
+ <li>• 1x Braided USB-C Cable</li>
+ <li>• 1x Safety Storage Case</li>
+ <li>• 1x Quick Start Guide</li>
+ <li>• 1x Warranty Card</li>
+ <li>• 1x Exclusive Gift Pack</li>
+ <li>• 1x Protective Film</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+ 
+ <div class="tm-p-footer">
+ <div class="tm-ui-btn btn-outline" onclick="toggleMiniG1(this)">
+ <span class="btn-txt">Learn More</span>&nbsp;<span class="btn-sym">+</span>
+ </div>
+ <button class="tm-ui-btn btn-solid" onclick="ajaxAddToCartG1('{{ target_variant.id }}', this)">
+ Preorder Now
+ </button>
+ </div>
+ </div>
+</div>
+<style>
+ .tm-premium-card {
+ display: flex; width: 100%; height: 230px; 
+ background: #fff !important; border: 1px solid #eeeeee !important; border-radius: 12px !important; 
+ margin-bottom: 15px; overflow: visible !important; box-sizing: border-box; 
+ }
+ .tm-img-side { width: 34%; background: #f7f7f7; position: relative; flex-shrink: 0; border-top-left-radius: 12px; border-bottom-left-radius: 12px;}
+ .tm-hero-img { 
+ width: 100%; height: 100%; object-fit: cover; 
+ border-top-left-radius: 12px; border-bottom-left-radius: 12px; 
+ }
+ .tm-content-side { 
+ flex: 1; padding: 15px 20px; display: flex; flex-direction: column; 
+ justify-content: space-between; overflow: visible !important; 
+ }
+ /* --- 核心修复：锁定内容区高度 --- */
+ .tm-info-viewport { 
+ height: 145px; /* 强制锁定此高度，防止底部按钮跳动 */
+ display: flex; flex-direction: column; 
+ justify-content: center; /* 正面内容垂直居中 */
+ pointer-events: none; 
+ }
+ .tm-pane { width: 100%; height: 100%; animation: tmFade 0.3s ease; }
+ .tm-pane-back { display: none; flex-direction: column; justify-content: flex-start; text-align: left;}
+ /* 文字样式 */
+ .tm-p-title { font-size: 16px; color: #111; margin: 0 0 5px 0; font-weight: 700; line-height: 1.2; text-align: left; }
+ .tm-p-price { display: flex; align-items: baseline; gap: 8px; margin-bottom: 5px; }
+ .p-now { font-size: 20px; color: #002fa7; font-weight: 800; }
+ .p-old { font-size: 13px; color: #afafb4; text-decoration: line-through; }
+ .tm-p-meta { text-align: left; margin-top: 20px;}
+ .meta-line { font-size: 12px; color: #555; }
+ .meta-high { color: #111; font-weight: 700; }
+ .meta-shipping { font-size: 11px; color: #afafb4; margin-top: 2px; }
+ /* --- 背面清单滚动逻辑 --- */
+ .tm-list-hd { font-size: 11px; font-weight: 700; color: #111; margin-bottom: 5px; text-transform: uppercase; border-bottom: 1px solid #f5f5f5; padding-bottom: 3px;}
+ .tm-list-scroll-box { 
+ flex: 1; /* 占据 viewport 的剩余高度 */
+ overflow-y: auto; /* 开启垂直滚动 */
+ scrollbar-width: none; 
+ pointer-events: auto !important; /* 允许在清单区域滑动 */
+ }
+ .tm-list-scroll-box::-webkit-scrollbar { display: none; }
+ .tm-list-scroll-box li { font-size: 12px; color: #666; line-height: 1.6; margin-bottom: 2px; display: block !important; }
+ /* 底部按钮区：由于上方 Viewport 高度固定，这里位置绝对不动 */
+ .tm-p-footer { 
+ display: flex; flex-direction: row; gap: 10px; 
+ margin-top: 5px; flex-shrink: 0; background: transparent !important; 
+ pointer-events: auto !important; 
+ }
+ .tm-ui-btn { height: 38px; border-radius: 19px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; cursor: pointer; transition: 0.2s; text-transform: uppercase; flex: 1; border: none; }
+ .btn-solid { background: #002fa7; color: #fff; }
+ .btn-outline { border: 1px solid #d9d9d9 !important; color: #1a1a1a; background: #fff; text-transform: capitalize; }
+ /* 激活状态切换 */
+ .tm-premium-card.is-active .tm-pane-front { display: none; }
+ .tm-premium-card.is-active .tm-pane-back { display: flex; }
+ @keyframes tmFade { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: translateY(0); } }
+ /* 移动端适配 */
+ @media (max-width: 768px) {
+ .tm-premium-card { height: auto; min-height: 230px; flex-direction: column; }
+ .tm-img-side { width: 100%; height: 160px; border-radius: 12px 12px 0 0; }
+ .tm-info-viewport { height: auto; min-height: 120px; }
+ }
+</style>
+<script>
+if (typeof toggleMiniG1 !== 'function') {
+ window.toggleMiniG1 = function(el) {
+ const card = el.closest('.tm-premium-card');
+ if (!card) return;
+ const isEx = card.classList.toggle('is-active');
+ const sym = card.querySelector('.btn-sym');
+ if (sym) sym.textContent = isEx ? '-' : '+';
+ };
+ window.ajaxAddToCartG1 = function(variantId, btn) {
+ const originalText = btn.textContent;
+ btn.textContent = "..."; btn.disabled = true;
+ fetch('/cart/add.js', {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json' },
+ body: JSON.stringify({ items: [{ id: parseInt(variantId), quantity: 1 }] })
+ })
+ .then(async (res) => {
+ if (res.ok) {
+ btn.textContent = "ADDED!";
+ // 清理弹窗与刷新购物车逻辑...
+ document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true }));
+ setTimeout(() => {
+ const cartTrigger = document.querySelector('.header__icon--cart, #cart-icon-bubble');
+ if (cartTrigger) cartTrigger.click();
+ setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 2500);
+ }, 500);
+ }
+ });
+ };
+}
+</script></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </section>
+</div></div></div></div></dialog><div class="ecom-popup-placeholder ecom-section"><div class="ecom-popup-placeholder-inner core__row--columns"><img src="https://ecomposer.app/images/placeholder-popup.jpg" alt="Popup placeholder"></div></div>
+ <style>
+ .ecom-popups-container{animation-name: none;} .ecom-popups-container .ecom-popups-wrapper{width: 780px;max-width: 780px;height: 580px;max-height: 580px;}.ecom-popups-container::backdrop{background-color: rgba(0, 0, 0, 0.5);} .ecom-popups-container::backdrop{backdrop-filter: blur(1px);}.ecom-popups-container .ecom-popups-wrapper .ecom-popups-wrapper-inner{}.ecom-popups-container .ecom-popups-wrapper{box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.5);} .ecom-popups-container .ecom-popups-wrapper, .ecom-popups-container .ecom-popups-wrapper .ecom-popups-wrapper-inner{border-radius: 10px;} .ecom-popups-wrapper{padding: 20px;}.ecom-popups-container .ecom-popups-wrapper-inner{overflow: hidden;} .ecom-popups-wrapper .ecom-popup-close-button{top: 10px;left: none;right: 10px;width: 30px;height: 30px;border-radius: 50%;padding: 10px;}.ecom-popups-wrapper .ecom-popup-close-button, .ecom-popups-wrapper .ecom-popup-close-button svg, .ecom-popups-wrapper .ecom-popup-close-button svg path{color: #000000 !important;fill: #000000 !important;}.ecom-popups-wrapper .ecom-popup-close-button{background-color: #efefef;border-style: none;}@media screen and (max-width: 1024px) and (min-width: 768px){ .ecom-popups-container .ecom-popups-wrapper{width: 100%;max-width: 100%;height: 580px;} .ecom-popups-wrapper{padding: 10px;margin: 0px;}}@media screen and (max-width: 767px) and (min-width: 101px){ .ecom-popups-container .ecom-popups-wrapper{max-width: 80%;height: 400px;}}.ecom-popup-placeholder{display:none;position:fixed;z-index:99;top:0;left:0;height:auto;width:100%;background-color:#fff}.ecom-popup-placeholder-inner{width:80%;margin:0 auto}.ecom-popup-placeholder-inner img{height:auto;width:100%}
+ </style><script>
+ // JS minify
+ !function(){let e=window.location.pathname.includes(`${window.EComposer.proxy_path}/preview/`);if(e){let o=document.querySelector(".ecom-popup-placeholder");o&&(o.style.display="block")}}();
+ </script>
+{% schema %}
+{
+ "name": "G1 Popup -v2602",
+ "settings": [
+ {
+ "type": "header",
+ "content": "The section was generated by [Ecomposer](https:\/\/ecomposer.io).",
+ "info": "\n EComposer is a Visual Page Builder app on Shopify AppStore.\n It provides 100+ pre-built templates in library,\n so you can build unlimited pages that you can imagine with it.\n Please don't add Shopify sections to EComposer's page in the theme customize. If you do this, Shopify sections will be deleted when you republish your page in EComposer\n "
+ },
+ {
+ "type": "header",
+ "content": "[EDIT WITH EComposer APP \u2192](https:\/\/ecomposer.app\/shop?open_builder=1&page=popup&id=698bddb44e07f8721a0fb438&utm_source=theme-customize)",
+ "info": "(*You must install the app to start editing this section [Learn more](https:\/\/help.ecomposer.io\/docs\/getting-started\/installation\/))"
+ }
+ ],
+ "locales": {
+ "en": {
+ "headingtext_0uuvn8iy8c6i_html": "Choose Your Early Bird Discount"
+ }
+ }
+}
+{% endschema %}

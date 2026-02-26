@@ -1,0 +1,35 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.prime-day.json",
+  "context": {
+    "market": "gb"
+  },
+  "sections": {
+    "33eca328-a247-4cb9-b5da-fbfe6639c3a1": {
+      "settings": {
+        "mobile_image": "shopify:\/\/shop_images\/prime_day_pre_monile.jpg",
+        "desktop_text_position": "sm:place-self-end-center sm:text-center"
+      },
+      "blocks": {
+        "button_RQTic3": {
+          "disabled": false,
+          "settings": {
+            "url": "https:\/\/www.amazon.co.uk\/sp?ie=UTF8&seller=A2S548N6WQHAWV&asin=B0D12JV8D1&ref_=dp_merchant_link&isAmazonFulfilled=1&open_in_browser=true"
+          }
+        },
+        "button_riWMiq": {
+          "disabled": false,
+          "settings": {}
+        }
+      }
+    }
+  }
+}

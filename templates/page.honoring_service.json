@@ -1,0 +1,365 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": "100%"
+      }
+    },
+    "cust_media_with_text_fnj4BD": {
+      "type": "cust-media-with-text",
+      "blocks": {
+        "image_TFmCMd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Section1_-_ServiceDogImage1.jpg",
+            "media_width": 50,
+            "media_position": "start",
+            "text_position": "place-self-center-start text-start",
+            "mobile_alignment": "left",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "Honoring Service with Savings",
+            "title": "10% OFF FOR SERVICE ANIMAL HANDLERS",
+            "content": "<p>At Cheerble, we deeply appreciate the invaluable contributions of service animals and their handlers. To express our gratitude, we're offering an extra 10% discount on all Cheerble products to qualified service animal handlers.</p><p><strong>What Qualifies:</strong><br/>- Service dogs of any breed and size<br/>- Animals trained to perform a task directly related to a person's disability<br/></p>",
+            "link_text": "sign up now",
+            "target_section": "app_form",
+            "link_url": "",
+            "background": "rgba(0,0,0,0)",
+            "background_gradient": "",
+            "text_color": "#1c1c1e",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_TFmCMd"
+      ],
+      "custom_css": [
+        "> div {padding-top: 0px; padding-bottom: 0px;}",
+        "@media (max-width: 699px) {> div {padding-bottom: 40px; }}"
+      ],
+      "settings": {
+        "target_section": "",
+        "full_width": true,
+        "alternate_media_position": false,
+        "background": "#fbfbfb",
+        "background_gradient": "",
+        "session_subheading": "",
+        "session_heading": "",
+        "session_content": "",
+        "session_heading_color": "",
+        "spacing": "none"
+      }
+    },
+    "17412454123b4fcc7d": {
+      "type": "apps",
+      "blocks": {
+        "powerful_form_builder_app_block_ARQU3Q": {
+          "type": "shopify://apps/powerful-form-builder/blocks/app-block/e4bcb1eb-35b2-42e6-bc37-bfe0e1542c9d",
+          "settings": {
+            "shortcode": "<div class=\"globo-formbuilder\" data-id=\"Njk5NTM=\"></div>"
+          }
+        }
+      },
+      "block_order": [
+        "powerful_form_builder_app_block_ARQU3Q"
+      ],
+      "settings": {
+        "target_section": "app_form",
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "cust_text_with_icons_KR9ihb": {
+      "type": "cust-text-with-icons",
+      "blocks": {
+        "item_hnnxPR": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "custom_icon": "shopify://shop_images/guarantee_1_1.svg",
+            "mobile_icon_width": 48,
+            "icon_width": 80,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "12 Month Warranties",
+            "content": ""
+          }
+        },
+        "item_Tgr9Mw": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "custom_icon": "shopify://shop_images/refund-policy_1_1.svg",
+            "mobile_icon_width": 48,
+            "icon_width": 80,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "30-Day Returns",
+            "content": ""
+          }
+        },
+        "item_GGLb4N": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "custom_icon": "shopify://shop_images/wallet_2_1.svg",
+            "mobile_icon_width": 48,
+            "icon_width": 80,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Buy Now | Pay Later",
+            "content": ""
+          }
+        },
+        "item_kjqKAR": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "custom_icon": "shopify://shop_images/support_1_1.svg",
+            "mobile_icon_width": 48,
+            "icon_width": 80,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Friendly Customer Support",
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_hnnxPR",
+        "item_Tgr9Mw",
+        "item_GGLb4N",
+        "item_kjqKAR"
+      ],
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": true,
+        "title": "Innovative Designs for Every Adventure",
+        "description": "",
+        "heading_tag": "h5",
+        "text_alignment": "center",
+        "icon_spacing": "medium",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "cust_faq_DjQcmV": {
+      "type": "cust-faq",
+      "blocks": {
+        "item_MEXDNn": {
+          "type": "item",
+          "settings": {
+            "title": "Do you ship globally?",
+            "content": "<p>Yes, we ship to most countries in the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+          }
+        },
+        "item_bcaeEw": {
+          "type": "item",
+          "settings": {
+            "title": "What is your return policy?",
+            "content": "<p>All products purchased from our website may be returned or replaced within 30 days of purchase for a full refund less shipping costs, no questions asked. International return orders may be subject to return shipping fees. To initiate such a return please <a href=\"/pages/contact-us\" target=\"_blank\" title=\"Contact Us\">contact us</a>.</p>"
+          }
+        },
+        "item_BATfmR": {
+          "type": "item",
+          "settings": {
+            "title": "How long will it take to get my orders?",
+            "content": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+          }
+        },
+        "item_67hxrw": {
+          "type": "item",
+          "settings": {
+            "title": "Where can I download the user manual?",
+            "content": "<p>Write content to answer to common questions your customers may have about your products, shipping policies..</p>"
+          }
+        },
+        "item_6fkc3L": {
+          "type": "item",
+          "settings": {
+            "title": "Any other questions?",
+            "content": "<p>You can contact us through our <a href=\"/pages/contact-us\" target=\"_blank\" title=\"Contact Us\">contact page</a>! We will be happy to assist you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_MEXDNn",
+        "item_bcaeEw",
+        "item_BATfmR",
+        "item_67hxrw",
+        "item_6fkc3L"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "title": "FAQs",
+        "accordion_content": "Please read our <a href=\"https://www.cheerble.com/pages/contact-us\">FAQs</a> page to find out more.",
+        "contact_us_heading": "Didn’t find your answer?",
+        "contact_us_content": "<p>Contact our customer support. Our customer support is available Monday to Friday: 9.30am-6:30pm HKT.Average answer time: 24h</p>",
+        "button_text": "Contact us",
+        "button_url": "shopify://pages/contact-us",
+        "text_position": "start",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "mobile_button_text_color": "#002fa7",
+        "contact_us_block_bg_color": "#fbfbfb",
+        "contact_us_block_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": ""
+      }
+    },
+    "cust_media_grid_v2_wPRT97": {
+      "type": "cust-media-grid-v2",
+      "blocks": {
+        "image_kUHjN9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Section6_-_Dog_Toys.jpg",
+            "title": "Dog Toys",
+            "description_text": "",
+            "link_url": "shopify://collections/dog",
+            "mobile_column_span": 2,
+            "mobile_row_span": 9,
+            "mobile_text_position": "place-self-end-start text-start",
+            "desktop_column_span": 2,
+            "desktop_row_span": 2,
+            "desktop_text_position": "sm:place-self-end-start sm:text-start",
+            "background": "rgba(0,0,0,0)",
+            "background_gradient": "",
+            "text_color": "#1c1c1e",
+            "text_gradient": "",
+            "button_background": "#000000",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_N9hGdx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Section6_-_Cat_Toys.jpg",
+            "title": "Cat Toys",
+            "description_text": "",
+            "link_url": "shopify://collections/cat",
+            "mobile_column_span": 1,
+            "mobile_row_span": 7,
+            "mobile_order": 1,
+            "mobile_text_position": "place-self-end-start text-start",
+            "desktop_column_span": 1,
+            "desktop_row_span": 1,
+            "desktop_text_position": "sm:place-self-end-start sm:text-start",
+            "background": "rgba(0,0,0,0)",
+            "background_gradient": "",
+            "text_color": "#1c1c1e",
+            "text_gradient": "",
+            "button_background": "#000000",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_KGBazm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Section6_-_Pet_Fountains.jpg",
+            "title": "Pet Fountains",
+            "description_text": "",
+            "link_url": "shopify://collections/pet-fountain",
+            "mobile_column_span": 1,
+            "mobile_row_span": 7,
+            "mobile_text_position": "place-self-end-start text-start",
+            "desktop_column_span": 1,
+            "desktop_row_span": 1,
+            "desktop_text_position": "sm:place-self-end-start sm:text-start",
+            "background": "rgba(0,0,0,0)",
+            "background_gradient": "",
+            "text_color": "#1c1c1e",
+            "text_gradient": "",
+            "button_background": "#000000",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_aNeenE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Section6_-_Accessories.jpg",
+            "title": "Pet Supplies",
+            "description_text": "",
+            "link_url": "shopify://collections/supplies",
+            "mobile_column_span": 2,
+            "mobile_row_span": 7,
+            "mobile_text_position": "place-self-end-start text-start",
+            "desktop_column_span": 2,
+            "desktop_row_span": 1,
+            "desktop_text_position": "sm:place-self-end-start sm:text-start",
+            "background": "rgba(0,0,0,0)",
+            "background_gradient": "",
+            "text_color": "#1c1c1e",
+            "text_gradient": "",
+            "button_background": "#000000",
+            "button_text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_kUHjN9",
+        "image_N9hGdx",
+        "image_KGBazm",
+        "image_aNeenE"
+      ],
+      "settings": {
+        "target_section": "",
+        "full_width": true,
+        "reduce_width": false,
+        "cust_media_grid_subheading": "",
+        "cust_media_grid_headding": "From Interactive Fun to Automatic Feeding",
+        "cust_media_grid_content": "<p>Being a proud pet owner just got a whole lot smarter!</p>",
+        "desktop_row_height": 305,
+        "mobile_row_height": 15,
+        "background": "",
+        "background_gradient": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "cust_media_with_text_fnj4BD",
+    "17412454123b4fcc7d",
+    "cust_text_with_icons_KR9ihb",
+    "cust_faq_DjQcmV",
+    "cust_media_grid_v2_wPRT97"
+  ]
+}

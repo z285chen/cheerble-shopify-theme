@@ -1,0 +1,688 @@
+{% comment %}
+ EComposer (https://ecomposer.io)
+ You SHOULD NOT modify source code in this page because
+ It is automatically generated from EComposer
+ At 2026-02-10 03:42:49
+ {% endcomment %} 
+ 
+ {% assign ecom_root_url = routes.root_url %}
+ {% if ecom_root_url != '/'%}
+ {% assign ecom_root_url = routes.root_url | append: '/' %}
+ {% endif %}
+ <link rel="stylesheet" media="all" id="ecom-vendors-css_ecomposer_base" href="https://cdn.ecomposer.app/vendors/css/ecom-base.css?v=2.1" /><noscript><link rel="stylesheet" media="all" id="ecom-vendors-css_ecomposer_base" href="https://cdn.ecomposer.app/vendors/css/ecom-base.css?v=2.1" /></noscript>
+{%capture section_id %}ecom-g1-pop-v260126-pad-popup{% endcapture%}{% if section and section_id == section.id and headless == true %}
+{{ content_for_header }}
+{% render 'ecom_header', ECOM_THEME: true %}{% endif %}
+{{'ecom-698a999b965aa24972069f92.css' | asset_url | stylesheet_tag }}
+<script src="{{'ecom-698a999b965aa24972069f92.js' | asset_url }}" defer="defer"></script>
+<script type="text/javascript" class="ecom-page-info">
+ window.EComposer = window.EComposer || {};
+ window.EComposer.TEMPLATE_ID="698a999b965aa24972069f92";
+ window.EComposer.POPUP = {"title":"G1 Pop -v260126 -pad","type":"popup","slug":"ecom-g1-pop-v260126-pad","plan_id":4,"template_id":"698a999b965aa24972069f92"};
+ </script>
+<dialog class="ecom-popups-container"><div class="ecom-popups-wrapper ecom-popup-position-center ecom-popup-animation-none"><div class="ecom-popup-close-button"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L9 9M1 9L9 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ecom-popups-wrapper-inner"><div class="ecom-builder" id="ecom-g1-pop-v260126-pad"><div class="ecom-sections" data-section-id="{{section.id}}"><section class="ecom-row ecom-core ecom-section ecom-byo9o2my4x9" data-id="ecom-byo9o2my4x9" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-hj42d49fzos"><div class="core__column--wrapper" id="ecom-hj42d49fzos"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-oforx7kkjg"><div class="ecom-row ecom-core core__block ecom-ryzlpa3tvba" data-id="ecom-ryzlpa3tvba" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-ax452iyhff8"><div class="core__column--wrapper" id="ecom-ax452iyhff8"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-0uuvn8iy8c6i"><div class="ecom__element element__heading ecom-element ecom-html ecom-type-deffault" section_id="ecom-byo9o2my4x9" deep="2"><h3 class="ecom__heading ecom-db">{{ 'sections.ecom-g1-pop-v260126-pad-popup.headingtext_0uuvn8iy8c6i_html' | t }}</h3></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> <div class="ecom-block ecom-core core__block elmspace ecom-suji02ghfbb"><div class="ecom-row ecom-core core__block ecom-3shd0djg8hx" data-id="ecom-3shd0djg8hx" style="z-index: inherit;"><div class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-h5e9dr76yjf"><div class="core__column--wrapper" id="ecom-h5e9dr76yjf"><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div><div class="core__blocks"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-a0u4ms3o4ss"><div data-v-6a92e952="" class="ecom__element ecom-element element__code exporting" section_id="ecom-byo9o2my4x9" deep="2">
+{% assign target_product_handle = "pet-feeder-match-g1-first-8-hour-special" %}
+{% assign total_limit = 500 %}
+{% assign shipping_time = "20261" %}
+{% assign g1_prod = all_products[target_product_handle] %}
+{% assign target_variant = g1_prod.selected_or_first_available_variant %}
+<div class="tour-mini-card" id="mini-{{ g1_prod.id }}">
+ 
+ 
+ <div class="tm-side-img">
+ <img src="{{ target_variant.featured_image | default: g1_prod.featured_image | image_url: width: 500 }}" class="tm-main-img">
+ </div>
+ 
+ <div class="tm-side-main">
+ 
+ <div class="tm-viewport">
+ 
+ <div class="tm-view tm-view-front">
+ <h4 class="tm-title">{{ g1_prod.title }}</h4>
+ 
+ <div class="tm-price-row">
+ <span class="tm-cur-price">{{ target_variant.price | money }}</span>
+ {% if target_variant.compare_at_price > target_variant.price %}
+ <span class="tm-old-price">{{ target_variant.compare_at_price | money }}</span>
+ {% endif %}
+ </div>
+ <div class="tm-stock">
+ Remaining: <span class="txt-black">{{ target_variant.inventory_quantity | at_least: 0 }}</span> 
+ / Total: {{ total_limit }}
+ </div>
+ 
+ <div class="tm-est">Estimated shipping: {{ shipping_time }}</div>
+ </div>
+ 
+ <div class="tm-view tm-view-back">
+ <div class="tm-box-hd">Included in the Box</div>
+ <div class="tm-scroll-area">
+ <ul>
+ <li>• 1x TourBox G1 Console</li>
+ <li>• 1x Braided USB-C Cable</li>
+ <li>• 1x Safety Storage Case</li>
+ <li>• 1x Quick Start Guide</li>
+ <li>• 1x Warranty Card</li>
+ <li>• 1x Limited Edition Postcard</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+ 
+ <div class="tm-footer">
+ <div class="tm-btn tm-btn-learn" onclick="toggleMiniMode('{{ g1_prod.id }}')">
+ <span class="tm-txt">Learn More</span>&nbsp;<span class="tm-sym">+</span> 
+ </div>
+ <button class="tm-btn tm-btn-buy" onclick="miniAddToCart('{{ target_variant.id }}', this)">
+ Preorder Now
+ </button>
+ </div>
+ </div>
+</div>
+<style>
+ /* 基础容器 */
+ .tour-mini-card {
+ display: flex;
+ width: 100%;
+ height: 230px; 
+ background: #fff !important;
+ border: 1px solid #eeeeee !important;
+ border-radius: 12px !important;
+ margin-bottom: 15px;
+ overflow: visible !important; 
+ box-sizing: border-box;
+ position: relative;
+ touch-action: auto !important;
+ }
+ /* --- 重点修复：图片容器自适应逻辑 --- */
+ .tm-side-img { 
+ width: 35%; 
+ height: 100%;
+ position: relative; 
+ flex-shrink: 0; 
+ display: flex; /* 开启Flex确保图片居中 */
+ align-items: center; 
+ justify-content: center;
+ overflow: hidden;
+ border-top-left-radius: 12px !important;
+ border-bottom-left-radius: 12px !important;
+ border-top-right-radius: 12px !important;
+ border-bottom-right-radius: 12px !important;
+ }
+ .tm-main-img { 
+ max-width: 100%; /* 宽度最大100% */
+ max-height: 100%; /* 高度最大100% */
+ width: auto;
+ height: auto;
+ object-fit: contain; /* 核心：保持比例完整显示，不裁切 */
+ display: block;
+ pointer-events: none;
+ padding-left: 15px;
+ border-top-left-radius: 10px !important;
+ border-bottom-left-radius: 10px !important;
+ border-top-right-radius: 10px !important;
+ border-bottom-right-radius: 10px !important;
+ }
+ /* 右侧内容区 */
+ .tm-side-main { 
+ flex: 1; padding: 12px 18px; display: flex; flex-direction: column; 
+ overflow: visible !important; position: relative; 
+ }
+ .tm-viewport { 
+ flex: 1; position: relative; overflow: visible !important; 
+ display: flex; flex-direction: column; 
+ pointer-events: none; 
+ }
+ .tm-view { width: 100%; height: 100%; animation: tmFade 0.3s ease; display: flex; flex-direction: column; }
+ .tm-view-front { justify-content: center; }
+ .tm-view-back { display: none; }
+ 
+ .tm-title { font-size: 15px; color: #1a1a1a; margin: 0 0 5px 0; font-weight: 700; line-height: 1.2; text-align: left; }
+ .tm-price-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px; }
+ .tm-cur-price { font-size: 18px; color: #000; font-weight: 700; }
+ .tm-old-price { font-size: 13px; color: #afafb4; text-decoration: line-through; }
+ 
+ .tm-stock { font-size: 11px; color: #777; text-align: left; }
+ .tm-est { font-size: 10px; color: #afafb4; margin-top: 2px; text-align: left; }
+ .txt-black { color: #111; font-weight: 600; }
+ /* 清单区域 */
+ .tm-box-hd { font-size: 11px; font-weight: 700; color: #111; margin-bottom: 5px; text-transform: uppercase; text-align: left; border-bottom: 1px solid #f0f0f0; padding-bottom: 3px;}
+ .tm-scroll-area { 
+ font-size: 11px; color: #555; line-height: 1.6; 
+ flex: 1; overflow-y: auto; text-align: left; scrollbar-width: none;
+ }
+ .tm-scroll-area::-webkit-scrollbar { display: none; }
+ /* 底部按钮 */
+ .tm-footer {
+ display: flex;
+ flex-direction: row; 
+ gap: 8px; 
+ margin-top: 8px;
+ background: transparent !important;
+ flex-shrink: 0;
+ pointer-events: auto !important; 
+ }
+ .tm-btn {
+ height: 36px;
+ border-radius: 18px; 
+ display: flex; align-items: center; justify-content: center;
+ font-size: 12px; 
+ font-weight: 600; cursor: pointer; transition: 0.2s;
+ text-transform: capitalize;
+ flex: 1;
+ white-space: nowrap;
+ border: none;
+ }
+ 
+ .tm-btn-buy { background: #002fa7; color: #fff; }
+ .tm-btn-buy:hover { background: #001f70; }
+ .tm-btn-learn { border: 1px solid #d9d9d9 !important; color: #1a1a1a; background: #fff; text-transform: capitalize; }
+ /* 状态切换 */
+ .tour-mini-card.is-active .tm-view-front { display: none; }
+ .tour-mini-card.is-active .tm-view-back { display: flex; }
+ 
+ @keyframes tmFade { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: translateY(0); } }
+ @media (max-width: 768px) {
+ .tour-mini-card { height: auto; min-height: 230px; flex-direction: column; }
+ .tm-side-img { width: 100%; height: 160px; border-radius: 12px 12px 0 0; }
+ .tm-main-img { padding: 15px; }
+ }
+</style>
+<script>
+if (typeof toggleMiniMode !== 'function') {
+ window.toggleMiniMode = function(id) {
+ const card = document.getElementById('mini-' + id);
+ const isEx = card.classList.toggle('is-active');
+ const btn = card.querySelector('.tm-btn-learn');
+ btn.querySelector('.tm-sym').textContent = isEx ? '-' : '+';
+ };
+ window.miniAddToCart = function(variantId, btn) {
+ const originalText = btn.textContent;
+ btn.textContent = "WAIT..."; 
+ btn.disabled = true;
+ fetch('/cart/add.js', {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json' },
+ body: JSON.stringify({ items: [{ id: parseInt(variantId), quantity: 1 }] })
+ })
+ .then(async (res) => {
+ if (res.ok) {
+ btn.textContent = "ADDED!";
+ const styleId = 'ecom-nuke-css';
+ if (!document.getElementById(styleId)) {
+ const nukeStyle = document.createElement('style');
+ nukeStyle.id = styleId;
+ nukeStyle.innerHTML = `[class*="ecom-popup"], .ecom-popup-root { display: none !important; } html, body { overflow: auto !important; position: static !important; } cart-drawer, #CartDrawer { z-index: 2147483647 !important; visibility: visible !important; }`;
+ document.head.appendChild(nukeStyle);
+ }
+ document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true }));
+ setTimeout(() => {
+ const cartTrigger = document.querySelector('.header__icon--cart, #cart-icon-bubble, .cart-toggle, a[href="{{ecom_root_url}}cart"]');
+ if (cartTrigger) cartTrigger.click();
+ setTimeout(() => {
+ const nuke = document.getElementById(styleId); if (nuke) nuke.remove();
+ btn.textContent = originalText; btn.disabled = false;
+ }, 3000);
+ }, 500);
+ } else {
+ alert("Inventory Error");
+ btn.textContent = originalText;
+ btn.disabled = false;
+ }
+ });
+ };
+}
+</script></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-q34gtrfabj"><div data-v-6a92e952="" class="ecom__element ecom-element element__code exporting" section_id="ecom-byo9o2my4x9" deep="2">
+{% assign target_product_handle = "pet-feeder-match-g1-super-early-bird" %}
+{% assign total_limit = 500 %}
+{% assign shipping_time = "20262" %}
+{% assign g1_prod = all_products[target_product_handle] %}
+{% assign target_variant = g1_prod.selected_or_first_available_variant %}
+<div class="tour-mini-card" id="mini-{{ g1_prod.id }}">
+ 
+ 
+ <div class="tm-side-img">
+ <img src="{{ target_variant.featured_image | default: g1_prod.featured_image | image_url: width: 500 }}" class="tm-main-img">
+ </div>
+ 
+ <div class="tm-side-main">
+ 
+ <div class="tm-viewport">
+ 
+ <div class="tm-view tm-view-front">
+ <h4 class="tm-title">{{ g1_prod.title }}</h4>
+ 
+ <div class="tm-price-row">
+ <span class="tm-cur-price">{{ target_variant.price | money }}</span>
+ {% if target_variant.compare_at_price > target_variant.price %}
+ <span class="tm-old-price">{{ target_variant.compare_at_price | money }}</span>
+ {% endif %}
+ </div>
+ <div class="tm-stock">
+ Remaining: <span class="txt-black">{{ target_variant.inventory_quantity | at_least: 0 }}</span> 
+ / Total: {{ total_limit }}
+ </div>
+ 
+ <div class="tm-est">Estimated shipping: {{ shipping_time }}</div>
+ </div>
+ 
+ <div class="tm-view tm-view-back">
+ <div class="tm-box-hd">Included in the Box</div>
+ <div class="tm-scroll-area">
+ <ul>
+ <li>• 1x TourBox G1 Console</li>
+ <li>• 1x Braided USB-C Cable</li>
+ <li>• 1x Safety Storage Case</li>
+ <li>• 1x Quick Start Guide</li>
+ <li>• 1x Warranty Card</li>
+ <li>• 1x Limited Edition Postcard</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+ 
+ <div class="tm-footer">
+ <div class="tm-btn tm-btn-learn" onclick="toggleMiniMode('{{ g1_prod.id }}')">
+ <span class="tm-txt">Learn More</span>&nbsp;<span class="tm-sym">+</span> 
+ </div>
+ <button class="tm-btn tm-btn-buy" onclick="miniAddToCart('{{ target_variant.id }}', this)">
+ Preorder Now
+ </button>
+ </div>
+ </div>
+</div>
+<style>
+ /* 基础容器 */
+ .tour-mini-card {
+ display: flex;
+ width: 100%;
+ height: 230px; 
+ background: #fff !important;
+ border: 1px solid #eeeeee !important;
+ border-radius: 12px !important;
+ margin-bottom: 15px;
+ overflow: visible !important; 
+ box-sizing: border-box;
+ position: relative;
+ touch-action: auto !important;
+ }
+ /* --- 重点修复：图片容器自适应逻辑 --- */
+ .tm-side-img { 
+ width: 35%; 
+ height: 100%;
+ position: relative; 
+ flex-shrink: 0; 
+ display: flex; /* 开启Flex确保图片居中 */
+ align-items: center; 
+ justify-content: center;
+ overflow: hidden;
+ border-top-left-radius: 12px !important;
+ border-bottom-left-radius: 12px !important;
+ border-top-right-radius: 12px !important;
+ border-bottom-right-radius: 12px !important;
+ }
+ .tm-main-img { 
+ max-width: 100%; /* 宽度最大100% */
+ max-height: 100%; /* 高度最大100% */
+ width: auto;
+ height: auto;
+ object-fit: contain; /* 核心：保持比例完整显示，不裁切 */
+ display: block;
+ pointer-events: none;
+ padding-left: 15px;
+ border-top-left-radius: 10px !important;
+ border-bottom-left-radius: 10px !important;
+ border-top-right-radius: 10px !important;
+ border-bottom-right-radius: 10px !important;
+ }
+ /* 右侧内容区 */
+ .tm-side-main { 
+ flex: 1; padding: 12px 18px; display: flex; flex-direction: column; 
+ overflow: visible !important; position: relative; 
+ }
+ .tm-viewport { 
+ flex: 1; position: relative; overflow: visible !important; 
+ display: flex; flex-direction: column; 
+ pointer-events: none; 
+ }
+ .tm-view { width: 100%; height: 100%; animation: tmFade 0.3s ease; display: flex; flex-direction: column; }
+ .tm-view-front { justify-content: center; }
+ .tm-view-back { display: none; }
+ 
+ .tm-title { font-size: 15px; color: #1a1a1a; margin: 0 0 5px 0; font-weight: 700; line-height: 1.2; text-align: left; }
+ .tm-price-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px; }
+ .tm-cur-price { font-size: 18px; color: #000; font-weight: 700; }
+ .tm-old-price { font-size: 13px; color: #afafb4; text-decoration: line-through; }
+ 
+ .tm-stock { font-size: 11px; color: #777; text-align: left; }
+ .tm-est { font-size: 10px; color: #afafb4; margin-top: 2px; text-align: left; }
+ .txt-black { color: #111; font-weight: 600; }
+ /* 清单区域 */
+ .tm-box-hd { font-size: 11px; font-weight: 700; color: #111; margin-bottom: 5px; text-transform: uppercase; text-align: left; border-bottom: 1px solid #f0f0f0; padding-bottom: 3px;}
+ .tm-scroll-area { 
+ font-size: 11px; color: #555; line-height: 1.6; 
+ flex: 1; overflow-y: auto; text-align: left; scrollbar-width: none;
+ }
+ .tm-scroll-area::-webkit-scrollbar { display: none; }
+ /* 底部按钮 */
+ .tm-footer {
+ display: flex;
+ flex-direction: row; 
+ gap: 8px; 
+ margin-top: 8px;
+ background: transparent !important;
+ flex-shrink: 0;
+ pointer-events: auto !important; 
+ }
+ .tm-btn {
+ height: 36px;
+ border-radius: 18px; 
+ display: flex; align-items: center; justify-content: center;
+ font-size: 12px; 
+ font-weight: 600; cursor: pointer; transition: 0.2s;
+ text-transform: capitalize;
+ flex: 1;
+ white-space: nowrap;
+ border: none;
+ }
+ 
+ .tm-btn-buy { background: #002fa7; color: #fff; }
+ .tm-btn-buy:hover { background: #001f70; }
+ .tm-btn-learn { border: 1px solid #d9d9d9 !important; color: #1a1a1a; background: #fff; text-transform: capitalize; }
+ /* 状态切换 */
+ .tour-mini-card.is-active .tm-view-front { display: none; }
+ .tour-mini-card.is-active .tm-view-back { display: flex; }
+ 
+ @keyframes tmFade { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: translateY(0); } }
+ @media (max-width: 768px) {
+ .tour-mini-card { height: auto; min-height: 230px; flex-direction: column; }
+ .tm-side-img { width: 100%; height: 160px; border-radius: 12px 12px 0 0; }
+ .tm-main-img { padding: 15px; }
+ }
+</style>
+<script>
+if (typeof toggleMiniMode !== 'function') {
+ window.toggleMiniMode = function(id) {
+ const card = document.getElementById('mini-' + id);
+ const isEx = card.classList.toggle('is-active');
+ const btn = card.querySelector('.tm-btn-learn');
+ btn.querySelector('.tm-sym').textContent = isEx ? '—' : '+';
+ };
+ window.miniAddToCart = function(variantId, btn) {
+ const originalText = btn.textContent;
+ btn.textContent = "WAIT..."; 
+ btn.disabled = true;
+ fetch('/cart/add.js', {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json' },
+ body: JSON.stringify({ items: [{ id: parseInt(variantId), quantity: 1 }] })
+ })
+ .then(async (res) => {
+ if (res.ok) {
+ btn.textContent = "ADDED!";
+ const styleId = 'ecom-nuke-css';
+ if (!document.getElementById(styleId)) {
+ const nukeStyle = document.createElement('style');
+ nukeStyle.id = styleId;
+ nukeStyle.innerHTML = `[class*="ecom-popup"], .ecom-popup-root { display: none !important; } html, body { overflow: auto !important; position: static !important; } cart-drawer, #CartDrawer { z-index: 2147483647 !important; visibility: visible !important; }`;
+ document.head.appendChild(nukeStyle);
+ }
+ document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true }));
+ setTimeout(() => {
+ const cartTrigger = document.querySelector('.header__icon--cart, #cart-icon-bubble, .cart-toggle, a[href="{{ecom_root_url}}cart"]');
+ if (cartTrigger) cartTrigger.click();
+ setTimeout(() => {
+ const nuke = document.getElementById(styleId); if (nuke) nuke.remove();
+ btn.textContent = originalText; btn.disabled = false;
+ }, 3000);
+ }, 500);
+ } else {
+ alert("Inventory Error");
+ btn.textContent = originalText;
+ btn.disabled = false;
+ }
+ });
+ };
+}
+</script></div></div> <div class="ecom-block ecom-core core__block elmspace ecom-88oc0meo01v"><div data-v-6a92e952="" class="ecom__element ecom-element element__code exporting" section_id="ecom-byo9o2my4x9" deep="2">
+{% assign target_product_handle = "pet-feeder-match-g1-early-bird" %}
+{% assign total_limit = 500 %}
+{% assign shipping_time = "20263" %}
+{% assign g1_prod = all_products[target_product_handle] %}
+{% assign target_variant = g1_prod.selected_or_first_available_variant %}
+<div class="tour-mini-card" id="mini-{{ g1_prod.id }}">
+ 
+ 
+ <div class="tm-side-img">
+ <img src="{{ target_variant.featured_image | default: g1_prod.featured_image | image_url: width: 500 }}" class="tm-main-img">
+ </div>
+ 
+ <div class="tm-side-main">
+ 
+ <div class="tm-viewport">
+ 
+ <div class="tm-view tm-view-front">
+ <h4 class="tm-title">{{ g1_prod.title }}</h4>
+ 
+ <div class="tm-price-row">
+ <span class="tm-cur-price">{{ target_variant.price | money }}</span>
+ {% if target_variant.compare_at_price > target_variant.price %}
+ <span class="tm-old-price">{{ target_variant.compare_at_price | money }}</span>
+ {% endif %}
+ </div>
+ <div class="tm-stock">
+ Remaining: <span class="txt-black">{{ target_variant.inventory_quantity | at_least: 0 }}</span> 
+ / Total: {{ total_limit }}
+ </div>
+ 
+ <div class="tm-est">Estimated shipping: {{ shipping_time }}</div>
+ </div>
+ 
+ <div class="tm-view tm-view-back">
+ <div class="tm-box-hd">Included in the Box</div>
+ <div class="tm-scroll-area">
+ <ul>
+ <li>• 1x TourBox G1 Console</li>
+ <li>• 1x Braided USB-C Cable</li>
+ <li>• 1x Safety Storage Case</li>
+ <li>• 1x Quick Start Guide</li>
+ <li>• 1x Warranty Card</li>
+ <li>• 1x Limited Edition Postcard</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+ 
+ <div class="tm-footer">
+ <div class="tm-btn tm-btn-learn" onclick="toggleMiniMode('{{ g1_prod.id }}')">
+ <span class="tm-txt">Learn More</span>&nbsp;<span class="tm-sym">+</span> 
+ </div>
+ <button class="tm-btn tm-btn-buy" onclick="miniAddToCart('{{ target_variant.id }}', this)">
+ Preorder Now
+ </button>
+ </div>
+ </div>
+</div>
+<style>
+ /* 基础容器 */
+ .tour-mini-card {
+ display: flex;
+ width: 100%;
+ height: 230px; 
+ background: #fff !important;
+ border: 1px solid #eeeeee !important;
+ border-radius: 12px !important;
+ margin-bottom: 15px;
+ overflow: visible !important; 
+ box-sizing: border-box;
+ position: relative;
+ touch-action: auto !important;
+ }
+ /* --- 重点修复：图片容器自适应逻辑 --- */
+ .tm-side-img { 
+ width: 35%; 
+ height: 100%;
+ position: relative; 
+ flex-shrink: 0; 
+ display: flex; /* 开启Flex确保图片居中 */
+ align-items: center; 
+ justify-content: center;
+ overflow: hidden;
+ border-top-left-radius: 12px !important;
+ border-bottom-left-radius: 12px !important;
+ border-top-right-radius: 12px !important;
+ border-bottom-right-radius: 12px !important;
+ }
+ .tm-main-img { 
+ max-width: 100%; /* 宽度最大100% */
+ max-height: 100%; /* 高度最大100% */
+ width: auto;
+ height: auto;
+ object-fit: contain; /* 核心：保持比例完整显示，不裁切 */
+ display: block;
+ pointer-events: none;
+ padding-left: 15px;
+ border-top-left-radius: 10px !important;
+ border-bottom-left-radius: 10px !important;
+ border-top-right-radius: 10px !important;
+ border-bottom-right-radius: 10px !important;
+ }
+ /* 右侧内容区 */
+ .tm-side-main { 
+ flex: 1; padding: 12px 18px; display: flex; flex-direction: column; 
+ overflow: visible !important; position: relative; 
+ }
+ .tm-viewport { 
+ flex: 1; position: relative; overflow: visible !important; 
+ display: flex; flex-direction: column; 
+ pointer-events: none; 
+ }
+ .tm-view { width: 100%; height: 100%; animation: tmFade 0.3s ease; display: flex; flex-direction: column; }
+ .tm-view-front { justify-content: center; }
+ .tm-view-back { display: none; }
+ 
+ .tm-title { font-size: 15px; color: #1a1a1a; margin: 0 0 5px 0; font-weight: 700; line-height: 1.2; text-align: left; }
+ .tm-price-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px; }
+ .tm-cur-price { font-size: 18px; color: #000; font-weight: 700; }
+ .tm-old-price { font-size: 13px; color: #afafb4; text-decoration: line-through; }
+ 
+ .tm-stock { font-size: 11px; color: #777; text-align: left; }
+ .tm-est { font-size: 10px; color: #afafb4; margin-top: 2px; text-align: left; }
+ .txt-black { color: #111; font-weight: 600; }
+ /* 清单区域 */
+ .tm-box-hd { font-size: 11px; font-weight: 700; color: #111; margin-bottom: 5px; text-transform: uppercase; text-align: left; border-bottom: 1px solid #f0f0f0; padding-bottom: 3px;}
+ .tm-scroll-area { 
+ font-size: 11px; color: #555; line-height: 1.6; 
+ flex: 1; overflow-y: auto; text-align: left; scrollbar-width: none;
+ }
+ .tm-scroll-area::-webkit-scrollbar { display: none; }
+ /* 底部按钮 */
+ .tm-footer {
+ display: flex;
+ flex-direction: row; 
+ gap: 8px; 
+ margin-top: 8px;
+ background: transparent !important;
+ flex-shrink: 0;
+ pointer-events: auto !important; 
+ }
+ .tm-btn {
+ height: 36px;
+ border-radius: 18px; 
+ display: flex; align-items: center; justify-content: center;
+ font-size: 12px; 
+ font-weight: 600; cursor: pointer; transition: 0.2s;
+ text-transform: capitalize;
+ flex: 1;
+ white-space: nowrap;
+ border: none;
+ }
+ 
+ .tm-btn-buy { background: #002fa7; color: #fff; }
+ .tm-btn-buy:hover { background: #001f70; }
+ .tm-btn-learn { border: 1px solid #d9d9d9 !important; color: #1a1a1a; background: #fff; text-transform: capitalize; }
+ /* 状态切换 */
+ .tour-mini-card.is-active .tm-view-front { display: none; }
+ .tour-mini-card.is-active .tm-view-back { display: flex; }
+ 
+ @keyframes tmFade { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: translateY(0); } }
+ @media (max-width: 768px) {
+ .tour-mini-card { height: auto; min-height: 230px; flex-direction: column; }
+ .tm-side-img { width: 100%; height: 160px; border-radius: 12px 12px 0 0; }
+ .tm-main-img { padding: 15px; }
+ }
+</style>
+<script>
+if (typeof toggleMiniMode !== 'function') {
+ window.toggleMiniMode = function(id) {
+ const card = document.getElementById('mini-' + id);
+ const isEx = card.classList.toggle('is-active');
+ const btn = card.querySelector('.tm-btn-learn');
+ btn.querySelector('.tm-sym').textContent = isEx ? '—' : '+';
+ };
+ window.miniAddToCart = function(variantId, btn) {
+ const originalText = btn.textContent;
+ btn.textContent = "WAIT..."; 
+ btn.disabled = true;
+ fetch('/cart/add.js', {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json' },
+ body: JSON.stringify({ items: [{ id: parseInt(variantId), quantity: 1 }] })
+ })
+ .then(async (res) => {
+ if (res.ok) {
+ btn.textContent = "ADDED!";
+ const styleId = 'ecom-nuke-css';
+ if (!document.getElementById(styleId)) {
+ const nukeStyle = document.createElement('style');
+ nukeStyle.id = styleId;
+ nukeStyle.innerHTML = `[class*="ecom-popup"], .ecom-popup-root { display: none !important; } html, body { overflow: auto !important; position: static !important; } cart-drawer, #CartDrawer { z-index: 2147483647 !important; visibility: visible !important; }`;
+ document.head.appendChild(nukeStyle);
+ }
+ document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true }));
+ setTimeout(() => {
+ const cartTrigger = document.querySelector('.header__icon--cart, #cart-icon-bubble, .cart-toggle, a[href="{{ecom_root_url}}cart"]');
+ if (cartTrigger) cartTrigger.click();
+ setTimeout(() => {
+ const nuke = document.getElementById(styleId); if (nuke) nuke.remove();
+ btn.textContent = originalText; btn.disabled = false;
+ }, 3000);
+ }, 500);
+ } else {
+ alert("Inventory Error");
+ btn.textContent = originalText;
+ btn.disabled = false;
+ }
+ });
+ };
+}
+</script></div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </div></div> </div></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </section>
+</div></div></div></div></dialog><div class="ecom-popup-placeholder ecom-section"><div class="ecom-popup-placeholder-inner core__row--columns"><img src="https://ecomposer.app/images/placeholder-popup.jpg" alt="Popup placeholder"></div></div>
+ <style>
+ .ecom-popups-container{animation-name: none;} .ecom-popups-container .ecom-popups-wrapper{width: 760px;max-width: 100%;height: 560px;max-height: 560px;}.ecom-popups-container::backdrop{background-color: rgba(0, 0, 0, 0.5);} .ecom-popups-container::backdrop{backdrop-filter: blur(1px);}.ecom-popups-container .ecom-popups-wrapper .ecom-popups-wrapper-inner{}.ecom-popups-container .ecom-popups-wrapper{box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.5);} .ecom-popups-container .ecom-popups-wrapper, .ecom-popups-container .ecom-popups-wrapper .ecom-popups-wrapper-inner{border-radius: 10px;} .ecom-popups-wrapper{padding: 20px;}.ecom-popups-container .ecom-popups-wrapper-inner{overflow: hidden;} .ecom-popups-wrapper .ecom-popup-close-button{top: 10px;left: none;right: 10px;width: 30px;height: 30px;border-radius: 50%;padding: 10px;}.ecom-popups-wrapper .ecom-popup-close-button, .ecom-popups-wrapper .ecom-popup-close-button svg, .ecom-popups-wrapper .ecom-popup-close-button svg path{color: #000000 !important;fill: #000000 !important;}.ecom-popups-wrapper .ecom-popup-close-button{background-color: #efefef;border-style: none;}@media screen and (max-width: 1024px) and (min-width: 768px){ .ecom-popups-container .ecom-popups-wrapper{max-width: 80%;height: 520px;}}@media screen and (max-width: 767px) and (min-width: 101px){ .ecom-popups-container .ecom-popups-wrapper{max-width: 80%;height: 400px;}}.ecom-popup-placeholder{display:none;position:fixed;z-index:99;top:0;left:0;height:auto;width:100%;background-color:#fff}.ecom-popup-placeholder-inner{width:80%;margin:0 auto}.ecom-popup-placeholder-inner img{height:auto;width:100%}
+ </style><script>
+ // JS minify
+ !function(){let e=window.location.pathname.includes(`${window.EComposer.proxy_path}/preview/`);if(e){let o=document.querySelector(".ecom-popup-placeholder");o&&(o.style.display="block")}}();
+ </script>
+{% schema %}
+{
+ "name": "G1 Pop -v260126 -pad",
+ "settings": [
+ {
+ "type": "header",
+ "content": "The section was generated by [Ecomposer](https:\/\/ecomposer.io).",
+ "info": "\n EComposer is a Visual Page Builder app on Shopify AppStore.\n It provides 100+ pre-built templates in library,\n so you can build unlimited pages that you can imagine with it.\n Please don't add Shopify sections to EComposer's page in the theme customize. If you do this, Shopify sections will be deleted when you republish your page in EComposer\n "
+ },
+ {
+ "type": "header",
+ "content": "[EDIT WITH EComposer APP \u2192](https:\/\/ecomposer.app\/shop?open_builder=1&page=popup&id=698a999b965aa24972069f92&utm_source=theme-customize)",
+ "info": "(*You must install the app to start editing this section [Learn more](https:\/\/help.ecomposer.io\/docs\/getting-started\/installation\/))"
+ }
+ ],
+ "locales": {
+ "en": {
+ "headingtext_0uuvn8iy8c6i_html": "Choose Your Early Bird Discount"
+ }
+ }
+}
+{% endschema %}
